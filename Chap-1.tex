@@ -5,16 +5,68 @@
 \begin{document}
 \fi
 \chapter{Introduction and overview}
+
 \section{Global perspectives}
+
 \section{Quantum bits}
+
 \section{Quantum computation}
+
 \section{Quantum algorithm}
+
 \begin{exe}
     Suppose that the problem is not to distinguish between the constant and balanced functions \emph{with certainty}, but rather, with some probability of error $\epsilon<1/2$. What is the performance of the best classical algorithm for this problem?
 \end{exe}
 \begin{sol}
-    
+    Suppose Alice queries Bob $j$ times, where $j\leq 2^{n-1}$. If she receives both $0$(s) and $1$(s), then she can determine $f(x)$ as balanced with certainty. If she receives all $0$(s) (or all $1$(s)), then according to Bayes' theorem and Law of total probability, the probability that $f(x)$ is constant is
+    \begin{align}
+        \notag&P(f(x)\text{ is constant}\vert f(x)=0\forall x=0,1,\cdots,j)=P(f(x)\text{ is constant}\vert f(x)=1\forall x=0,1,\cdots,j)\\
+        \notag=&\frac{P(f(x)\text{ is constant})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is constant})}{P(f(x)=0\forall j=0,1,\cdots,j)}\\
+        \notag=&\frac{P(f(x)\text{ is constant})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is constant})}{\splitfrac{P(f(x)\text{ is constant})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is constant})}{+P(f(x)\text{ is balanced})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is balanced})}}\\
+        =&\frac{\frac{1}{2}\times\frac{1}{2}}{\frac{1}{2}\times\frac{1}{2}+\frac{1}{2}\times\frac{C^{2^n-k}_{2^{n-1}}}{C^{2^n}_{2^{n-1}}}}=\frac{1}{1+2\frac{(2^n-j)!(2^{n-1})!}{(2^n)!(2^{n-1}-j)!}}=\frac{(2^n-1)(2^n-2)\cdots(2^n-j+1)}{(2^n-1)(2^n-2)\cdots(2^n-j+1)+(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-j+1)}.
+    \end{align}
+    and the probability that $f(x)$ is balanced is
+    \begin{align}
+        \notag&P(f(x)\text{ is balanced}\vert f(x)=0\forall x=0,1,\cdots,j)=P(f(x)\text{ is balanced}\vert f(x)=1\forall x=0,1,\cdots,j)\\
+        \notag=&\frac{P(f(x)\text{ is balanced})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is balanced})}{P(f(x)=0,1,\cdots,j)}\\
+        \notag=&\frac{P(f(x)\text{ is balanced})P(f(x)=0\forall j=0,1,\cdots,j\vert f(x)\text{ is balanced})}{\splitfrac{P(f(x)\text{ is constant})P(f(x)=0\forall x=0,1,\cdots,j\vert f(x)\text{ is constant})}{+P(f(x)\text{ is balanced})P(f(x)=0\forall x=0,1,\cdots,j\vert f(x)\text{ is balanced})}}\\
+        =&\frac{\frac{1}{2}\times\frac{C^{2^n-j}_{2^{n-1}}}{C^{2^n}_{2^{n-1}}}}{\frac{1}{2}\times\frac{1}{2}+\frac{1}{2}\times\frac{C^{2^n-k}_{2^{n-1}}}{C^{2^n}_{2^{n-1}}}}=\frac{2\frac{(2^n-k)!(2^{n-1})!}{(2^n)!(2^{n-1}-j)!}}{1+2\frac{(2^n-k)!(2^{n-1})!}{(2^n)!(2^{n-1}-j)!}}=\frac{(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-j+1)}{(2^n-1)(2^n-2)\cdots(2^n-j+1)+(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-j+1)}.
+    \end{align}
+    Note that
+    \begin{align}
+        P(f(x)\text{ is constant}\vert f(x)=0\forall x=0,1,\cdots,j)\geq P(f(x)\text{ is balanced}\vert f(x)=0\forall x=0,1,\cdots,j)
+    \end{align}
+    with equality if and only if $j=1$.
+    Therefore, the best classical algorithm is:
+    \begin{itemize}
+        \item[1.] Alice selects number $x=0$ and queries Bob;
+        \item[2.] 
+        \begin{itemize}
+            \item[i.] If Alice have received both $0$(s) and $1$(s), then she determines $f(x)$ as balanced;
+            \item[ii.] If Alice have received either all $0$(s) or $1$(s), and $P(f(x)\text{ is constant}\vert f(x)=0\forall x=0,1,\cdots,j)>\frac{1}{2}$ or $P(f(x)\text{ is constant}\vert f(x)=1\forall x=0,1,\cdots,j)>\frac{1}{2}$, then she classifies $f(x)$ as constant;
+            \item[iii.] Otherwise, let $x=x+1$ and return to step 1.
+        \end{itemize}
+    \end{itemize}
+    In the worst case, Alice queries Bob (say) $k$ times and receives $k$ $0$s. She classifies $f(x)$ as constant since the error probability of her judgement is just below $1/2$:
+    \begin{align}
+        \notag P(\text{error}\vert f(x)=0\forall x=0,1,\cdots,k-1)=&P(f(x)\text{ is balanced}\vert f(x)=0\forall x=0,1,\cdots,k-1)\\
+        =&\frac{(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-k+1)}{(2^n-1)(2^n-2)\cdots(2^n-k+1)+(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-k+1)}<\frac{1}{2}.
+    \end{align}
+    If Alice only queries Bob $(k-1)$ times and receives $(k-1)$ $0$s, she can not make judgement with error probability less than $1/2$:
+    \begin{align}
+        \notag P(\text{error}\vert f(x)=0\forall x=0,1,\cdots,k-2)=&P(f(x)\text{is balanced}\vert f(x)=0\forall x=0,1,\cdots,k-2)\\
+        \geq&\frac{(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-k+2)}{(2^n-1)(2^n-2)\cdots(2^n-k+2)+(2^{n-1}-1)(2^{n-1}-2)\cdots(2^{n-1}-k+2)}\geq\frac{1}{2},
+    \end{align}
+    so we have
+    \begin{align}
+        k=2.
+    \end{align}
+    i.e., the computation complexity of the best classical algorithm for this problem is $O(1)$.
 \end{sol}
+
+\section{Experimental quantum information processing}
+
+\section{Quantum information}
 \ifx\allfiles\undefined
 \end{document}
 \fi
