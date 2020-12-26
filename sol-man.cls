@@ -94,8 +94,8 @@
         \fancyhead[L]{{\Huge\bfseries{}Solution\\
             Manual to}\\
             By \href{#4}{#3}, #5} % The left of the header
-        \fancyhead[R]{{\Large\bfseries#1}
-            \\#2} % The center of the header
+        \fancyhead[R]{{\Large\bfseries#1}\\
+            #2} % The center of the header
         \fancyfoot[R]{\thepage\ / \pageref{LastPage}} % 页脚右：<当前页码> / <总页数> The right of the footer: <current page number> / <total page number>
     }
     \thispagestyle{FirstPage} % 设置首页页眉风格为 FirstPage Set header style of first page to be FirstPage
