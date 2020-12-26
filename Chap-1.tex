@@ -69,9 +69,11 @@
 \begin{exe}
     Explain how a device which, upon input of one of two non-orthogonal quantum states $\lvert\psi\rangle$ or $\lvert\varphi\rangle$ correctly identified the state, could be used to build a theorem which cloned the states $\lvert\psi\rangle$ and $\lvert\varphi\rangle$, in violation of the no-cloning theorem. Conversely, explain how device for cloning could be used to distinguish non-orthogonal quantum states.
 \end{exe}
-\begin{sol}
-    
-\end{sol}
+\begin{pf}
+    The no-cloning theorem says that it is impossible for a cloning device to clone states that are not orthogonal to one another. If we have a device that can distinguish two non-orthogonal quantum states $\lvert\psi\rangle$ and $\lvert\varphi\rangle$, given a state either $\lvert\phi\rangle$ or $\lvert\varphi\rangle$, we can use this device to know whether the state is $\lvert\phi\rangle$ and $\lvert\varphi\rangle$, then find a another system and initialize it to the same state with not too much difficulty. In this way, we can clone states that are non-orthogonal, which violate the no-cloning theorem.
+
+    Conversely, if we have a device for cloning quantum states, given an unknown state, we can use this device to generate copies of the state and measure it as many times as we want, so that we will obtain enough information to determine the state. In this way, we can distinguish non-orthogonal quantum states.
+\end{pf}
 
 \section{Quantum information}
 \ifx\allfiles\undefined
