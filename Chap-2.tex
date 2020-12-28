@@ -23,7 +23,21 @@
     Suppose $V$ is a vector space with basis vectors $\lvert 0\rangle$ and $\lvert 1\rangle$, and $A$ is a linear operator from $V$ to $V$ such that $A\lvert 0\rangle=\lvert 1\rangle$ and $A\lvert 1\rangle=\lvert 0\rangle$. Give a matrix representation for $A$, with respect to the input basis $\lvert 0\rangle$, $\lvert 1\rangle$, and the output basis $\lvert 0\rangle$ and $\lvert 1\rangle$. Find input and output bases which give rise to a different matrix representation of $A$.
 \end{exe}
 \begin{sol}
-    
+    The matrix representation for $A$ with respect to the input basis $\lvert 0\rangle$, $\lvert 1\rangle$ and the output basis $\lvert 0\rangle$ and $\lvert 1\rangle$ is
+    \begin{align}
+        \left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right].
+    \end{align}
+
+    Keep $\lvert 0\rangle$ and $\lvert 1\rangle$ as the input basis and choose $\lvert+\rangle=(\lvert 0\rangle+\lvert 1\rangle)/\sqrt{2}$ and $\lvert-\rangle=(\lvert 0\rangle-\lvert 1\rangle)/\sqrt{2}$ as the output basis, then $A$ can be regarded as a linear operator from $V$ to $V$ such that $A\lvert 0\rangle=(\lvert+\rangle-\lvert-\rangle)/\sqrt{2}$ and $A\lvert 1\rangle=(\lvert 0\rangle+\lvert 1\rangle)/\sqrt{2}$. In this way, the matrix representation for $A$ is
+    \begin{align}
+        \frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&-1\\
+            1&1
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
