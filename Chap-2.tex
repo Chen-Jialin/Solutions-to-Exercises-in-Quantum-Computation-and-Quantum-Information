@@ -196,7 +196,36 @@
     Suppose $\lvert v_i\rangle$ is an orthonormal basis for and inner product space $V$. What is the matrix representation for the operator $\lvert v_j\rangle\langle v_k\rvert$, with respect to the $\lvert v_i\rangle$ basis?
 \end{exe}
 \begin{sol}
-    
+    The matrix representation for the operator $\lvert v_j\rangle\langle v_k\rvert$ with respect to the $\lvert v_i\rangle$ basis:
+    \begin{align}
+        \lvert v_j\rangle\langle v_k\rvert=\begin{array}{cc}
+            \begin{array}{ccccccc}
+                \multicolumn{7}{c}{k\text{th column}} \\
+                 &  &  & \downarrow &  &  & 
+                \end{array} & \begin{array}{c}
+                    \\
+                    \\
+                   \end{array} \\
+            \left[\begin{array}{ccccccc}
+                0 &  &  &  & \multicolumn{3}{c}{\multirow{3}{*}{\Huge0}} \\
+                 & \ddots &  &  & \multicolumn{3}{c}{} \\
+                 &  & 0 &  & \multicolumn{3}{c}{} \\
+                 &  &  & 1 &  &  &  \\
+                \multicolumn{3}{c}{\multirow{3}{*}{\Huge0}} &  & 0 &  &  \\
+                \multicolumn{3}{c}{} &  &  & \ddots &  \\
+                \multicolumn{3}{c}{} &  &  &  & 0
+                \end{array}\right] & \begin{array}{c}
+                    \\
+                    \\
+                    \\
+                   \leftarrow\,j\text{th row} \\
+                    \\
+                    \\
+                    \\
+                   \end{array}
+        \end{array}
+    \end{align}
+    (a matrix with all zeros expect a one at the $j$th row and $k$th column).
 \end{sol}
 
 \ifx\allfiles\undefined
