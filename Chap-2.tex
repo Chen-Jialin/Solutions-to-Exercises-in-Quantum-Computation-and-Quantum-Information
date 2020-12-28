@@ -135,10 +135,46 @@
 \end{sol}
 
 \begin{exe}
-    Prove tha the Gram-Schmidt procedure produces an orthonormal basis for $V$.
+    Prove that the Gram-Schmidt procedure produces an orthonormal basis for $V$.
 \end{exe}
 \begin{sol}
-    
+    Obviously, $\lvert v_1\rangle,\cdots,\lvert v_n\rangle$ are normalized, so we first prove that $\lvert v_1\rangle,\cdots,\lvert v_d\rangle$ are orthogonal with induction.
+    For $k=1$,
+    \begin{align}
+        (\lvert v_1\rangle,\lvert v_{k+1}\rangle)=&(\lvert v_1,\lvert v_2\rangle\rangle)=\left(\lvert v_1\rangle,\frac{\lvert w_2\rangle-\langle v_1\vert w_2\rangle\lvert v_1\rangle}{\norm{\lvert v_1\rangle-\langle v_1\vert w_2\rangle\lvert v_1\rangle}}\right)=\frac{\langle v_1\vert w_2\rangle-\langle v_1\vert w_2\rangle\langle v_1\vert v_1\rangle}{\norm{\lvert v_1\rangle-\langle v_1\vert w_2\rangle\lvert v_1\rangle}}=\frac{\langle v_1\vert w_2\rangle-\langle v_1\vert w_2\rangle}{\norm{\lvert v_1\rangle-\langle v_1\vert w_2\rangle\lvert v_1\rangle}}=0,\\
+    \end{align}
+    so $\lvert v_1\rangle,\cdots,\lvert v_{k+1}\rangle$ are orthogonal for $k=1$.
+    For $k\geq 2$, if $\lvert v_1\rangle,\cdots,\lvert v_k\rangle$ are orthogonal, then
+    \begin{align}
+        \notag(\lvert v_j\rangle,\lvert v_{k+1}\rangle)=&\left(\lvert v_j\rangle,\frac{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}{\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}}\right)=\frac{\langle v_j\vert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\langle v_j\vert v_i\rangle}{\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}}\\
+        =&\frac{\langle v_j\vert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\delta_{ji}}{\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}}=\frac{\langle v_j\vert w_{k+1}\rangle-\langle v_j\vert w_{k+1}\rangle}{\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}}=0,\quad\forall j=1,\cdots,k,
+    \end{align}
+    so $\lvert v_1\rangle,\cdots,\lvert v_{k+1}\rangle$ are orthogonal for $k\geq 2$, such as $k=d-1$.
+    Till now, we proved that $\lvert v_1\rangle,\cdots,\lvert v_d\rangle$ are orthonormal.
+
+    We then prove that $\lvert v_1\rangle,\cdots,\lvert v_n\rangle$ are a basis for $V$.
+    As proved above, $\lvert v_1\rangle,\cdots,\lvert v_d\rangle$ are orthonormal, and thus linear independent. Since $\lvert w_1\rangle,\cdots,\lvert w_d\rangle$ are a basis for $V$. Any vector $\lvert v\rangle$ in $V$ can be written as a linear combination of $\lvert w_1\rangle,\cdots,\lvert w_d\rangle$:
+    \begin{align}
+        \lvert v\rangle=\sum_{i=1}^da_i\lvert w_i\rangle.
+    \end{align}
+    Using
+    \begin{align}
+        \label{E2.8-w1-v1}
+        \lvert v_1\rangle=\frac{\lvert w_1\rangle}{\norm{\lvert w_1\rangle}}\Longrightarrow \lvert w_1\rangle=\norm{\lvert w_1\rangle}\lvert v_1\rangle,\\
+    \end{align}
+    and
+    \begin{align}
+        \label{E2.8-w-v}
+        \notag\lvert v_{k+1}\rangle=&\frac{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}{\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}}\\
+        \Longrightarrow&\lvert w_{k+1}\rangle=\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}\lvert v_{k+1}\rangle+\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle,\quad\forall k=1,\cdots,d-1
+    \end{align}
+    we can rewrite $\lvert v\rangle$ as a linear combination of $\lvert v_1\rangle,\cdots,\lvert v_d\rangle$:
+    \begin{align}
+        \lvert v\rangle=a_1\norm{\lvert w_1\rangle}\lvert v_1\rangle+\sum_{k=1}^{d-1}a_{k+1}\left(\norm{\lvert w_{k+1}\rangle-\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle}\lvert v_{k+1}\rangle+\sum_{i=1}^k\langle v_i\vert w_{k+1}\rangle\lvert v_i\rangle\right),
+    \end{align}
+    so $\lvert v_1\rangle,\cdots,\lvert v_d\rangle$ span and form a basis for $V$.
+
+    Therefore, the Gram-Schmidt procedure produces an orthonormal basis for $V$.
 \end{sol}
 
 \ifx\allfiles\undefined
