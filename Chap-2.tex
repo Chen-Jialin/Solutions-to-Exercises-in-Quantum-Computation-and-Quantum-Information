@@ -82,7 +82,24 @@
     Verify that $(\cdot,\cdot)$ just defined is an inner product on $\mathbb{C}^n$.
 \end{exe}
 \begin{sol}
-    
+    $(\cdot,\cdot)$ just defined satisfies the requirements that:
+    \begin{itemize}
+        \item[(1)] $(\cdot,\cdot)$ is linear in the second argument,
+        \begin{align}
+            \notag\left((y_1,\cdots,y_n),\sum_j\lambda_j(z_1^{(j)},\cdots,z_n^{(j)})\right)=&\left((y_1,\cdots,y_n),(\sum_j\lambda_jz_1^{(j)},\cdots,\sum_j\lambda_jz_n^{(j)})\right)=\sum_iy_i^*\sum_j\lambda_jz_i^{(j)}\\
+            =&\sum_j\lambda_j\sum_iy_i^*z_i^{(j)}=\sum_j\lambda_j((y_1,\cdots,y_n),(z_1^{(j)},\cdots,z_n^{(j)})).
+        \end{align}
+        \item[(2)] 
+        \begin{align}
+            ((y_1,\cdots,y_n),(z_1,\cdots,z_n))=\sum_iy_iz_i^*=\left(\sum_iy_i^*z_i\right)^*=((y_1,\cdots,y_n),(z_1,\cdots,z_n))^*.
+        \end{align}
+        \item[(3)] 
+        \begin{align}
+            ((y_1,\cdots,y_n),(y_1,\cdots,y_n))=\sum_iy_i^*y_i=\sum_i\abs{y_i}^2\geq 0,
+        \end{align}
+        with equality if and only if $(y_1,\cdots,y_n)=0$.
+    \end{itemize}
+    Therefore, $(\cdot,\cdot)$ is an inner product on $\mathbb{C}^n$.
 \end{sol}
 
 \ifx\allfiles\undefined
