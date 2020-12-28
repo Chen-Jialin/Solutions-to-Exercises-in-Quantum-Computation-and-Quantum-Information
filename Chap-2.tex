@@ -44,7 +44,19 @@
     Suppose $A$ is a linear operator from vector space $V$ to vector space $W$, and $B$ is a linear operator from vector spaces $W$ to vector space $X$. Let $\lvert v_i\rangle$, $\lvert w_j\rangle$, and $\lvert x_k\rangle$ be bases for the vector spaces $V$, $W$, and $X$, respectively. Show that the matrix representation for the linear transformation $BA$ is the matrix product of the matrix representations for $B$ and $A$, with respect to the appropriate bases.
 \end{exe}
 \begin{sol}
-    
+    Suppose the dimension of vector spaces $V$, $W$, and $W$ are $l$, $m$, $n$, respectively. Since $A$ is a linear operator from vector space $V$ to vector space $W$, for each $i$ in the range $1,\cdots,l$, there exist complex numbers $A_{1i}$ through $A_{mi}$ such that
+    \begin{align}
+        A\lvert v_i\rangle=\sum_jA_{ji}\lvert w_j\rangle,
+    \end{align}
+    where $A_{ji}$ is the matrix entries of the matrix representation of the operator $A$. Since $B$ is a linear operator from vector space $W$ to vector space $X$, for each $j$ in the range $1,\cdots,m$, there exist complex numbers $A_{1j}$ through $A_{nj}$ such that
+    \begin{align}
+        B\lvert w_j\rangle=\sum_kB_{kj}\lvert x_k\rangle,
+    \end{align}
+    where $B_{kj}$ is the matrix entries of the matrix representation of the operator $B$. Putting the above two equations together, we have
+    \begin{align}
+        BA\lvert v_i\rangle=B\sum_jA_{ji}\lvert w_j\rangle=\sum_jA_{ji}\sum_kB_{kj}\lvert x_k\rangle=\sum_k\left(\sum_jB_{kj}A_{ji}\right)\lvert x_k\rangle=\sum_k(BA)_{ki}\lvert x_k\rangle.
+    \end{align}
+    where $(AB)_{ki}$ is the matrix entries of the matrix representation of the operator $B$. Therefore, the matrix representation for the linear transformation $BA$ is the matrix product of the matrix representations for $B$ and $A$, with respect to the appropriate bases.
 \end{sol}
 
 \ifx\allfiles\undefined
