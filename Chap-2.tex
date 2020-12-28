@@ -63,7 +63,19 @@
     Show that the identity operator on a vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else, if the matrix representation is taken with respect to the same input and output bases. The matrix is known as the \emph{identity matrix}.
 \end{exe}
 \begin{sol}
-    
+    Suppose $I$ is the identity operator on the vector space $V$ and choose $\lvert v_1\rangle,\cdots,\lvert v_m\rangle$ as both the input basis and the output basis for $V$. Then for each $j$ in the range $1,\cdots,m$, there exist complex numbers $I_{1j}$ through $I_{mj}$ such that
+    \begin{gather}
+        I\lvert v_j\rangle=\sum_iA_{ij}\lvert v_i\rangle=\lvert v_j\rangle,\\
+        \Longrightarrow(A_{jj}-1)\lvert v_j\rangle+\sum_{i\neq j}A_{ij}\lvert v_i\rangle=0,
+    \end{gather}
+    where $A_{ij}$ is the entries of the matrix representation of the operator $I$. Due to linear independence of the basis, there must be
+    \begin{align}
+        v_{ij}=\left\{\begin{array}{ll}
+            1,&i=j;\\
+            0,&i\neq j,
+        \end{array}\right.=\delta_{ij},\quad\forall i,j=1,\cdots,m.
+    \end{align}
+    i.e., the identity operator on the vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else.
 \end{sol}
 
 \ifx\allfiles\undefined
