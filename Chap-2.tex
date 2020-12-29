@@ -43,7 +43,7 @@
 \begin{exe}[Matrix representation for operator products]
     Suppose $A$ is a linear operator from vector space $V$ to vector space $W$, and $B$ is a linear operator from vector spaces $W$ to vector space $X$. Let $\lvert v_i\rangle$, $\lvert w_j\rangle$, and $\lvert x_k\rangle$ be bases for the vector spaces $V$, $W$, and $X$, respectively. Show that the matrix representation for the linear transformation $BA$ is the matrix product of the matrix representations for $B$ and $A$, with respect to the appropriate bases.
 \end{exe}
-\begin{sol}
+\begin{pf}
     Suppose the dimension of vector spaces $V$, $W$, and $W$ are $l$, $m$, $n$, respectively. Since $A$ is a linear operator from vector space $V$ to vector space $W$, for each $i$ in the range $1,\cdots,l$, there exist complex numbers $A_{1i}$ through $A_{mi}$ such that
     \begin{align}
         A\lvert v_i\rangle=\sum_jA_{ji}\lvert w_j\rangle,
@@ -59,7 +59,7 @@
         BA\lvert v_i\rangle=B\sum_jA_{ji}\lvert w_j\rangle=\sum_jA_{ji}\sum_kB_{kj}\lvert x_k\rangle=\sum_k\left(\sum_jB_{kj}A_{ji}\right)\lvert x_k\rangle=\sum_k(BA)_{ki}\lvert x_k\rangle.
     \end{align}
     where $(AB)_{ki}$ is the entries of the matrix representation of the operator $BA$. Therefore, the matrix representation for the linear transformation $BA$ is the matrix product of the matrix representations for $B$ and $A$, with respect to the appropriate bases.
-\end{sol}
+\end{pf}
 
 \begin{exe}[Matrix representation for identity]
     Show that the identity operator on a vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else, if the matrix representation is taken with respect to the same input and output bases. The matrix is known as the \emph{identity matrix}.
