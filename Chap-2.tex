@@ -410,7 +410,41 @@
     is not diagonalizable.
 \end{exe}
 \begin{pf}
-
+    The matrix is not normal,
+    \begin{align}
+        \left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}=\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&1\\
+            0&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right]\neq\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&1\\
+            0&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right],
+    \end{align}
+    so it is nor diagonalizable.
 \end{pf}
 
 \ifx\allfiles\undefined
