@@ -527,7 +527,20 @@
     Show that all eigenvalues of a unitary matrix has modulus $1$, that is can be written in the form $e^{i\theta}$ for some real $\theta$.
 \end{exe}
 \begin{pf}
-    
+    Suppose unitary matrix $A$ has eigenvalues $\lambda_1,\cdots,\lambda_n$ with corresponding eigenvectors $\lvert 1\rangle,\cdots,\lvert n\rangle$. The eigenequations of $A$ are
+    \begin{align}
+        A\lvert i\rangle=\lambda_i\lvert i\rangle,\quad\forall i=1,\cdots,n.
+    \end{align}
+    Taking Hermitian conjugate of the above equations,
+    \begin{align}
+        \langle i\rvert A^{\dagger}=(A\lvert i\rangle)^{\dagger}=\lambda_i^*\langle i\rvert,\quad\forall i=1,\cdots,n.
+    \end{align}
+    Since $A$ is unitary, for any $i=1,\cdots,n$,
+    \begin{gather}
+        1=\langle i\vert i\rangle=\langle i\rvert I\lvert i\rangle=\langle i\rvert A^{\dagger}A\lvert i\rangle=\abs{\lambda_i}^2\langle i\vert i\rangle=\abs{\lambda_i}^2,\\
+        \Longrightarrow\abs{\lambda_i}=1.
+    \end{gather}
+    Therefore, all eigenvalues of a unitary matrix has modulus $1$.
 \end{pf}
 
 \ifx\allfiles\undefined
