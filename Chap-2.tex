@@ -491,7 +491,14 @@
     Show that any projector $P$ satisfies the equation $P^2=P$.
 \end{exe}
 \begin{pf}
-    
+    For any orthonormal basis $\lvert 1\rangle,\cdots,\lvert k\rangle$ for $W$,
+    \begin{align}
+        P=\sum_{i=1}^k\lvert i\rangle\langle i\rvert,
+    \end{align}
+    and then
+    \begin{align}
+        P^2=\sum_{i=1}^k\lvert i\rangle\langle i\rvert\sum_{j=1}^k\lvert j\rangle\langle j\rvert=\sum_{i=1}^k\sum_{j=1}^k\lvert i\rangle\langle i\vert j\rangle\langle j\rvert=\sum_{i=1}^k\sum_{j=1}^k\lvert i\rangle\delta_{ij}\langle j\rvert=\sum_{i=1}^k\lvert i\rangle\langle i\rvert=P.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
