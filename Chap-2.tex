@@ -625,7 +625,14 @@
     Suppose $A'$ and $A''$ are matrix representations of an operator $A$ on a vector space $V$ with respect to two different orthonormal bases, $\lvert v_i\rangle$ and $\lvert w_i\rangle$. Then the elements of $A'$ and $A''$ are $A_{ij}'=\langle v_i\rvert A\lvert v_j\rangle$ and $A_{ij}''=\langle w_i\rvert A\lvert w_j\rangle$. characterize the relationship between $A'$ and $A''$.
 \end{exe}
 \begin{sol}
-    
+    Define $U=\sum_i\lvert w_i\rangle\langle v_i\rvert$ so that $\lvert w_i\rangle=U\lvert v_i\rangle$ and $\langle w_i\rvert=\langle v_i\rvert U^{\dagger}$ $\forall i$. Since $\lvert v_i\rangle$ and $\lvert w_i\rangle$ are two bases for $V$ and
+    \begin{align}
+        A_{ij}''=\langle w_i\rvert A''\lvert w_j\rangle=\langle v_i\rvert U^{\dagger}A'U\lvert v_j\rangle,
+    \end{align}
+    the relationship between $A'$ and $A''$ is
+    \begin{align}
+        A''=U^{\dagger}A'U.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
