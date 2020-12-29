@@ -547,7 +547,78 @@
     Show that the Pauli matrices are Hermitian and unitary.
 \end{exe}
 \begin{pf}
-    
+    Since
+    \begin{align}
+        \sigma_0^{\dagger}=I^{\dagger}=I=\sigma_0,
+    \end{align}
+    and
+    \begin{align}
+        \sigma_0^{\dagger}\sigma_0=I^{\dagger}I=II=I,
+    \end{align}
+    $\sigma_0$ is Hermitian and unitary.
+    Since
+    \begin{align}
+        \sigma_1^{\dagger}=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=\sigma_1,
+    \end{align}
+    and
+    \begin{align}
+        \sigma_1^{\dagger}\sigma_1=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,
+    \end{align}
+    $\sigma_1$ is Hermitian and unitary.
+    Since
+    \begin{align}
+        \sigma_2^{\dagger}=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=\sigma_2,
+    \end{align}
+    and
+    \begin{align}
+        \sigma_2^{\dagger}\sigma_2=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,
+    \end{align}
+    $\sigma_2$ is Hermitian and unitary.
+    Since
+    \begin{align}
+        \sigma_3^{\dagger}=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\sigma_3,
+    \end{align}
+    and
+    \begin{align}
+        \sigma_3^{\dagger}\sigma_3=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,
+    \end{align}
+    $\sigma_3$ is Hermitian and unitary.
 \end{pf}
 
 \ifx\allfiles\undefined
