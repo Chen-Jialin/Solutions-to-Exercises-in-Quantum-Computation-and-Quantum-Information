@@ -232,7 +232,171 @@
     Find the eigenvectors, eigenvalues, and diagonal representations of the Pauli matrices $X$, $Y$, and $Z$.
 \end{exe}
 \begin{sol}
-    
+    The characteristic equation of $X$
+    \begin{align}
+        \det\abs{X-\lambda I}=\abs{\begin{matrix}
+            -\lambda&1\\
+            1&-\lambda
+        \end{matrix}}=\lambda^2-1=0,
+    \end{align}
+    gives the eigenvalues
+    \begin{align}
+        \lambda_1=1,\quad\lambda_2=-1.
+    \end{align}
+    The eigenequations of $X$
+    \begin{align}
+        X\lvert v_1\rangle=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            b_1\\
+            a_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\quad X\lvert v_2\rangle=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\left[\begin{matrix}
+            b_2\\
+            a_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+            -a_2\\
+            -b_2
+        \end{matrix}\right],
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            -1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle).
+    \end{align}
+    The diagonal representation of $X$ is
+    \begin{align}
+        X=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-\langle 1\rvert).
+    \end{align}
+    The characteristic equation of $Y$
+    \begin{align}
+        \det\abs{Y-\lambda I}=\abs{\begin{matrix}
+            -\lambda&-i\\
+            i&-\lambda
+        \end{matrix}}=\lambda^2-1=0,
+    \end{align}
+    gives the eigenvalues
+    \begin{align}
+        \lambda_1=1,\quad\lambda_2=-1.
+    \end{align}
+    The eigenequations of $Y$
+    \begin{align}
+        Y\lvert v_1\rangle=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            -ib_1\\
+            ia_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\quad Y\lvert v_2\rangle=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\left[\begin{matrix}
+            -ib_2\\
+            ia_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+            -a_2\\
+            -b_2
+        \end{matrix}\right],
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            i
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            -i
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle).
+    \end{align}
+    The diagonal representation of $Y$ is
+    \begin{align}
+        Y=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+i\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-i\langle 1\rvert).
+    \end{align}
+    The characteristic equation of $Z$
+    \begin{align}
+        \det\abs{Z-\lambda I}=\abs{\begin{matrix}
+            1-\lambda&0\\
+            0&-1-\lambda
+        \end{matrix}}=\lambda^2-1=0,
+    \end{align}
+    gives the eigenvalues
+    \begin{align}
+        \lambda_1=1,\quad\lambda_2=-1.
+    \end{align}
+    The eigenequations of $Z$
+    \begin{align}
+        Z\lvert v_1\rangle=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            a_1\\
+            -b_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\quad Z\lvert v_2\rangle=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            -b_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+            -a_2\\
+            -b_2
+        \end{matrix}\right],
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\left[\begin{matrix}
+            1\\
+            0
+        \end{matrix}\right]=\lvert 0\rangle,\quad\lvert v_2\rangle=\left[\begin{matrix}
+            0\\
+            1
+        \end{matrix}\right].
+    \end{align}
+    The diagonal representation of $Z$ is
+    \begin{align}
+        Z=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\lvert 0\rangle\langle 0\rvert-\lvert 1\rangle\langle 1\rvert.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
