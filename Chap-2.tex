@@ -64,7 +64,7 @@
 \begin{exe}[Matrix representation for identity]
     Show that the identity operator on a vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else, if the matrix representation is taken with respect to the same input and output bases. The matrix is known as the \emph{identity matrix}.
 \end{exe}
-\begin{sol}
+\begin{pf}
     Suppose $I$ is the identity operator on the vector space $V$ and choose $\lvert v_1\rangle,\cdots,\lvert v_m\rangle$ as both the input basis and the output basis for $V$. Then for each $j$ in the range $1,\cdots,m$, there exist complex numbers $I_{1j}$ through $I_{mj}$ such that
     \begin{gather}
         I\lvert v_j\rangle=\sum_iA_{ij}\lvert v_i\rangle=\lvert v_j\rangle,\\
@@ -78,7 +78,7 @@
         \end{array}\right.=\delta_{ij},\quad\forall i,j=1,\cdots,m.
     \end{align}
     i.e., the identity operator on the vector space $V$ has a matrix representation which is one along the diagonal and zero everywhere else.
-\end{sol}
+\end{pf}
 
 \begin{exe}
     Verify that $(\cdot,\cdot)$ just defined is an inner product on $\mathbb{C}^n$.
