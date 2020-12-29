@@ -477,7 +477,14 @@
     Show that $(A^{\dagger})^{\dagger}=A$.
 \end{exe}
 \begin{pf}
-    
+    For two arbitrary vectors $\lvert v\rangle$ and $\lvert w\rangle$,
+    \begin{align}
+        ((A^{\dagger})^{\dagger}\lvert v\rangle,\lvert w\rangle)=(\lvert v\rangle,A^{\dagger}\lvert w\rangle)=(A^{\dagger}\lvert w\rangle,\lvert v\rangle)^*=(\lvert w\rangle,A\lvert v\rangle)^*=[(A\lvert v\rangle,\lvert w\rangle)^*]^*=(A\lvert v\rangle,\lvert w\rangle).
+    \end{align}
+    Due to the arbitrariness of $\lvert v\rangle$ and $\lvert w\rangle$,
+    \begin{align}
+        (A^{\dagger})^{\dagger}=A.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
