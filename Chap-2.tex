@@ -845,7 +845,41 @@
     \end{align}
 \end{exe}
 \begin{pf}
-    
+    Suppose $A$ is a $m$ by $n$ matrix, and $B$ is a $p$ by $q$ matrix.
+    \begin{itemize}
+        \item[(a)] 
+        \begin{align}
+            (A\otimes B)^*=\left[\begin{matrix}
+                A_{11}B&A_{12}B&\cdots&A_{1n}B\\
+                A_{21}B&A_{22}B&\cdots&A_{2n}B\\
+                \vdots&\vdots&\vdots&\vdots\\
+                A_{m1}B&A_{m2}B&\cdots&A_{mn}B
+            \end{matrix}\right]^*=\left[\begin{matrix}
+                A_{11}^*B^*&A_{12}^*B^*&\cdots&A_{1n}^*B^*\\
+                A_{21}^*B^*&A_{22}^*B^*&\cdots&A_{2n}^*B^*\\
+                \vdots&\vdots&\vdots&\vdots\\
+                A_{m1}^*B^*&A_{m2}^*B^*&\cdots&A_{mn}^*B^*
+            \end{matrix}\right]=A^*\otimes B^*.
+        \end{align}
+        \item[(b)] 
+        \begin{align}
+            (A\otimes B)^T=\left[\begin{matrix}
+                A_{11}B&A_{12}B&\cdots&A_{1n}B\\
+                A_{21}B&A_{22}B&\cdots&A_{2n}B\\
+                \vdots&\vdots&\vdots&\vdots\\
+                A_{m1}B&A_{m2}B&\cdots&A_{mn}B
+            \end{matrix}\right]^T=\left[\begin{matrix}
+                A_{11}B^T&A_{21}B^T&\cdots&A_{m1}B^T\\
+                A_{12}B^T&A_{22}B^T&\cdots&A_{m2}B^T\\
+                \vdots&\vdots&\vdots&\vdots\\
+                A_{1n}B^T&A_{2n}B^T&\cdots&A_{mn}B^T
+            \end{matrix}\right]=A^T\otimes B^T.
+        \end{align}
+        \item[(c)] 
+        \begin{align}
+            (A\otimes B)^{\dagger}=[(A\otimes B)^*]^T=(A^*\otimes B^*)^T=(A^*)^T\otimes(B^*)^T=A^{\dagger}\otimes B^{\dagger}.
+        \end{align}
+    \end{itemize}
 \end{pf}
 
 \ifx\allfiles\undefined
