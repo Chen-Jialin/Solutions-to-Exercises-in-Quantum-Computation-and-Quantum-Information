@@ -772,7 +772,70 @@
     Calculate the matrix representation of the tensor products of the Pauli operators (a) $X$ and $Z$; (b) $I$ and $X$; (c) $X$ and $I$. Is the tensor product commutative?
 \end{exe}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(a)] The matrix representation of the tensor product of $X$ and $Z$:
+        \begin{align}
+            X\otimes Z=\left[\begin{matrix}
+                0&1\\
+                1&0
+            \end{matrix}\right]\otimes\left[\begin{matrix}
+                1&0\\
+                0&-1
+            \end{matrix}\right]=\left[\begin{matrix}
+                0&0&1&0\\
+                0&0&0&-1\\
+                1&0&0&0\\
+                0&-1&0&0
+            \end{matrix}\right].
+        \end{align}
+        The matrix representation of the tensor product of $Z$ and $X$:
+        \begin{align}
+            Z\otimes X=\left[\begin{matrix}
+                1&0\\
+                0&-1
+            \end{matrix}\right]\otimes\left[\begin{matrix}
+                0&1\\
+                1&0
+            \end{matrix}\right]=\left[\begin{matrix}
+                0&1&0&0\\
+                1&0&0&0\\
+                0&0&0&-1\\
+                0&0&-1&0
+            \end{matrix}\right].
+        \end{align}
+        Therefore, the tensor product $X\otimes Z$ and $Z\otimes X$ are not commutative.
+        \item[(b)] The matrix representation of the tensor product of $I$ and $X$:
+        \begin{align}
+            I\otimes X=\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right]\otimes\left[\begin{matrix}
+                0&1\\
+                1&0
+            \end{matrix}\right]=\left[\begin{matrix}
+                0&1&0&0\\
+                1&0&0&0\\
+                0&0&0&1\\
+                0&0&1&0
+            \end{matrix}\right].
+        \end{align}
+        \item[(c)] The matrix representation of the tensor product of $X$ and $I$:
+        \begin{align}
+            X\otimes I=\left[\begin{matrix}
+                0&1\\
+                1&0
+            \end{matrix}\right]\otimes\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right]=\left[\begin{matrix}
+                0&0&1&0\\
+                0&0&0&1\\
+                1&0&0&0\\
+                0&1&0&0
+            \end{matrix}\right].
+        \end{align}
+        Therefore, the tensor product $I\otimes X$ and $X\otimes I$ are not commutative.
+    \end{itemize}
 \end{sol}
 
 \ifx\allfiles\undefined
