@@ -639,7 +639,19 @@
     Repeat the proof of the spectral decomposition in Box 2.2 for the case when $M$ is Hermitian, simplifying the proof wherever possible.
 \end{exe}
 \begin{pf}
-    
+    \emph{Forward}: Suppose vector space $V$ is $d$-dimensional.
+    The case $d=1$ is trivial.
+    For the case $d\geq 2$, let $\lambda$ be an eigenvalue of $M$, $P$ the projector onto the $\lambda$ eigenspace, and $Q$ the projector onto the orthogonal component. The $M=IMI=(P+Q)M(P+Q)=PMP+PMQ+QMP+QMQ=PMP+QMQ$, where $PMP=\lambda P$, i.e., $PMP$ is diagonal, and $QMQQM^{\dagger}Q=QM^{\dagger}QQMQ$, i.e., $QMQ$ is normal. By induction, $QMQ$ is diagonal with respect to some orthonormal basis for the subspace $Q$. It follows that $M=PMP+QMQ$ is diagonal with respect to some orthonormal basis for the total vector space.
+
+    \emph{Converse} holds only if all the eigenvalues of $M$ are real. Suppose $M$ is diagonalizable with respect to an orthonormal basis $\lvert i\rangle$ for $V$, i.e.,
+    \begin{align}
+        M=\sum_i\lambda_i\lvert i\rangle\langle i\rvert.
+    \end{align}
+    Then,
+    \begin{align}
+        M^{\dagger}=\left(\sum_i\lambda_i\lvert i\rangle\langle i\rvert\right)^{\dagger}=\sum_i\lambda_i^*\lvert i\rangle\langle i\rvert=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,
+    \end{align}
+    so $M$ is Hermitian.
 \end{pf}
 
 \ifx\allfiles\undefined
