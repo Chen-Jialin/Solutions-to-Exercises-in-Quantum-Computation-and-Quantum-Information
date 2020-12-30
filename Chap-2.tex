@@ -886,7 +886,16 @@
     Show that the tensor product of two unitary operators is unitary.
 \end{exe}
 \begin{pf}
-    
+    Suppose $A$ and $B$ are two unitary operators,
+    \begin{align}
+        A^{\dagger}A=&I,\\
+        B^{\dagger}B=&I.
+    \end{align}
+    Using the conclusion obtain in the previous exercise,
+    \begin{align}
+        (A\otimes B)^{\dagger}(A\otimes B)=(A^{\dagger}\otimes B^{\dagger})(A\otimes B)=(A^{\dagger}A)\otimes(B^{\dagger}B)=I\otimes I=I,
+    \end{align}
+    so the tensor product of two unitary operators is unitary.
 \end{pf}
 
 \ifx\allfiles\undefined
