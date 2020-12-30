@@ -715,7 +715,15 @@
     Show that for any operator $A$, $A^{\dagger}A$ is positive.
 \end{exe}
 \begin{pf}
-    
+    For any vector $\lvert v\rangle$,
+    \begin{align}
+        (\lvert v\rangle,A^{\dagger}A\lvert v\rangle)=((A^{\dagger}A)^{\dagger}\lvert v\rangle,\lvert v\rangle)=(A^{\dagger}A\lvert v\rangle,\lvert v\rangle)=(\lvert v\rangle,A^{\dagger}A\lvert v\rangle)^*,
+    \end{align}
+    so $(\lvert v\rangle,A^{\dagger}A\lvert v\rangle)$ is real. Besides,
+    \begin{align}
+        (\lvert v\rangle,A^{\dagger}A\lvert v\rangle)=((A^{\dagger})^{\dagger}\lvert v\rangle,A\lvert v\rangle)=(A\lvert v\rangle,A\lvert v\rangle)\geq 0.
+    \end{align}
+    Therefore, for any operator $A$, $A^{\dagger}A$ is positive.
 \end{pf}
 
 \ifx\allfiles\undefined
