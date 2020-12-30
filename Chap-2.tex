@@ -730,7 +730,42 @@
     Let $\lvert\psi\rangle=(\lvert 0\rangle+\lvert 1\rangle)/\sqrt{2}$. Write out $\lvert\psi\rangle^{\otimes 2}$ and $\lvert\psi\rangle^{\otimes 3}$ explicitly, both in terms of tensor products like $\lvert 0\rangle\lvert 1\rangle$, and using the Kronecker product.
 \end{exe}
 \begin{sol}
-    
+    \begin{align}
+        \lvert\psi\rangle^{\otimes 2}=&\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)=\frac{1}{2}(\lvert 0\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 1\rangle+\lvert 1\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 1\rangle)\\
+        =&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]=\frac{1}{2}\left[\begin{matrix}
+            1\\
+            1\\
+            1\\
+            1
+        \end{matrix}\right],\\
+        \notag\lvert\psi\rangle^{\otimes 3}=&\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)=\frac{1}{2\sqrt{2}}(\lvert 0\rangle\lvert 0\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 0\rangle\lvert 1\rangle+\lvert 0\rangle\lvert 1\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 1\rangle\lvert 1\rangle\\
+        &+\lvert 1\rangle\lvert 0\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 0\rangle\lvert 1\rangle+\lvert 1\rangle\lvert 1\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 1\rangle\lvert 1\rangle)\\
+        =&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1
+        \end{matrix}\right]=\frac{1}{2\sqrt{2}}\left[\begin{matrix}
+            1\\
+            1\\
+            1\\
+            1\\
+            1\\
+            1\\
+            1\\
+            1
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
