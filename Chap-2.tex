@@ -688,6 +688,29 @@
     Therefore, the eigenvalues of a projector $P$ are all either $0$ or $1$.
 \end{pf}
 
+\begin{exe}[Hermiticity of positive operators]
+    Show that a positive operator is necessarily Hermitian. (\emph{Hint}: Show that an arbitrary operator $A$ can be written $A=B+iC$ where $B$ and $C$ are Hermitian.)
+\end{exe}
+\begin{pf}
+    An arbitrary positive operator $A$ can be written $A=B+iC$ where all the entries of $B=\frac{A+A^{\dagger}}{2}$ and $C=\frac{A-A^{\dagger}}{2i}$ are Hermitian. Since $A$ is a positive operator, for any vector $\lvert v\rangle$,
+    \begin{align}
+        \langle v\rvert A\lvert v\rangle=\langle v\rvert(B+iC)\lvert v\rangle=\langle v\rvert B\lvert v\rangle+i\langle v\rvert C\lvert v\rangle\geq 0,
+    \end{align}
+    and is real. In this way, $\langle v\rvert C\lvert v\rangle$ can only be either purely imaginary or zero. Since $C$ is Hermitian, it is diagonalizable and has a diagonal representation
+    \begin{align}
+        C=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,
+    \end{align}
+    where $\lambda_i$ are the eigenvalues of $C$ and real, and $\lvert i\rangle$ is an orthonormal basis. Any vector $\lvert v\rangle$ can be written as a linear combination of $\lvert i\rangle$,
+    \begin{align}
+        \lvert v\rangle=\sum_ia_i\lvert i\rangle.
+    \end{align}
+    Hence,
+    \begin{align}
+        \langle v\rvert C\lvert v\rangle=\sum_ia_i^*\langle i\rvert \sum_j\lambda_j\lvert j\rangle\langle j\rvert\sum_ka_k\lvert k\rangle=\sum_{ijk}\lambda_ja_i^*a_k\langle i\vert j\rangle\langle j\vert k\rangle=\sum_{ijk}\lambda_ja_i^*a_k\delta_{ij}\delta_{jk}=\sum_i\lambda_i\abs{a_i}^2
+    \end{align}
+    can not be purely imaginary and only be zero. Therefore, $A=B$ and is Hermitian.
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
