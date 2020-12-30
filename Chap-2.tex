@@ -678,7 +678,14 @@
     Show that the eigenvalues of a projector $P$ are all either $0$ or $1$.
 \end{exe}
 \begin{pf}
-    
+    Suppose $\lvert 1\rangle,\cdots,\lvert k\rangle$ is an orthonormal basis for the subspace $P$ and $\lvert 1\rangle,\cdots,\lvert n\rangle$ is an orthonormal basis for the total vector space, where $k\leq n$. It is easy to see that $\lvert 1\rangle,\cdots,\lvert n\rangle$ are eigenvectors of projector $P=\sum_{i=1}^k\lvert i\rangle\langle i\rvert$:
+    \begin{align}
+        P\lvert j\rangle=\sum_{i=1}^k\lvert i\rangle\langle i\vert j\rangle=\sum_{i=1}^k\lvert i\rangle\delta_{ij}=\left\{\begin{array}{ll}
+            \lvert j\rangle,&\text{if }j=1,\cdots,k;\\
+            0,&\text{if }j=k+1,\cdots,n.
+        \end{array}\right.
+    \end{align}
+    Therefore, the eigenvalues of a projector $P$ are all either $0$ or $1$.
 \end{pf}
 
 \ifx\allfiles\undefined
