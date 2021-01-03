@@ -966,6 +966,18 @@
     Hence $\lvert i\rangle_V\otimes\lvert j\rangle_W$ is an orthonormal basis for $V\otimes W$ and $P_V\otimes P_W$ is a projector onto $V\otimes W$. Therefore, the tensor product of two projectors is a projector.
 \end{pf}
 
+\begin{exe}
+    The Hadamard operator on one qubit may be written as
+    \begin{align}
+        H=\frac{1}{\sqrt{2}}\left[(\lvert 0\rangle+\lvert 1\rangle)\langle 0\rvert+(\lvert 0\rangle-\lvert 1\rangle)\langle 1\rvert\right].
+    \end{align}
+    Show explicitly that the Hadamard transform on $n$ qubits, $H^{\otimes n}$, may be written as
+    \begin{align}
+        H^{\otimes n}=\frac{1}{\sqrt{2^n}}\sum_{x,y}(-1)^{x\cdot y}\lvert x\rangle\langle y\rvert.
+    \end{align}
+    Write out an explicit matrix representation for $H^{\otimes 2}$.
+\end{exe}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
