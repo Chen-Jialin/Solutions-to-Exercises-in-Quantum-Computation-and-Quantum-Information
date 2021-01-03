@@ -977,6 +977,32 @@
     \end{align}
     Write out an explicit matrix representation for $H^{\otimes 2}$.
 \end{exe}
+\begin{sol}
+    Hadamard transform on one qubit may be written as
+    \begin{align}
+        H\lvert 0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle\langle 0\rvert+\lvert 1\rangle\langle 0\rvert+\lvert 0\rangle\langle 1\rvert-\lvert 1\rangle\langle 1\rvert)=\frac{1}{\sqrt{2}}\sum_{x,y=0}^1\lvert x\rangle\langle y\rvert.
+    \end{align}
+    Thus Hadamard transform on $n$ qubits may be written as
+    \begin{align}
+        \notag H^{\otimes n}=&\left(\frac{1}{\sqrt{2}}\sum_{x_1,y_1=0}^1\lvert x_1\rangle\langle y_1\rvert\right)\otimes\cdots\otimes\left(\frac{1}{\sqrt{2}}\sum_{x_n,y_n=0}^1\lvert x_n\rangle\langle y_n\rvert\right)=\frac{1}{\sqrt{2^n}}\sum_{\substack{x_1,\cdots,x_n\\y_1,\cdots,y_n}=0}^1\lvert x_1,\cdots,x_n\rangle\langle y_1,\cdots,y_n\rvert\\
+        =&\frac{1}{\sqrt{2^n}}\sum_{x,y}(-1)^{x\cdot y}\lvert x\rangle\langle y\rvert.
+    \end{align}
+    The matrix representation for $H^{\otimes 2}$ is
+    \begin{align}
+        H^{\otimes 2}=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=\frac{1}{2}\left[\begin{matrix}
+            1&1&1&1\\
+            1&-1&1&-1\\
+            1&1&-1&-1\\
+            1&-1&-1&1
+        \end{matrix}\right].
+    \end{align}
+\end{sol}
 
 \ifx\allfiles\undefined
 \end{document}
