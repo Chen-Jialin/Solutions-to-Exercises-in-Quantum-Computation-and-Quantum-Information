@@ -919,7 +919,16 @@
     Show that the tensor product of two positive operators is positive.
 \end{exe}
 \begin{pf}
-    
+    Suppose $A$ and $B$ are positive operators on vector spaces $V$ and $W$ respectively. For any vector $\lvert v\rangle\in V$ and $\lvert w\rangle\in W$,
+    \begin{align}
+        (\lvert v\rangle,A\lvert v\rangle)\geq&0,\\
+        (\lvert w\rangle,B\lvert w\rangle)\geq&0,
+    \end{align}
+    so
+    \begin{align}
+        (\lvert v\rangle\otimes\lvert w\rangle,(A\otimes B)(\lvert v\rangle\otimes\lvert w\rangle))=(\lvert v\rangle\otimes\lvert w\rangle,(A\lvert v\rangle)\otimes(B\lvert w\rangle))=(\lvert v\rangle,A\lvert v\rangle)(\lvert w\rangle,B\lvert w\rangle)\geq 0.
+    \end{align}
+    Therefore, the tensor product of two positive operators is positive.
 \end{pf}
 
 \ifx\allfiles\undefined
