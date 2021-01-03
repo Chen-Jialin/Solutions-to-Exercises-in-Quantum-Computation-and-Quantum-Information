@@ -935,7 +935,35 @@
     Show that the tensor product of two projectors is a projector.
 \end{exe}
 \begin{pf}
-    
+    Suppose $\lvert i\rangle_V$ is an orthonormal basis for vector space $V$, and $\lvert j\rangle_W$ is an orthonormal basis for vector space $W$. The projector onto $V$ is
+    \begin{align}
+        P_V=\sum_i\lvert i\rangle_V\langle i\lvert_V,
+    \end{align}
+    and the projector onto $W$ is
+    \begin{align}
+        P_W=\sum_j\lvert j\rangle_W\langle j\lvert_W.
+    \end{align}
+    Their tensor product is
+    \begin{align}
+        P_V\otimes P_W=\left(\sum_i\lvert i\rangle_V\langle i\lvert_V\right)\otimes\left(\sum_j\lvert j\rangle_W\langle j\lvert_W\right)=\sum_i\sum_j(\lvert i\rangle_V\otimes\lvert j\rangle_W)(\langle i\rvert_V\otimes\langle j\rvert_W).
+    \end{align}
+    Since both $\lvert i\rangle_V$ and $\lvert j\rangle_W$ are independent, $\lvert i\rangle\otimes\lvert j\rangle$ are independent. Since both $\lvert i\rangle_V$ and $\lvert j\rangle_W$ are orthonormal, $\lvert i\rangle\otimes\lvert j\rangle$ are orthonormal,
+    \begin{align}
+        (\vert i\rangle_V\otimes\lvert j\rangle_W,\lvert k\rangle_V\otimes\lvert l\rangle_W)=(\lvert i\rangle_V,\lvert k\rangle_V)(\lvert j\rangle_W,\lvert l\rangle_W)=\delta_{ik}\delta_{jl}.
+    \end{align}
+    Since any vector $\lvert v\rangle\in V$ can be written as a linear combination of $\lvert i\rangle_V$,
+    \begin{align}
+        \lvert v\rangle=\sum_ia_i\lvert i\rangle_V,
+    \end{align}
+    and any vector $\lvert w\rangle\in W$ can be written as a linear combination of $\lvert j\rangle_W$,
+    \begin{align}
+        \lvert w\rangle=\sum_jb_j\lvert j\rangle_W,
+    \end{align}
+    the tensor product $\lvert v\otimes\lvert w\rangle\in V\otimes W$ can be written as a linear combination of $\lvert i\rangle_V\otimes\lvert j\rangle_W$,
+    \begin{align}
+        \lvert v\rangle\otimes\lvert w\rangle=\left(\sum_ia_i\lvert i\rangle_V\right)\otimes\left(\sum_jb_j\lvert j\rangle_W\right)=\sum_{i,j}a_ib_j\lvert i\rangle_V\otimes\lvert j\rangle_W.
+    \end{align}
+    Hence $\lvert i\rangle_V\otimes\lvert j\rangle_W$ is an orthonormal basis for $V\otimes W$ and $P_V\otimes P_W$ is a projector onto $V\otimes W$. Therefore, the tensor product of two projectors is a projector.
 \end{pf}
 
 \ifx\allfiles\undefined
