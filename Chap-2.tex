@@ -1218,7 +1218,7 @@
 \begin{exe}[commutation relation for the Pauli matrices]
     Verify the commutation relations
     \begin{align}
-        [X,Y]=2iY;\quad[Y,Z]=2iX;\quad[Z,X]=2iY.
+        [X,Y]=2iZ;\quad[Y,Z]=2iX;\quad[Z,X]=2iY.
     \end{align}
     There is an elegant way of writing this using $\epsilon_{jkl}$, the alternative antisymmetric tensor on three indices for which $\epsilon_{jkl}=0$ except for $\epsilon_{123}=\epsilon_{231}=\epsilon_{312}=1$, and $\epsilon_{321}=\epsilon_{213}=\epsilon_{132}=-1$:
     \begin{align}
@@ -1226,7 +1226,66 @@
     \end{align}
 \end{exe}
 \begin{pf}
-    
+    The commutation relations for the Pauli matrices are
+    \begin{align}
+        [X,Y]=&XY-YX=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]-\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=-2i\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=-2iZ,\\
+        [Y,Z]=&YZ-ZY=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]-\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=-2i\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=-2iX,\\
+        [Z,X]=&ZX-XZ=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]-\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=-2i\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=-2iY,
+    \end{align}
+    and
+    \begin{align}
+        [\sigma_j,\sigma_j]=&\sigma_l\sigma_l-\sigma_l\sigma_l=0,\quad\forall j=1,2,3,\\
+        [\sigma_j,\sigma_k]=&\sigma_j\sigma_k-\sigma_k\sigma_j=-[\sigma_k,\sigma_j],\quad\forall j,k=1,2,3.
+    \end{align}
+    In general,
+    \begin{align}
+        [\sigma_j,\sigma_k]=2i\sum_{l=1}^3\epsilon_{jkl}\sigma_l.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
