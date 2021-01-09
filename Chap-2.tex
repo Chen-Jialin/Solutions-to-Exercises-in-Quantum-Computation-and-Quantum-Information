@@ -1115,7 +1115,7 @@
     \end{align}
 \end{pf}
 
-\begin{exe}[The Hilbert-Schmit inner product on operators]
+\begin{exe}[The Hilbert-Schmidt inner product on operators]
     The set $L_V$ of linear operators on a Hilbert space $V$ is obviously a vector space -- the sum of two linear operators is a Linear operator, $zA$ is a linear operator if $A$ is a linear operator and $z$ is a complex number, and there is a zero element $0$. An important additional result is that the vector space $L_V$ can be given a natural inner product structure, turning it into a Hilbert space.
     \begin{itemize}
         \item[(1)] Show that the function $(\cdot,\cdot)$ on $L_V\times L_V$ defined by
@@ -1128,7 +1128,91 @@
     \end{itemize}
 \end{exe}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(1)] The function $(\cdot,\cdot)$ on $L_V\times L_V$ satisfies the requirements that:
+        \begin{itemize}
+            \item[(a)] $(\cdot,\cdot)$ is linear in the second argument,
+            \begin{align}
+                \left(A,\sum_j\lambda_jB^{(j)}\right)=\tr\left(A^{\dagger}\sum_j\lambda_jB^{(j)}\right)=\tr\left(\sum_j\lambda_jA^{\dagger}B^{(j)}\right)=\sum_j\lambda_j\tr(A^{\dagger}B^{(j)})=\sum_j\lambda(A,B^{\dagger}).
+            \end{align}
+            \item[(b)] 
+            \begin{align}
+                \notag(A,B)=&\tr(A^{\dagger}B)=\sum_i(A^{\dagger}B)_{ii}=\sum_i\left[\sum_j(A^{\dagger})_{ij}B_{ji}\right]=\sum_i\left(\sum_jA_{ji}^*B_{ji}\right)=\left[\sum_i\left(\sum_jA_{ji}B_{ji}^*\right)\right]^*\\
+                =&\left\{\sum_i\left[\sum_j(B^{\dagger})_{ij}A_{ji}\right]\right\}^*=\left[\sum_i(B^{\dagger}A)_{ii}\right]^*=[\tr(B^{\dagger}A)]^*=(B,A)^*.
+            \end{align}
+            \item[(c)] 
+            \begin{align}
+                (A,A)=\tr(A^{\dagger}A)=\sum_i(A^{\dagger}A)_{ii}=\sum_i\left[\sum_j(A^{\dagger})_{ij}A_{ji}\right]=\sum_i\left(\sum_jA_{ji}^*A_{ji}\right)=\sum_{i,j}\abs{A_{ji}}^2\geq 0,
+            \end{align}
+            with equality if and only if $A=0$.
+        \end{itemize}
+        Therefore, the function $(\cdot,\cdot)$ defined on $L_V\times L_V$ is an inner product function.
+        \item[(2)] Suppose $\lvert 1\rangle,\cdot,\lvert d\rangle$ form an orthonormal basis for $V$. Since
+        \begin{itemize}
+            \item[(a)] any operator $A$ in $V$ can be written as
+            \begin{align}
+                A=\sum_{i,j}A_{ij}\lvert i\rangle\langle j\rvert,
+            \end{align}
+            and
+            \item[(b)] $\lvert i\rangle\langle j\rvert$ are orthonormal,
+            \begin{align}
+                (\lvert i\rangle\langle j\rvert,\lvert m\rangle\langle n\rvert)=\tr[(\lvert i\rangle\langle j\rvert)^{\dagger}\lvert m\rangle\langle n\rvert]=\tr(\lvert j\rangle\langle i\vert m\rangle\langle n\rvert)=\sum_k\langle k\rvert j\rangle\langle i\vert m\rangle\langle n\vert k\rangle=\sum_k\delta_{kj}\delta_{im}\delta_{nk}=\delta_{im}\delta_{jn},
+            \end{align}
+            and thus linearly independent, $\lvert i\rangle\langle j\rvert$ is an orthonormal basis for $L_V$. Since this basis has $d^2$ elements, $L_V$ has dimension $d^2$.
+        \end{itemize}
+        \item[(3)] $\left\{\lvert i\rangle\langle i\rvert,\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}},\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}};\forall 1\leq i<j\leq d\right\}$ is an orthonormal basis of Hermitian matrices for the Hilbert space $L_V$. Here is the reason:
+        \begin{itemize}
+            \item[(a)] For any Hermitian matrices $A$, since
+            \begin{align}
+                A^{\dagger}=A\Longrightarrow A_{ji}^*=A_{ji},\quad\forall i,j=1,\cdots,d,
+            \end{align}
+            and $A_{ii}$ is real $\forall i$, $A$ can be written as
+            \begin{align}
+                \notag A=&\sum_{i,j}A_{ij}\lvert i\rangle\langle j\rvert=\sum_iA_{ii}\lvert i\rangle\langle i\rvert+\sum_{i=2}^d\sum_{j=1}^{i-1}A_{ij}\lvert i\rangle\langle j\rvert+\sum_{j=2}^d\sum_i^{j-1}A_{ij}\lvert i\rangle\langle j\rvert\\
+                \notag=&\sum_iA_{ii}\lvert i\rangle\langle i\rvert+\sum_{i=2}^d\sum_{j=1}^{i-1}A_{ji}^*\lvert i\rangle\langle j\rvert+\sum_{j=2}^d\sum_i^{j-1}A_{ij}\lvert i\rangle\langle j\rvert\\
+                \notag=&\sum_iA_{ii}\lvert i\rangle\langle i\rvert+\sum_{j=2}^d\sum_{i=1}^{j-1}A_{ij}^*\lvert j\rangle\langle i\rvert+\sum_{j=2}^d\sum_i^{j-1}A_{ij}\lvert i\rangle\langle j\rvert\\
+                \notag=&\sum_iA_{ii}\lvert i\rangle\langle i\rvert+\sum_{j=2}^d\sum_{i=1}^{j-1}\frac{A_{ij}+A_{ij}^*}{\sqrt{2}}\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}}+\sum_{j=2}^d\sum_i^{j-1}\frac{A_{ij}-A_{ij}^*}{-i\sqrt{2}}\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}}.
+            \end{align}
+            \item[(b)] Elements in $\left\{\lvert i\rangle\langle i\rvert,\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}},\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}};\forall 1\leq i<j\leq d\right\}$ are orthonormal and thus linearly independent,
+            \begin{align}
+                \notag\left(\lvert i\rangle\langle i\rvert,\frac{\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert}{\sqrt{2}}\right)=&\tr\left[(\lvert i\rangle\langle i\rvert)^{\dagger}\left(\frac{\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert}{\sqrt{2}}\right)\right]=\frac{1}{\sqrt{2}}\tr\left[\lvert i\rangle\langle i\rvert(\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert)\right]\\
+                \notag=&\frac{1}{\sqrt{2}}\tr(\lvert i\rangle\langle i\vert m\rangle\langle n\rvert+\lvert i\rangle\langle i\vert n\rangle\langle m\rvert)\\
+                \notag=&\frac{1}{\sqrt{2}}\sum_k(\langle k\vert i\rangle\langle i\vert m\rangle\langle n\vert k\rangle+\langle k\vert i\rangle\langle i\vert n\rangle\langle m\vert k\rangle)\\
+                \notag=&\frac{1}{\sqrt{2}}\sum_k(\delta_{ki}\delta_{im}\delta_{nk}+\delta_{ki}\delta_{in}\delta_{mk})\\
+                =&\sqrt{2}\delta_{im}\delta_{in}=0,\quad\forall i=1,\cdots,d,1\leq m<n\leq d,\\
+                \notag\left(\lvert i\rangle\langle i\rvert,\frac{\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right)=&\tr\left[(\lvert i\rangle\langle i\rvert)^{\dagger}\left(\frac{\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right)\right]=\frac{1}{i\sqrt{2}}\tr\left[\lvert i\rangle\langle i\rvert(\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert)\right]\\
+                \notag=&\frac{1}{i\sqrt{2}}\tr(\lvert i\rangle\langle i\vert m\rangle\langle n\rvert-\lvert i\rangle\langle i\vert n\rangle\langle m\rvert)\\
+                \notag=&\frac{1}{i\sqrt{2}}\sum_k(\langle k\vert i\rangle\langle i\vert m\rangle\langle n\vert k\rangle-\langle k\vert i\rangle\langle i\vert n\rangle\langle m\vert k\rangle)\\
+                \notag=&\frac{1}{i\sqrt{2}}\sum_k(\delta_{ki}\delta_{im}\delta_{nk}-\delta_{ki}\delta_{in}\delta_{mk})\\
+                =&0,\quad\forall i=1,\cdots,d,1\leq m<n\leq d,\\
+                \notag\left(\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}},\frac{\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right)=&\tr\left[\left(\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}}\right)^{\dagger}\left(\frac{\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right)\right]\\
+                \notag=&\frac{1}{2i}\tr\left[(\lvert j\rangle\langle i\rvert+\lvert i\rangle\langle j\rvert)(\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert)\right]\\
+                \notag=&\frac{1}{2i}\tr(\lvert j\rangle\langle i\vert m\rangle\langle n\rvert-\lvert j\rangle\langle i\vert n\rangle\langle m\rvert+\lvert i\rangle\langle j\vert m\rangle\langle n\rvert-\lvert i\rangle\langle j\vert n\rangle\langle m\rvert)\\
+                \notag=&\frac{1}{2i}\sum_k(\langle k\vert j\rangle\langle i\vert m\rangle\langle n\vert k\rangle-\langle k\vert j\rangle\langle i\vert n\rangle\langle m\vert k\rangle\\
+                \notag&+\langle k\vert i\rangle\langle j\vert m\rangle\langle n\vert k\rangle-\langle k\vert i\rangle\langle j\vert n\rangle\langle m\vert k\rangle)\\
+                \notag=&\frac{1}{2i}\sum_k(\delta_{kj}\delta_{im}\delta_{nk}-\delta_{kj}\delta_{in}\delta_{mk}+\delta_{ki}\delta_{jm}\delta_{nk}-\delta_{ki}\delta_{jn}\delta_{mk})\\
+                =&0,\quad\forall 1\leq i<j\leq d,\cdots,d,1\leq m<n\leq d,\\
+                \notag(\lvert i\rangle\langle i\rvert,\lvert j\rangle\langle j\rvert)=&\tr[(\lvert i\rangle\langle i\rvert)^{\dagger}\lvert j\rangle\langle j\rvert]=\tr(\lvert i\rangle\langle i\vert j\rangle\langle j\rvert)=\sum_k\langle k\vert i\rangle\langle i\vert j\rangle\langle j\vert k\rangle=\sum_k\delta_{ki}\delta_{ij}\delta_{jk}\\
+                =&\delta_{ij},\quad\forall i,j=1,\cdots,d,\\
+                \notag\left(\frac{\lvert i\rangle\langle j\rvert+\lvert i\rangle\langle j\rvert}{\sqrt{2}},\frac{\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert}{\sqrt{2}}\right)=&\tr\left[\left(\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}}\right)^{\dagger}\frac{\lvert m\rangle\langle n\rvert+\lvert n\rangle\langle m\rvert}{\sqrt{2}}\right]\\
+                \notag=&\frac{1}{2}\tr[(\lvert j\rangle\langle i\rvert+\lvert i\rangle\langle j\rvert)(\lvert m\rangle\langle m\rvert+\lvert n\rangle\langle m\rvert)]\\
+                \notag=&\frac{1}{2}\tr(\lvert j\rangle\langle i\vert m\rangle\langle n\rvert+\lvert j\rangle\langle i\vert n\rangle\langle m\rvert+\lvert i\rangle\langle j\vert m\rangle\langle n\rvert+\lvert i\rangle\langle j\vert n\rangle\langle m\rvert)\\
+                \notag=&\frac{1}{2}\sum_k(\langle k\vert j\rangle\langle i\vert m\rangle\langle n\vert k\rangle+\langle k\vert j\rangle\langle i\vert n\rangle\langle m\vert k\rangle\\
+                \notag&+\langle k\vert i\rangle\langle j\vert m\rangle\langle n\vert k\rangle+\langle k\vert i\rangle\langle j\vert n\rangle\langle m\vert k\rangle)\\
+                \notag=&\frac{1}{2}\sum_k(\delta_{kj}\delta_{im}\delta_{nk}+\delta_{kj}\delta_{in}\delta_{mk}+\delta_{ki}\delta_{jm}\delta_{nk}+\delta_{ki}\delta_{jn}\delta_{mk})\\
+                =&\delta_{im}\delta_{jn}+\delta_{in}\delta_{jm},\quad\forall 1\leq i<j\leq d,1\leq m<n\leq d,\\
+                \notag\left(\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}},\frac{\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right)=&\tr\left[\left(\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}}\right)^{\dagger}\frac{\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert}{i\sqrt{2}}\right]\\
+                \notag=&\frac{1}{2}\tr\left[(\lvert j\rangle\langle i\rvert-\lvert i\rangle\langle j\rvert)(\lvert m\rangle\langle n\rvert-\lvert n\rangle\langle m\rvert)\right]\\
+                \notag=&\frac{1}{2}\tr(\lvert j\rangle\langle i\vert m\rangle\langle n\rvert-\lvert j\rangle\langle i\vert n\rangle\langle m\rvert-\lvert i\rangle\langle j\vert m\rangle\langle n\rvert+\lvert j\rangle\langle i\vert n\rangle\langle m\rvert)\\
+                \notag=&\frac{1}{2}\sum_k(\langle k\vert j\rangle\langle i\vert m\rangle\langle n\vert k\rangle-\langle k\vert j\rangle\langle i\vert n\rangle\langle m\vert k\rangle\\
+                \notag&-\langle k\vert i\rangle\langle j\vert m\rangle\langle n\vert k\rangle+\langle k\vert i\rangle\langle j\vert n\rangle\langle m\vert k\rangle)\\
+                \notag=&\frac{1}{2}\sum_k(\delta_{kj}\delta_{im}\delta_{nk}-\delta_{kj}\delta_{in}\delta_{mk}-\delta_{ki}\delta_{jm}\delta_{nk}+\delta_{ki}\delta_{jn}\delta_{mk})\\
+                =&\delta_{im}\delta_{jn}-\delta_{in}\delta_{jm}=\delta_{im}\delta_{jn},\quad\forall 1\leq i<j\leq d,1\leq m<n\leq d.
+            \end{align}
+            and thus linearly independent.
+        \end{itemize}
+        Therefore, $\left\{\lvert i\rangle\langle i\rvert,\frac{\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert}{\sqrt{2}},\frac{\lvert i\rangle\langle j\rvert-\lvert j\rangle\langle i\rvert}{i\sqrt{2}};\forall 1\leq i<j\leq d\right\}$ is an orthonormal basis of Hermitian matrices for the Hilbert space $L_V$.
+    \end{itemize}
 \end{sol}
 
 \ifx\allfiles\undefined
