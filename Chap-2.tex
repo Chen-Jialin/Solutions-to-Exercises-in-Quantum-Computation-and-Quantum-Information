@@ -1215,6 +1215,20 @@
     \end{itemize}
 \end{sol}
 
+\begin{exe}[commutation relation for the Pauli matrices]
+    Verify the commutation relations
+    \begin{align}
+        [X,Y]=2iY;\quad[Y,Z]=2iX;\quad[Z,X]=2iY.
+    \end{align}
+    There is an elegant way of writing this using $\epsilon_{jkl}$, the alternative antisymmetric tensor on three indices for which $\epsilon_{jkl}=0$ except for $\epsilon_{123}=\epsilon_{231}=\epsilon_{312}=1$, and $\epsilon_{321}=\epsilon_{213}=\epsilon_{132}=-1$:
+    \begin{align}
+        [\sigma_j,\sigma_k]=2i\sum_{l=1}^3\epsilon_{jkl}\sigma_l.
+    \end{align}
+\end{exe}
+\begin{pf}
+    
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
