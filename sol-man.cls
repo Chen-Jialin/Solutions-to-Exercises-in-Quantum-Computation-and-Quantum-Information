@@ -135,7 +135,7 @@
 \providecommand{\sgn}{\,\mathrm{sgn}\,} % 符号函数 Sign function
 \providecommand{\sinc}{\,\mathrm{sinc}\,} % 辛格函数 Sinc function
 \providecommand{\rect}{\,\mathrm{rect}\,} % 矩形函数 Rectangular function
-\providecommand{\tr}{\,\mathrm{Tr}\,} % 矩阵的迹 Trace of matrix
+\providecommand{\tr}{\,\mathrm{tr}\,} % 矩阵的迹 Trace of matrix
 
 % 题目和题解风格 Problem and solution style
 \ifUsingEnglish
