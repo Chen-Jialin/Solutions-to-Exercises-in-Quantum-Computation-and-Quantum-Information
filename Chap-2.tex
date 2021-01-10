@@ -1299,7 +1299,104 @@
     \end{align}
 \end{exe}
 \begin{pf}
-    
+    \begin{align}
+        \{\sigma_1,\sigma_2\}=&\sigma_1\sigma_2+\sigma_2\sigma_1=\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]+\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            i&0\\
+            0&-i
+        \end{matrix}\right]+\left[\begin{matrix}
+            -i&0\\
+            0&i
+        \end{matrix}\right]=0,\\
+        \{\sigma_2,\sigma_3\}=&\sigma_2\sigma_3+\sigma_3\sigma_2=\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]+\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            0&i\\
+            i&0
+        \end{matrix}\right]+\left[\begin{matrix}
+            0&-i\\
+            -i&0
+        \end{matrix}\right]=0,\\
+        \{\sigma_3,\sigma_1\}=&\sigma_3\sigma_1+\sigma_1\sigma_3=\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]+\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            0&1\\
+            -1&0
+        \end{matrix}\right]+\left[\begin{matrix}
+            0&-1\\
+            1&0
+        \end{matrix}\right]=0,\\
+        \sigma_0^2=&I^2=I,\\
+        \sigma_1^2=&\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,\\
+        \sigma_2^2=&\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,\\
+        \sigma_3^2=&\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I.
+    \end{align}
+    Therefore, in general,
+    \begin{align}
+        \{\sigma_i,\sigma_j\}=\delta_{ij}I,\quad\forall i,j=1,2,3,\text{ and }i\neq j,
+    \end{align}
+    and
+    \begin{align}
+        \sigma_i^2=I,\quad\forall i=0,1,2,3.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
