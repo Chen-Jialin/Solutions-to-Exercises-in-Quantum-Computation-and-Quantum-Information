@@ -1480,7 +1480,16 @@
     Suppose $A$ and $B$ are Hermitian. Show that $i[A,B]$ is Hermitian.
 \end{exe}
 \begin{pf}
-    
+    Since $A$ and $B$ are Hermitian,
+    \begin{align}
+        A^{\dagger}=&A,\\
+        B^{\dagger}=&B.
+    \end{align}
+    Since
+    \begin{align}
+        (i[A,B])^{\dagger}=[i(AB-BA)]^{\dagger}=-i(B^{\dagger}A^{\dagger}-A^{\dagger}B^{\dagger})=i(AB-BA)=i[A,B],
+    \end{align}
+    $i[A,B]$ is Hermitian.
 \end{pf}
 
 \ifx\allfiles\undefined
