@@ -1496,7 +1496,35 @@
     What is the polar decomposition of a positive matrix $P$? Of a unitary matrix $U$? Of a Hermitian matrix, $H$?
 \end{exe}
 \begin{pf}
-    
+    \emph{Polar decomposition of positive matrix $P$}: There exists unitary $U$ and positive operators $J$ and $K$ such that
+    \begin{align}
+        P=UJ=KU,
+    \end{align}
+    where the unique positive operators $J=\sqrt{P^{\dagger}P}$ and $K=\sqrt{PP^{\dagger}}$. Since $P$ is positive, it can be given a spectral decomposition, $P=\sum_i\lambda_i\lvert i\rangle\langle i\rvert$, where $\lambda_i$ are real and $\lambda_i\geq 0$ $\forall i$. In this way,
+    \begin{align}
+        J=&\sqrt{P^{\dagger}P}=\sum_i\sqrt{\lambda_i^*\lambda_i}\lvert i\rangle\langle i\rvert=\sum_i\abs{\lambda_i}\lvert i\rangle\langle i\rvert=\sum_i\lambda_i\lvert i\rangle\langle i\rvert=P,\\
+        K=&\sqrt{PP^{\dagger}}=\sum_i\sqrt{\lambda_i\lambda_i^*}\lvert i\rangle\langle i\rvert=\sum_i\abs{\lambda_i}\lvert i\rangle\langle i\rvert=\sum_i\lambda_i\lvert i\rangle\langle i\rvert=P.
+    \end{align}
+    If $P$ is invertible, i.e., $P$ is positive definite, then so is $J$, so $U=PJ^{-1}=I$ is unique.\\
+    \emph{Polar decomposition of unitary matrix $U$}: There exists unitary $A$ and positive operators $J$ and $K$ such that
+    \begin{align}
+        U=AJ=KA,
+    \end{align}
+    where the unique positive operators $J=\sqrt{U^{\dagger}U}=I$ and $K=\sqrt{KK^{\dagger}}=I$. Hence $A=UJ^{-1}=U$ is unique.\\
+    \emph{Polar decomposition of Hermitian matrix $H$}: There exists unitary $U$ and positive operators $J$ and $K$ such that
+    \begin{align}
+        H=UJ=KU,
+    \end{align}
+    where the unique positive operators $J=\sqrt{H^{\dagger}H}$ and $K=\sqrt{HH^{\dagger}}$. Since $H$ is Hermitian, it is normal. According to spectral decomposition theorem, $H$ is diagonal with respect to some orthonormal basis, i.e.,
+    \begin{align}
+        H=A\Lambda A^{\dagger},
+    \end{align}
+    where $\Lambda$ is the matrix of eigenvalues of $H$ and $A$ is unitary. In this way,
+    \begin{align}
+        J=&\sqrt{H^{\dagger}H}=\sqrt{HH}=A\sqrt{\Lambda^2}A^{\dagger},\\
+        K=&\sqrt{HH^{\dagger}}=\sqrt{HH}=A\sqrt{\Lambda^2}A^{\dagger}.
+    \end{align}
+    If $H$ is invertible, then $U=HJ^{-1}$ is unique.
 \end{pf}
 
 \ifx\allfiles\undefined
