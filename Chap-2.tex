@@ -1821,7 +1821,56 @@
     What are the eigenvalues and eigenvectors of $H$?
 \end{exe}
 \begin{sol}
-    
+    The characteristic equation of $H$
+    \begin{align}
+        \left\lvert\begin{matrix}
+            \frac{1}{\sqrt{2}}-\lambda&\frac{1}{\sqrt{2}}\\
+            \frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{2}}-\lambda
+        \end{matrix}\right\rvert=\lambda^2-1=0
+    \end{align}
+    gives the eigenvalues
+    \begin{align}
+        \lambda_{1,2}=\pm 1.
+    \end{align}
+    The eigenequations of $H$
+    \begin{align}
+        H\lvert v_1\rangle=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            a_1+b_1\\
+            a_1-b_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\\
+        H\lvert v_2\rangle=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            a_2+b_2\\
+            a_2-b_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+            -a_2\\
+            -b_2
+        \end{matrix}\right],
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\left[\begin{matrix}
+            \sqrt{\frac{2+\sqrt{2}}{2}}\\
+            \sqrt{\frac{2-\sqrt{2}}{2}}
+        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+            \sqrt{\frac{2-\sqrt{2}}{4}}\\
+            -\sqrt{\frac{2+\sqrt{2}}{4}}
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
