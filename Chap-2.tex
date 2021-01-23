@@ -1531,7 +1531,24 @@
     Express the polar decomposition of a normal matrix in the outer product representation.
 \end{exe}
 \begin{sol}
-    
+    \emph{Polar decomposition of normal matrix in the outer products representation}: For a normal matrix $M$, there exists unitary $U$ and positive operators $J$ and $K$ such that
+    \begin{align}
+        M=UJ=KU,
+    \end{align}
+    where the unique operators $J=\sqrt{M^{\dagger}M}$ and $K=\sqrt{MM^{\dagger}}$. In the outer product representation,
+    \begin{align}
+        M=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,
+    \end{align}
+    so
+    \begin{align}
+        J=&\sum_i\sqrt{\lambda_i^*\lambda_i}\lvert i\rangle\langle i\rvert=\sum_i\abs{\lambda_i}\lvert i\rangle\langle i\rvert,\\
+        K=&\sum_i\sqrt{\lambda_i\lambda_i^*}\lvert i\rangle\langle i\rvert=\sum_i\abs{\lambda_i}\lvert i\rangle\langle i\rvert.
+    \end{align}
+    If $M$ is invertible, then
+    \begin{align}
+        U=MJ^{-1}=\left(\sum_i\lambda_i\lvert i\rangle\langle i\rvert\right)\left(\sum_j\abs{\lambda_j}^{-1}\lvert j\rangle\langle j\rvert\right)=\sum_i\frac{\lambda_i}{\abs{\lambda_i}}\lvert i\rangle\langle i\rvert
+    \end{align}
+    is also unique.
 \end{sol}
 
 \ifx\allfiles\undefined
