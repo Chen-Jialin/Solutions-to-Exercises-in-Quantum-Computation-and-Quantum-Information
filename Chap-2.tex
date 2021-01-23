@@ -1561,7 +1561,214 @@
     \end{align}
 \end{exe}
 \begin{sol}
-    
+    Left polar decomposition:
+    \begin{align}
+        \left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=UJ,
+    \end{align}
+    where
+    \begin{align}
+        J=\sqrt{\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]}.
+    \end{align}
+    Since
+    \begin{align}
+        \left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&1\\
+            0&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right],
+    \end{align}
+    whose characteristic equation
+    \begin{align}
+        \left\lvert\begin{matrix}
+            2-\lambda&1\\
+            1&1-\lambda
+        \end{matrix}\right\rvert=\lambda^2-3\lambda+1=0
+    \end{align}
+    gives eigenvalues
+    \begin{align}
+        \lambda_{1,2}=\frac{3\pm\sqrt{5}}{2},
+    \end{align}
+    and eigenequations
+    \begin{align}
+        \left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right]\lvert v_1\rangle=&\left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            2a_1+b_1\\
+            a_1+b_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\\
+        \left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right]\lvert v_2\rangle=&\left[\begin{matrix}
+            2&1\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\left[\begin{matrix}
+            2a_2+b_2\\
+            a_2+b_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\left[\begin{matrix}
+            \sqrt{\frac{5+\sqrt{5}}{10}}\\
+            \sqrt{\frac{5-\sqrt{5}}{10}}
+        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+            \sqrt{\frac{5-\sqrt{5}}{10}}\\
+            -\sqrt{\frac{5+\sqrt{5}}{10}}
+        \end{matrix}\right],
+    \end{align}
+    we have
+    \begin{align}
+        J=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\left[\begin{matrix}
+            1.3416&0.4472\\
+            0.4472&0.8944
+        \end{matrix}\right],
+    \end{align}
+    and
+    \begin{align}
+        U=\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]J^{-1}\approx\left[\begin{matrix}
+            0.8944&-0.4472\\
+            0.4472&0.8944
+        \end{matrix}\right].
+    \end{align}
+    Right polar decomposition:
+    \begin{align}
+        \left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]=KU,
+    \end{align}
+    where
+    \begin{align}
+        K=\sqrt{\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}}.
+    \end{align}
+    Since
+    \begin{align}
+        \left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]^{\dagger}=\left[\begin{matrix}
+            1&0\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&1\\
+            0&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right],
+    \end{align}
+    whose characteristic equation
+    \begin{align}
+        \left\lvert\begin{matrix}
+            1-\lambda&1\\
+            1&2-\lambda
+        \end{matrix}\right\rvert=\lambda^2-3\lambda+1=0
+    \end{align}
+    gives eigenvalues
+    \begin{align}
+        \lambda_{1,2}=\frac{3\pm\sqrt{5}}{2},
+    \end{align}
+    and eigenequations
+    \begin{align}
+        \left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right]\lvert v_1\rangle=&\left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            a_1+b_1\\
+            a_1+2b_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\\
+        \left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right]\lvert v_2\rangle=&\left[\begin{matrix}
+            1&1\\
+            1&2
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\left[\begin{matrix}
+            a_2+b_2\\
+            a_2+2b_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right],
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\left[\begin{matrix}
+            \sqrt{\frac{5-\sqrt{5}}{10}}\\
+            \sqrt{\frac{5+\sqrt{5}}{10}}
+        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+            \sqrt{\frac{5+\sqrt{5}}{10}}\\
+            -\sqrt{\frac{5-\sqrt{5}}{10}}
+        \end{matrix}\right],
+    \end{align}
+    we have
+    \begin{align}
+        K=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\left[\begin{matrix}
+            0.8944&0.4472\\
+            0.4472&1.3416
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
