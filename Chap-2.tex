@@ -1777,7 +1777,26 @@
     Verify that the Hadamard gate $H$ is unitary.
 \end{exe}
 \begin{pf}
-    
+    Since
+    \begin{align}
+        H^{\dagger}H=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]^{\dagger}\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I,
+    \end{align}
+    the Hadamard gate $H$ is unitary.
 \end{pf}
 
 \ifx\allfiles\undefined
