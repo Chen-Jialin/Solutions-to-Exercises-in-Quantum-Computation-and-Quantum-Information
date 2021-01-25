@@ -1895,7 +1895,12 @@
     Prove that $U(t_1,t_2)$ defined in Equation (2.91) is unitary.
 \end{exe}
 \begin{pf}
-    
+    \begin{align}
+        U(t_1,t_2)=&\exp\left[\frac{-iH(t_2-t_1)}{\hbar}\right]=\sum_{n=0}^{\infty}\frac{1}{n!}\left[\frac{-iH(t_2-t_1)}{\hbar}\right]^n,\\
+        \notag[U(t_1,t_2)]^{\dagger}=&\sum_{n=0}^{\infty}\frac{1}{n!}\left[\frac{iH^{\dagger}(t_2-t_1)}{\hbar}\right]^n=\sum_{n=0}^{\infty}\frac{1}{n!}\left[\frac{iH(t_2-t_1)}{\hbar}\right]^n=\exp\left[\frac{iH(t_2-t_1)}{\hbar}\right]=\left\{\exp\left[\frac{-iH(t_2-t_1)}{\hbar}\right]\right\}^{-1}\\
+        =&[U(t_1,t_2)]^{-1}.
+    \end{align}
+    Therefore, $U(t_1,t_2)$ is unitary.
 \end{pf}
 
 \ifx\allfiles\undefined
