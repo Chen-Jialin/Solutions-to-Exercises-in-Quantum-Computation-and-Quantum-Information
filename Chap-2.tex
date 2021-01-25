@@ -1961,7 +1961,18 @@
     Suppose we prepare a quantum system in an eigenstate $\lvert\psi\rangle$ of some observable $M$, with corresponding eigenvalue $m$. What is the average observed value of $M$, and the standard deviation?
 \end{exe}
 \begin{sol}
-    
+    The average observed value of $M$ is
+    \begin{align}
+        \langle M\rangle=\langle\psi\rvert M\lvert\psi\rangle=\langle\psi\rvert m\lvert\rangle=m.
+    \end{align}
+    The average observed value of $M^2$ is
+    \begin{align}
+        \langle M^2\rangle=\langle\psi\rvert M^2\lvert\psi\rangle=\langle\psi\rvert m^2\lvert\psi\rangle=m^2.
+    \end{align}
+    The standard deviation of $M$ is
+    \begin{align}
+        [\Delta(M)]^2=\langle M^2\rangle-\langle M\rangle^2=0.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
