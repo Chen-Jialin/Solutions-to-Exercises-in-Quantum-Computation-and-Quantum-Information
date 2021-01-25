@@ -2013,7 +2013,108 @@
     Show that $\vec{v}\cdot\vec{\sigma}$ has eigenvalues $\pm 1$, and that the projectors onto the corresponding eigenspaces are given by $P_{\pm}=(I\pm\vec{v}\cdot\vec{\sigma})/2$.
 \end{exe}
 \begin{pf}
-    
+    \begin{align}
+        \vec{v}\cdot\vec{\sigma}=v_1\sigma_1+v_2\sigma_2+v_3\sigma_3=v_1\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]+v_2\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]+v_3\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            v_3&v_1-iv_2\\
+            v_1+iv_2&-v_3
+        \end{matrix}\right].
+    \end{align}
+    The characteristic equation of $\vec{v}\cdot\vec{\sigma}$
+    \begin{align}
+        \lvert\vec{v}\cdot\vec{\sigma}-\lambda I\rvert=\left\lvert\begin{matrix}
+            v_3-\lambda&v_1-iv_2\\
+            v_1+iv_2&-v_3-\lambda
+        \end{matrix}\right\rvert=\lambda^2-v_1^2-v_2^2-v_3^2=\lambda^2-1=0
+    \end{align}
+    gives the eigenvalues
+    \begin{align}
+        \lambda_{1,2}=\pm 1.
+    \end{align}
+    The eigenequations
+    \begin{align}
+        (\vec{v}\cdot\vec{\sigma})\lvert v_1\rangle=&\left[\begin{matrix}
+            v_3&v_1-iv_2\\
+            v_1+iv_2&-v_3
+        \end{matrix}\right]\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right]=\left[\begin{matrix}
+            v_3a_1+(v_1-iv_2)b_1\\
+            (v_1+iv_2)a_1-v_3b_1
+        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+            a_1\\
+            b_1
+        \end{matrix}\right],\\
+        (\vec{v}\cdot\vec{\sigma})\lvert v_2\rangle=&\left[\begin{matrix}
+            v_3&v_1-iv_2\\
+            v_1+iv_2&-v_3
+        \end{matrix}\right]\left[\begin{matrix}
+            a_2\\
+            b_2
+        \end{matrix}\right]=\left[\begin{matrix}
+            v_3a_2+(v_1-iv_2)b_2\\
+            (v_1+iv_2)a_2-v_3b_2
+        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+            -a_2\\
+            -b_2
+        \end{matrix}\right]
+    \end{align}
+    give the corresponding eigenvectors
+    \begin{align}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+            1+v_3\\
+            v_1+iv_2
+        \end{matrix}\right],\quad\lvert v_2\rangle=\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+            v_3-1\\
+            v_1+iv_2
+        \end{matrix}\right].
+    \end{align}
+    The projectors onto the corresponding eigensapces are
+    \begin{align}
+        \notag P_+=&\lvert v_1\rangle\langle v_1\rvert=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+            1+v_3\\
+            v_1+iv_2
+        \end{matrix}\right]\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+            1+v_3&v_1-iv_2
+        \end{matrix}\right]\\
+        \notag=&\frac{1}{2(1+v_3)}\left[\begin{matrix}
+            (1+v_3)^2&(1+v_3)(v_1-iv_2)\\
+            (v_1+iv_2)(1+v_3)&(v_1+iv_2)(v_1-iv_2)
+        \end{matrix}\right]=\frac{1}{2(1+v_3)}\left[\begin{matrix}
+            (1+v_3)^2&(1+v_3)(v_1-iv_2)\\
+            (v_1+iv_2)(1+v_3)&(1+v_3)(1-v_3)
+        \end{matrix}\right]\\
+        =&\frac{1}{2}\left[\begin{matrix}
+            1+v_3&v_1-iv_2\\
+            v_1+iv_2&1-v_3
+        \end{matrix}\right]=(I+\vec{v}\cdot\vec{\sigma})/2,\\
+        \notag P_-=&\lvert v_2\rangle\langle v_2\rvert=\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+            v_3-1\\
+            v_1+iv_2
+        \end{matrix}\right]\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+            v_3-1&v_1-iv_2
+        \end{matrix}\right]\\
+        \notag=&\frac{1}{2(1-v_3)}\left[\begin{matrix}
+            (v_3-1)^2&(v_3-1)(v_1-iv_2)\\
+            (v_1+iv_2)(v_3-1)&(v_1+iv_2)(v_1-iv_2)
+        \end{matrix}\right]=\frac{1}{2(1-v_3)}\left[\begin{matrix}
+            (1-v_3)^2&-(1-v_3)(v_1-iv_2)\\
+            -(v_1+iv_2)(1-v_3)&(1+v_3)(1-v_3)
+        \end{matrix}\right]\\
+        =&\frac{1}{2}\left[\begin{matrix}
+            1-v_3&-(v_1-iv_2)\\
+            v_1+iv_2&1+v_3
+        \end{matrix}\right]=(I-\vec{v}\cdot\vec{\sigma})/2.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
