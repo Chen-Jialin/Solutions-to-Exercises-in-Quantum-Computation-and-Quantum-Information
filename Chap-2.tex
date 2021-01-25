@@ -2121,7 +2121,25 @@
     Calculate the probability of obtaining the result $+1$ for a measurement of $\vec{v}\cdot\vec{\sigma}$, given that the state priori to measurement is $\lvert 0\rangle$. What is the state of the system after the measurement if $+1$ is obtained?
 \end{exe}
 \begin{sol}
-    
+    The probability of obtaining $+1$ for a measurement of $\vec{v}\cdot\vec{\sigma}$ is
+    \begin{align}
+        p(1)=\langle 0\rvert P_+\lvert 0\rangle=\left[\begin{matrix}
+            1&0
+        \end{matrix}\right]\frac{1}{2}\left[\begin{matrix}
+            1-v_3&-(v_1-iv_2)\\
+            v_1+iv_2&1+v_3
+        \end{matrix}\right]\left[\begin{matrix}
+            1\\
+            0
+        \end{matrix}\right]=\frac{1-v_3}{2}.
+    \end{align}
+    The state of the system after the measurement if $+1$ is obtained is
+    \begin{align}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+            1+v_3\\
+            v_1+iv_2
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
