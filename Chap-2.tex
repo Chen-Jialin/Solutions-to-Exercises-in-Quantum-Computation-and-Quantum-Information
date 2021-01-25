@@ -1934,7 +1934,27 @@
     Suppose $\{L_l\}$ and $\{M_m\}$ are two sets of measurement operators. Show that a measurement defined by the measurement operators $\{L_l\}$ followed by a measurement defined by the measurement operators $\{M_m\}$ is physically equivalent to a single measurement defined by measurement operators $\{N_{lm}\}$ with the representation $N_{ml}$.
 \end{exe}
 \begin{pf}
-    
+    Suppose the state of the quantum state is $\lvert\psi\rangle$ immediately before the measurement. Then the probability that the result $m$ occurs in the first measurement is
+    \begin{align}
+        p(l)=\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle,
+    \end{align}
+    and the state of the system after the measurement is
+    \begin{align}
+        \frac{L_l\lvert\psi\rangle}{\sqrt{\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle}}.
+    \end{align}
+    The probability that the result $l$ occurs in the second measurement conditional on that the result $m$ occurs in the first measurement is
+    \begin{align}
+        p(m\vert l)=\frac{\langle\psi\rvert L_l^{\dagger}}{\sqrt{\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle}}M_m^{\dagger}M_m\frac{L_l\lvert\psi\rangle}{\sqrt{\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle}}=\frac{\langle\psi\rvert L_l^{\dagger}M_m^{\dagger}M_mL_l\lvert\psi\rangle}{\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle},
+    \end{align}
+    and the state of the system after the two measurements is
+    \begin{align}
+        \frac{M_mL_l\lvert\psi\rangle}{\sqrt{\frac{\langle\psi\rvert L_l^{\dagger}M_m^{\dagger}M_mL_l\lvert\psi\rangle}{\langle\psi\rvert L_l^{\dagger}L_l\lvert\psi\rangle}}}
+    \end{align}
+    Hence, the probability that the result $m$ occurs in the first measurement and the result $l$ occurs in the second measurement is
+    \begin{align}
+        p(l,m)=p(l)p(m\vert l)=\langle\psi\rvert L_l^{\dagger}M_m^{\dagger}M_mL_l\lvert\psi\rangle.
+    \end{align}
+    Therefore, a measurement defined by the measurement operators $\{L_l\}$ followed by a measurement defined by the measurement $\{M_m\}$ is physically equivalent to a single measurement defined by measurement operators $\{N_{lm}\}$ with the representation $N_{ml}=L_lM_m$.
 \end{pf}
 
 \ifx\allfiles\undefined
