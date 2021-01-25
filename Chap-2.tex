@@ -1907,7 +1907,27 @@
     Use the spectral decomposition to show that $K=-i\log(U)$ is Hermitian for any unitary $U$, and thus $U=\exp(iK)$ for some Hermitian $K$.
 \end{exe}
 \begin{pf}
-    
+    The spectral decomposition of $U$ in terms of outer product representation is
+    \begin{align}
+        U=\sum_n\lambda_n\lvert n\rangle\langle n\rvert.
+    \end{align}
+    Since $U$ is unitary,
+    \begin{align}
+        U^{\dagger}=\sum_n\lambda_n^*\lvert n\rangle\langle n\rvert=\sum_n\lambda_n^{-1}\lvert n\rangle\langle n\rvert=U^{-1},
+    \end{align}
+    we have
+    \begin{align}
+        \lambda_n^*=\lambda_n^{-1},\quad\forall n.
+    \end{align}
+    The spectral decomposition of $K$ is
+    \begin{align}
+        K=-i\log U=\sum_n-i\log\lambda_i\lvert n\rangle\langle n\rvert.
+    \end{align}
+    Since
+    \begin{align}
+        K^{\dagger}=\sum_n(-i\log\lambda_n)^*\lvert n\rangle\langle n\rvert=\sum_ni\log(\lambda_n^*)\lvert n\rangle\langle n\rvert=\sum_ni\log(\lambda_n^{-1})\lvert n\rangle\langle n\rvert=\sum_n-i\log\lambda_n\lvert n\rangle\langle n\rvert=K,
+    \end{align}
+    $K$ is Hermitian. Hence $U=\exp(iK)$ for some Hermitian $K$.
 \end{pf}
 
 \ifx\allfiles\undefined
