@@ -1877,7 +1877,18 @@
     Suppose $A$ and $B$ are commuting Hermitian operators. Prove that $\exp(A)\exp(B)=\exp(A+B)$. (\emph{Hint}: Use the results of Section 2.1.9.)
 \end{exe}
 \begin{pf}
-    
+    Since $A$ and $B$ commute,
+    \begin{align}
+        [A,B]=AB-BA=0\Longrightarrow AB=BA.
+    \end{align}
+    Hence
+    \begin{align}
+        \notag\exp(A+B)=&\sum_{n=0}^{\infty}\frac{(X+Y)^n}{n!}=\sum_{n=0}^{\infty}\sum_{m=0}^n\left(\begin{matrix}
+            n\\
+            m
+        \end{matrix}\right)\frac{A^mB^{n-m}}{n!}=\sum_{n=0}^{\infty}\sum_{m=0}^n\frac{A^mB^{n-m}}{m!(n-m)!}=\sum_{j=0}^{\infty}\sum_{k=0}^{\infty}\frac{A^jB^k}{j!k!}\\
+        =&\left(\sum_{j=0}\frac{A^j}{j!}\right)\left(\sum_{k=0}^{\infty}\frac{B^k}{k!}\right)=\exp(A)\exp(B).
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
