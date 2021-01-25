@@ -1979,7 +1979,34 @@
     Suppose we have qubit in the state $\lvert 0\rangle$, and we measure the observable $X$. What is the average value of $X$? What is the standard deviation of $X$?
 \end{exe}
 \begin{sol}
-    
+    The average value of $X$ is
+    \begin{align}
+        \langle 0\rvert X\lvert 0\rangle=\left[\begin{matrix}
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            1\\
+            0
+        \end{matrix}\right]=0.
+    \end{align}
+    The average value of $X^2$ is
+    \begin{align}
+        \langle 0\rvert X^2\lvert 0\rangle=\left[\begin{matrix}
+            1&0
+        \end{matrix}\right]\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]^2\left[\begin{matrix}
+            1\\
+            0
+        \end{matrix}\right]=1.
+    \end{align}
+    The standard deviation of $X$ is
+    \begin{align}
+        [\Delta(X)]^2=\langle X^2\rangle-\langle X\rangle^2=1.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
