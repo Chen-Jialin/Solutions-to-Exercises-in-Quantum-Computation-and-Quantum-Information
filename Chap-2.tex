@@ -2146,7 +2146,19 @@
     Show that any measurement where the measurement operators and the POVM elements coincide is a projective measurement.
 \end{exe}
 \begin{pf}
-    
+    Consider a measurement whose measurement operators $\{M_m\}$ coincide with POVM elements $\{E_m=M_m^{\dagger}M_m\}$,
+    \begin{align}
+        E_m=M_m^{\dagger}M_m=M_m.
+    \end{align}
+    Since
+    \begin{align}
+        M_m=E_m^{\dagger}=M_m^{\dagger}M_m=E_m=M_m,
+    \end{align}
+    $\{M_m\}$ are Hermitian. Hence
+    \begin{align}
+        M_m^{\dagger}M_m=M_m^2=M_m,
+    \end{align}
+    $\{M_m\}$ are projectors and this measurement is a projective measurement.
 \end{pf}
 
 \ifx\allfiles\undefined
