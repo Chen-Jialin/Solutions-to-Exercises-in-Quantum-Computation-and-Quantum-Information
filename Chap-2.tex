@@ -2165,7 +2165,11 @@
     Suppose a measurement is described by measurement operators $M_m$. Show that there exists unitary operators $U_m$ such that $M_m=U_m\sqrt{E_m}$, where $E_m$ is the POVM associated to the measurement.
 \end{exe}
 \begin{pf}
-    
+    Since $U_m$ is unitary and the POVM measurement operators $E_m$ is Hermitian,
+    \begin{align}
+        M_m^{\dagger}M_m=\sqrt{E_m^{\dagger}}U_m^{\dagger}U_m\sqrt{E_m}=\sqrt{E_m}U_m^{-1}U_m\sqrt{E_m}=E_m.
+    \end{align}
+    Therefore, there exists unitary operators $U_m$ such that $M_m=U_m\sqrt{E_m}$, where $E_m$ is the POVM associated to the measurement.
 \end{pf}
 
 \ifx\allfiles\undefined
