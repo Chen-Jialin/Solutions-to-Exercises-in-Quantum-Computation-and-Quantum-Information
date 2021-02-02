@@ -2176,7 +2176,14 @@
     Suppose Bob is given a quantum state chosen from a set $\lvert\psi_1\rangle,\cdots,\lvert\psi_m\rangle$ of linearly independent states. Construct a POVM $\{E_1,E_2,\cdots,E_{m+1}\}$ such that if outcome $E_i$ occurs, $1\leq i\leq m$, then Bob knows with certainty that he was given the state $\lvert\psi_i\rangle$. (The POVM must be such that $\langle\psi_i\rvert E_i\lvert\psi_i\rangle$ for each $i$.)
 \end{exe}
 \begin{sol}
-    
+    For each $1\leq i\leq m$, using Gram-Schmidt procedure to produce the orthonormal basis set $\lvert\phi_1^{(i)}\rangle,\lvert\phi_2^{(i)}\rangle,\cdots,\lvert\phi_{i-1}^{(i)}\rangle,\lvert\phi_{i+1}^{(i)}\rangle,\cdots,\lvert\phi_m\rangle$ from $\lvert\psi_1\rangle,\lvert\psi_2\rangle,\cdots,\lvert\psi_{i-1}\rangle,\lvert\psi_{i+1}\rangle,\cdots,\lvert\psi_m\rangle$, and then
+    \begin{align}
+        E_m=\frac{\left(\lvert\psi_i\rangle-\sum_{j\neq i}\langle\psi_i\vert\phi_j^{(i)}\rangle\lvert\phi_j^{(i)}\rangle\right)\left(\langle\psi_i\rvert-\sum_{j\neq i}\langle\phi_j^{(i)}\vert\psi_i\rangle\langle\phi_j^{(i)}\rvert\right)}{\abs{\lvert\psi_i\rangle-\sum_{j\neq i}\langle\psi_i\vert\phi_j^{(i)}\rangle\lvert\phi_j^{(i)}\rangle}^2}.
+    \end{align}
+    For $i=m+1$,
+    \begin{align}
+        E_{m+1}=I-\sum_{i=1}^mE_m.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
