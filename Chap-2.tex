@@ -2202,7 +2202,10 @@
     Show that the average value of the observable $X_1Z_2$ for a two qubit system measured in the state $(\lvert 00\rangle+\lvert 11\rangle)/\sqrt{2}$ is zero.
 \end{exe}
 \begin{pf}
-    
+    The average value of the observable $X_1Z_2$ for a two qubit system measured in the state $(\lvert 00\rangle+\lvert 11\rangle)/\sqrt{2}$ is
+    \begin{align}
+        \frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}X_1Z_2\frac{\lvert 00\rangle+\lvert 11\rangle}{\sqrt{2}}=\frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}X_1\frac{\lvert 00\rangle-\lvert 11\rangle}{\sqrt{2}}=\frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}\frac{\lvert 10\rangle-\lvert 01\rangle}{\sqrt{2}}=0.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
