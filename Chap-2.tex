@@ -2246,7 +2246,30 @@
     Prove that $\lvert\psi\rangle\neq\lvert a\rangle\lvert b\rangle$ for all single qubit states $\lvert a\rangle$ and $\lvert b\rangle$.
 \end{exe}
 \begin{pf}
-    
+    Suppose
+    \begin{align}
+        \lvert a\rangle=&a_0\lvert 0\rangle+a_1\lvert 1\rangle,\\
+        \lvert b\rangle=&b_0\lvert 0\rangle+b_1\lvert 1\rangle,
+    \end{align}
+    where the normalization condition requires that
+    \begin{align}
+        \abs{a_0}^2+\abs{a_1}^2=&1,\\
+        \abs{b_0}^2+\abs{b_1}^2=&1.
+    \end{align}
+    If
+    \begin{align}
+        \label{E2.68}
+        \frac{\lvert 00\rangle+\lvert 11\rangle}{\sqrt{2}}=\lvert\psi\rangle=\lvert a\rangle\lvert b\rangle=a_0b_0\lvert 00\rangle+a_0b_1\lvert 01\rangle+a_1b_0\lvert 10\rangle+a_1b_1\lvert 11\rangle,
+    \end{align}
+    then
+    \begin{align}
+        \label{E2.68-1}a_0b_0=&\frac{1}{\sqrt{2}},\\
+        \label{E2.68-2}a_0b_1=&0,\\
+        \label{E2.68-3}a_1b_0=&0,\\
+        \label{E2.68-4}a_1b_1=&\frac{1}{\sqrt{2}}.
+    \end{align}
+    Equation \eqref{E2.68-1} and \eqref{E2.68-4} means that none of $a_0$, $a_1$, $b_0$ and $b_1$ equals $0$, which conflicts with equation \eqref{E2.68-2} and \eqref{E2.68-3}.
+    Therefore, equation \eqref{E2.68} is impossible and $\lvert\psi\rangle\neq\lvert a\rangle\lvert b\rangle$ for all single qubit states $\lvert a\rangle$ and $\lvert b\rangle$.
 \end{pf}
 
 \ifx\allfiles\undefined
