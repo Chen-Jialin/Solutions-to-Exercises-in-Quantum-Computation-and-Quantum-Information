@@ -1031,13 +1031,13 @@
 \begin{exe}[Exponential of the Pauli matrices]
     Let $\vec{v}$ be any real, three dimensional unit vector and $\theta$ a real number. Prove that
     \begin{align}
-        \label{E3.35}
+        \label{E2.35}
         \exp(i\theta\vec{v}\cdot\vec{\sigma})=\cos(\theta)I+i\sin(\theta)\vec{v}\cdot\vec{\sigma},
     \end{align}
     where $\vec{v}\cdot\vec{\sigma}=\sum_{i=1}^3v_i\sigma_i$. This exercise is generalized in Problem 2.1 on page 117.
 \end{exe}
 \begin{pf}
-    The left side of equation \eqref{E3.35} is
+    The left side of equation \eqref{E2.35} is
     \begin{align}
         \exp(i\theta\vec{v}\cdot\vec{\sigma})=\sum_{n=0}^{\infty}\frac{1}{n!}(i\theta\vec{v}\cdot\vec{\sigma})^k=\sum_{n=1}^{\infty}\frac{(-1)^n}{(2n)!}(\theta\vec{v}\cdot\vec{\sigma})^{2n}+\sum_{n=0}^{\infty}\frac{i(-1)^n}{(2n+1)!}(\theta\vec{v}\cdot\vec{\sigma})^{2n+1}.
     \end{align}
@@ -1056,11 +1056,11 @@
     \begin{align}
         (\vec{v}\cdot\vec{\sigma})^2=\sum_iv_i^2I=I.
     \end{align}
-    Hence the left side of equation \eqref{E3.35} can be written as
+    Hence the left side of equation \eqref{E2.35} can be written as
     \begin{align}
         \exp(i\theta\vec{v}\cdot\vec{\sigma})=\sum_{n=1}^{\infty}\frac{(-1)^n}{(2n)!}\theta^{2n}+\sum_{n=0}^{\infty}\frac{i(-1)^n}{(2n+1)}\theta^{2n+1}\vec{\sigma}=\cos(\theta)I+i\sin(\theta)\vec{\sigma},
     \end{align}
-    which equals the right side of equation \eqref{E3.35}. Therefore, equation \eqref{E3.35} holds.
+    which equals the right side of equation \eqref{E2.35}. Therefore, equation \eqref{E2.35} holds.
 \end{pf}
 
 \begin{exe}
