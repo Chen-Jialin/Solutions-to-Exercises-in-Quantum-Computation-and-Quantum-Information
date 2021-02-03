@@ -2216,7 +2216,30 @@
     Prove that there exists a unitary operator $U':V\rightarrow V$ which extends $U$. That is, $U'\lvert w\rangle=U\lvert w\rangle$ for all $\lvert w\rangle$ in $W$, but $U'$ is defined on the entire space $V$. Usually we omit the prime symbol $'$ and just write $U$ to decode the extension.
 \end{exe}
 \begin{pf}
-    
+    Define
+    \begin{align}
+        U'\equiv U\otimes A,
+    \end{align}
+    where the unitary operator $A:U-W\rightarrow\im(U)^{\perp}$.
+    Since both $U$ and $A$ are unitary, $U'$ is unitary.
+    For all $\lvert w\rangle$ in $V$, we can express it as
+    \begin{align}
+        \lvert w\rangle=\lvert w_1\rangle\otimes\lvert w_2\rangle,
+    \end{align}
+    where $\lvert w_1\rangle$ and $\lvert w_2\rangle$ are in the image of $U$, $\im(U)$, and the complement of the image of U, $\im(U)^{\perp}=W-\im(U)$, respectively, and then
+    \begin{align}
+        U'\lvert w\rangle=(U\otimes A)(\lvert w_1\rangle\otimes\lvert w_2\rangle)=(U\lvert w_1\rangle)\otimes(A\lvert w_2\rangle).
+    \end{align}
+    Specially, for all $\lvert w\rangle$ in $W$, we can extend it as
+    \begin{align}
+        \lvert w'\rangle=\lvert w\rangle\otimes\lvert 0\rangle\in V
+    \end{align}
+    where $\im(U)^{\perp}$ is the zero vector in $V-W$,
+    and then
+    \begin{align}
+        U'\lvert w'\rangle=(U\otimes A)(\lvert w\rangle\otimes\lvert 0\rangle)=U\lvert w\rangle\otimes\lvert 0\rangle
+    \end{align}
+    Therefore, there exists a unitary $U':V\rightarrow V$ which extends $U$.
 \end{pf}
 
 \ifx\allfiles\undefined
