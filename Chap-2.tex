@@ -2278,7 +2278,28 @@
     Verify that the Bell basis forms an orthonormal basis for the two qubit state space.
 \end{exe}
 \begin{pf}
-    
+    The Bell basis satisfies that:
+    \begin{itemize}
+        \item[(a)] The Bell basis is normalized,
+        \begin{align}
+            \abs{\lvert\beta_{00}\rangle}=&\sqrt{\langle\beta_{00}\vert\beta_{00}\rangle}=\sqrt{\frac{\langle 00\rvert+\langle 00\rvert}{\sqrt{2}}\frac{\lvert 00\rangle+\lvert 11\rangle}{\sqrt{2}}}=1,\\
+            \abs{\lvert\beta_{01}\rangle}=&\sqrt{\langle\beta_{01}\vert\beta_{01}\rangle}=\sqrt{\frac{\langle 01\rvert+\langle 10\rvert}{\sqrt{2}}\frac{\lvert 01\rangle+\lvert 10\rangle}{\sqrt{2}}}=1,\\
+            \abs{\lvert\beta_{10}\rangle}=&\sqrt{\langle\beta_{10}\vert\beta_{10}\rangle}=\sqrt{\frac{\langle 00\rvert-\langle 11\rvert}{\sqrt{2}}\frac{\lvert 00\rangle-\lvert 11\rangle}{\sqrt{2}}},\\
+            \abs{\lvert\beta_{11}\rangle}=&\sqrt{\langle\beta_{11}\vert\beta_{11}\rangle}=\sqrt{\frac{\langle 01\rvert-\langle 10\rvert}{\sqrt{2}}\frac{\lvert 01\rangle-\lvert 10\rangle}{\sqrt{2}}}=1.
+        \end{align}
+        \item[(b)] The Bell basis is orthogonal,
+        \begin{align}
+            \langle\beta_{00}\vert\beta_{01}\rangle=&\frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}\frac{\lvert 01\rangle+\lvert 10\rangle}{\sqrt{2}}=0,\\
+            \langle\beta_{00}\vert\beta_{10}\rangle=&\frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}\frac{\lvert 00\rangle-\lvert 11\rangle}{\sqrt{2}}=0,\\
+            \langle\beta_{00}\vert\beta_{11}\rangle=&\frac{\langle 00\rvert+\langle 11\rvert}{\sqrt{2}}\frac{\lvert 01\rangle-\lvert 10\rangle}{\sqrt{2}}=0,\\
+            \langle\beta_{01}\vert\beta_{10}\rangle=&\frac{\langle 01\rvert+\langle 10\rvert}{\sqrt{2}}\frac{\lvert 00\rangle-\lvert 11\rangle}{\sqrt{2}}=0,\\
+            \langle\beta_{01}\vert\beta_{11}\rangle=&\frac{\langle 01\rvert+\langle 10\rvert}{\sqrt{2}}\frac{\lvert 01\rangle-\lvert 10\rangle}{\sqrt{2}}=0,\\
+            \langle\beta_{10}\vert\beta_{11}\rangle=&\frac{\langle 00\rvert-\langle 11\rvert}{\sqrt{2}}\frac{\lvert 01\rangle-\lvert 10\rangle}{\sqrt{2}}=0,
+        \end{align}
+        and thus also linearly independent.
+        \item[(c)] The dimension of the two qubit state space is $2\times 2=4$, the Bell basis also have $4$ independent elements, so the Bell basis can span the two qubit space.
+    \end{itemize}
+    Therefore, the Bell basis forms an orthonormal basis for the two qubit state space.
 \end{pf}
 
 \ifx\allfiles\undefined
