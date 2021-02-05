@@ -2331,7 +2331,38 @@
     Let $\rho$ be a density operator. Show that $\tr(\rho^2)\leq 1$, with equality if and only if $\rho$ is pure state.
 \end{exe}
 \begin{pf}
-    
+    The density operator is
+    \begin{align}
+        \rho=\sum_ip_i\lvert\psi_i\rangle\langle\psi_i\rvert,
+    \end{align}
+    so
+    \begin{align}
+        \notag\tr(\rho^2)=&\tr\left[\left(\sum_ip_i\lvert\psi_i\rangle\langle\psi_i\rvert\right)\left(\sum_jp_j\lvert\psi_j\rangle\langle\psi_j\rvert\right)\right]=\sum_ip_i\left[\sum_jp_j\tr(\lvert\psi_i\rangle\langle\psi_i\vert\psi_j\rangle\langle\psi_j\rvert)\right]\\
+        \notag=&\sum_ip_i\left[\sum_jp_j\tr(\langle\psi_i\vert\psi_j\rangle\langle\psi_j\vert\psi_i\rangle)\right]=\sum_ip_i\left[\sum_jp_j\tr(\abs{\langle\psi_i\vert\psi_j\rangle}^2)\right]=\sum_ip_i\left[\sum_jp_j\abs{\langle\psi_i\vert\psi_j\rangle}^2\right]\\
+        \leq&\sum_ip_i\left(\sum_jp_j\right)=\sum_ip_i=1.
+    \end{align}
+    If $\rho$ is a pure state,
+    \begin{align}
+        \rho=\lvert\psi\rangle\langle\psi\rvert,
+    \end{align}
+    then
+    \begin{align}
+        \tr(\rho^2)=\tr(\lvert\psi\rangle\langle\psi\vert\psi\rangle\langle\psi\rvert)=\tr(\lvert\psi\rangle\langle\psi\rvert)=1.
+    \end{align}
+    If $\tr(\rho^2)=1$, then
+    \begin{gather}
+        \sum_ip_i\left[\sum_jp_j\abs{\langle\psi_i\vert\psi_j\rangle}^2\right]=\sum_ip_i\left(\sum_jp_j\right),\\
+        \Longrightarrow\abs{\langle\psi_i\vert\psi_j\rangle}^2=\abs{\langle\psi_i\vert\psi_i\rangle}^2=1,
+    \end{gather}
+    which means that, for all $i$ and $j$, $\lvert\psi_i\rangle$ and $\lvert\psi_j\rangle$ is the same up to a phase difference
+    \begin{align}
+        \lvert\psi_j\rangle=e^{i\theta_{ij}}\lvert\psi_i\rangle,\quad\forall i,j,
+    \end{align}
+    i.e., $\rho$ must be a pure state
+    \begin{align}
+        \rho=\lvert\psi_1\rangle\langle\psi_1\rvert.
+    \end{align}
+    Therefore, $\tr(\rho^2)\leq 1$, with equality if and only if $\rho$ is a pure state.
 \end{pf}
 
 \ifx\allfiles\undefined
