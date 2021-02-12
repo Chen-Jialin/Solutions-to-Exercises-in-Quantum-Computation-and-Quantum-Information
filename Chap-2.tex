@@ -2379,7 +2379,124 @@
     \end{itemize}
 \end{exe}
 \begin{sol}
-    
+    \item[(1)] An arbitrary $2\times 2$ matrix $\rho$ can be expressed as a linear combination of $I$, $\sigma_1$, $\sigma_2$, $\sigma_3$,
+    \begin{align}
+        \notag\rho=&\left[\begin{matrix}
+            \rho_{11}&\rho_{12}\\
+            \rho_{21}&\rho_{22}
+        \end{matrix}\right]=\left[\begin{matrix}
+            \frac{1}{2}(\rho_{11}+\rho_{22})+\frac{1}{2}(\rho_{11}-\rho_{22})&\frac{1}{2}(\rho_{12}+\rho_{21})+i(-i)\frac{1}{2}(\rho_{12}-\rho_{21})\\
+            \frac{1}{2}(\rho_{12}+\rho_{21})+i\cdot i(\rho_{12}-\rho_{21})&\frac{1}{2}(\rho_{11}+\rho_{22})-\frac{1}{2}(\rho_{11}-\rho_{22})
+        \end{matrix}\right]\\
+        \notag=&\frac{1}{2}(\rho_{11}+\rho_{22})\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]+\frac{1}{2}(\rho_{12}+\rho_{21})\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]+\frac{i}{2}(\rho_{12}-\rho_{21})\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]+\frac{1}{2}(\rho_{11}-\rho_{22})\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\\
+        =&\frac{1}{2}(\rho_{11}+\rho_{22})I+\frac{1}{2}(\rho_{12}+\rho_{21})\sigma_1+\frac{i}{2}(\rho_{12}-\rho_{21})\sigma_2+\frac{1}{2}(\rho_{11}-\rho_{22})\sigma_3
+    \end{align}
+    If $\rho$ is an arbitrary density matrix, then it has trace of $1$,
+    \begin{align}
+        \tr(\rho)=\rho_{11}+\rho_{22}=1,
+    \end{align}
+    so
+    \begin{align}
+        \rho=\frac{1}{2}I+\frac{1}{2}(\rho_{12}+\rho_{21})\sigma_1+\frac{i}{2}(\rho_{12}-\rho_{21})\sigma_2+\frac{1}{2}(\rho_{11}-\rho_{22})\sigma_3=\frac{I+\vec{r}\cdot\vec{\sigma}}{2},
+    \end{align}
+    where
+    \begin{align}
+        \vec{r}=(r_1,r_2,r_3)=(\rho_{12}+\rho_{21},i(\rho_{12}-\rho_{21}),\rho_{11}-\rho_{22}).
+    \end{align}
+    \item[(2)] For the state
+    \begin{align}
+        \rho=\frac{I}{2}=\frac{I+\vec{r}\cdot\vec{\sigma}}{2},
+    \end{align}
+    the Bloch vector representation is
+    \begin{align}
+        \vec{r}=(0,0,0)=\vec{0}.
+    \end{align}
+    \item[(3)] \emph{Necessity}: If $\norm{\vec{r}}=1$, then
+    \begin{align}
+        \label{E2.72-1}
+        \norm{\vec{r}}^2=r_1r_1^*+r_2r_2^*+r_3r_3^*=(\rho_{12}+\rho_{21})(\rho_{12}+\rho_{21})^*+(\rho_{12}-\rho_{21})(\rho_{12}-\rho_{21})^*+(\rho_{11}-\rho_{22})(\rho_{11}-\rho_{22})^*=1.
+    \end{align}
+    Since the density matrix $\rho$ is positive, it is necessarily Hermitian, i.e., $\rho_{11}$ and $\rho_{22}$ are real and $\rho_{12}$ and $\rho_{21}$ are complex conjugate,
+    \begin{align}
+        \rho_{12}=\rho_{21}^*.
+    \end{align}
+    Hence, we can rewrite equation \eqref{E2.72-1} as
+    \begin{align}
+        \label{E2.72-2}
+        (\rho_{12}+\rho_{21})(\rho_{21}+\rho_{12})+(\rho_{12}-\rho_{21})(\rho_{21}-\rho_{12})+(\rho_{11}-\rho_{22})(\rho_{11}-\rho_{22})^*=4\rho_{12}\rho_{21}+\rho_{11}^2+\rho_{22}^2-2\rho_{11}\rho_{22}=1.
+    \end{align}
+    Since the trace of the density matrix $\rho$ is $1$,
+    \begin{align}
+        \tr(\rho)=\rho_{11}+\rho_{22}=1,
+    \end{align}
+    we can rewrite equation \eqref{E2.72-2} as
+    \begin{gather}
+        4\rho_{12}\rho_{21}+2(\rho_{11}^2+\rho_{22}^2)-(\rho_{11}^2+\rho_{22}^2+2\rho_{11}\rho_{22})=4\rho_{12}\rho_{21}+2(\rho_{11}^2+\rho_{22}^2)-(\rho_{11}+\rho_{22})^2=4\rho_{12}\rho_{21}+2(\rho_{11}^2+\rho_{22}^2)-1=1,\\
+        \Longrightarrow 2\rho_{12}\rho_{21}+\rho_{11}^2+\rho_{22}^2=1.
+    \end{gather}
+    In this way, the trace of the square of the density matrix equals $1$,
+    \begin{align}
+        \tr(\rho^2)=\tr\left(\left[\begin{matrix}
+            \rho_{11}&\rho_{12}\\
+            \rho_{21}&\rho_{22}
+        \end{matrix}\right]\left[\begin{matrix}
+            \rho_{11}&\rho_{12}\\
+            \rho_{21}&\rho_{22}
+        \end{matrix}\right]\right)=\tr\left[\begin{matrix}
+            \rho_{11}^2+\rho_{12}\rho_{21}&\rho_{11}\rho_{12}+\rho_{12}\rho_{22}\\
+            \rho_{21}\rho_{11}+\rho_{22}\rho_{21}&\rho_{21}\rho_{12}+\rho_{22}^2
+        \end{matrix}\right]=\rho_{11}^2+\rho_{22}^2+2\rho_{12}\rho_{21}=1.
+    \end{align}
+    Therefore, the state $\rho$ is pure.\\
+    \emph{Sufficiency}: If the state $\rho$ is pure, the trace of its square is $1$,
+    \begin{align}
+        \tr(\rho^2)=\rho_{11}^2+\rho_{22}^2+2\rho_{12}\rho_{21}=1.
+    \end{align}
+    Then
+    \begin{align}
+        \norm{\vec{r}}=\sqrt{4\rho_{12}\rho_{21}+2(\rho_{11}^2+\rho_{22}^2)-1}=1.
+    \end{align}
+    Therefore, a state $\rho$ is pure if and only if $\norm{\vec{r}}=1$.
+    \item[(4)] According to Section 1.2, we write the state of the pure state as
+    \begin{align}
+        \lvert\psi\rangle=\cos\frac{\theta}{2}\lvert 0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\lvert 1\rangle,
+    \end{align}
+    and the Bloch vector is
+    \begin{align}
+        \vec{r}=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta).
+    \end{align}
+    The density matrix of the pure state is
+    \begin{align}
+        \notag\rho=&\left(\cos\frac{\theta}{2}\lvert 0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\lvert 1\rangle\right)\left(\cos\frac{\theta}{2}\langle 0\rvert+e^{-i\varphi}\sin\frac{\theta}{2}\langle 1\rvert\right)=\left[\begin{matrix}
+            \cos\frac{\theta}{2}\\
+            e^{i\varphi}\sin\frac{\theta}{2}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\theta}{2}&e^{-i\varphi}\sin\frac{\theta}{2}
+        \end{matrix}\right]\\
+        =&\left[\begin{matrix}
+            \cos^2\frac{\theta}{2}&e^{-i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}\\
+            e^{i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}&\sin^2\frac{\theta}{2}
+        \end{matrix}\right].
+    \end{align}
+    According to the description we have given, the Bloch vector is
+    \begin{align}
+        \notag\vec{r}=&(\rho_{12}+\rho_{21},i(\rho_{12}-\rho_{21}),\rho_{11}-\rho_{22})\\
+        \notag=&\left(e^{-i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}+e^{i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2},i\left(e^{-i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}-e^{i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}\right),\cos^2\frac{\theta}{2}-\sin^2\frac{\theta}{2}\right)\\
+        =&(\sin\theta\cos\varphi,\sin\theta\sin\sin\varphi,\cos\theta).
+    \end{align}
+    Therefore, for pure states, the description of the Bloch vector we have given coincide with that in Section 1.2.
 \end{sol}
 
 \ifx\allfiles\undefined
