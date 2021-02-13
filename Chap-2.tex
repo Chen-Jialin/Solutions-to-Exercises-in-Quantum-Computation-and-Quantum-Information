@@ -2562,7 +2562,19 @@
     Suppose a composite of system $A$ and $B$ is in the state $\lvert a\rangle\lvert b\rangle$, where $\lvert a\rangle$ is a pure state of system $A$, and $\lvert b\rangle$ is a pure state of system $B$. Show that the reduced density operator of system $A$ alone is a pure state.
 \end{exe}
 \begin{pf}
-    
+    The density operator of the composite system is
+    \begin{align}
+        \rho^{AB}=\lvert a\rangle\langle a\rvert\otimes\lvert b\rangle\langle b\rvert.
+    \end{align}
+    The reduced density operator of system $A$ is
+    \begin{align}
+        \rho^A=\tr_B(\rho^{AB})=\lvert a\rangle\langle a\rvert\tr_B(\lvert b\rangle\langle b\rvert)=\lvert a\rangle\langle a\rvert.
+    \end{align}
+    Since
+    \begin{align}
+        \tr[(\rho^A)^2]=\tr[(\lvert a\rangle\langle a\rvert)(\lvert a\rangle\langle a\rvert)]=\tr(\lvert a\rangle\langle a\rvert)=1,
+    \end{align}
+    the reduced density operator of system $A$ alone is a pure state.
 \end{pf}
 
 \ifx\allfiles\undefined
