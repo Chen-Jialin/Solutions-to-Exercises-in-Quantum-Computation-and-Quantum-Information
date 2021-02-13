@@ -2659,7 +2659,55 @@
     Extend the proof the Schmidt decomposition to the case where $A$ and $B$ may have the state spaces of different dimensionality.
 \end{exe}
 \begin{pf}
-    
+    Suppose the dimension of the state space for systems $A$ and $B$ are $n$ and $m$, respectively, and let $\lvert j\rangle$ and $\lvert k\rangle$ be any fixed orthonormal bases for systems $A$ and $B$, respectively.
+    Then $\lvert\psi\rangle$ can be written as
+    \begin{align}
+        \lvert\psi\rangle=\sum_{j=1}^n\sum_{k=1}^ma_{jk}\lvert j\rangle\lvert k\rangle,
+    \end{align}
+    for some matrix $a$ of complex numbers $a_{jk}$.
+    Without loss of generality, set $n>m$. By the singular value decomposition,
+    \begin{align}
+        a=u\left[\begin{matrix}
+            d\\
+            0
+        \end{matrix}\right]v,
+    \end{align}
+    where $u$ is an $n\times n$ unitary matrix, $v$ is an $m\times m$ unitary matrix, $d$ is an $m\times m$ diagonal matrix with non-negative real elements, and $\left[\begin{smallmatrix}
+        d\\
+        0
+    \end{smallmatrix}\right]$ is a $n\times m$ matrix whose $(m+1)$th to $n$th row are all zero.
+    Thus
+    \begin{align}
+        \lvert\psi\rangle=\sum_{j=1}^n\sum_{i=1}^m\sum_{k=1}^mu_{ji}d_{ii}v_{ik}\lvert j\rangle\lvert k\rangle.
+    \end{align}
+    Define
+    \begin{align}
+        \lvert i_A\rangle\equiv&\sum_{j=1}^nu_{ji}\lvert j\rangle,\\
+        \lvert i_B\rangle\equiv&\sum_{k=1}^mu_{ik}\lvert k\rangle,
+    \end{align}
+    and
+    \begin{align}
+        \lambda_i\equiv d_{ii}.
+    \end{align}
+    We see that this gives
+    \begin{align}
+        \lvert\psi\rangle=\sum_{i=1}^m\lambda_i\lvert i_A\rangle\lvert i_B\rangle.
+    \end{align}
+    Due to the unitarity of $u$ and $v$ and the orthonormality of $\lvert j\rangle$ and $\lvert k\rangle$,
+    \begin{align}
+        \langle i_A\vert l_A\rangle=&\left(\sum_{j=1}^nu_{ji}\lvert j\rangle\right)^{\dagger}\left(\sum_{j'=1}^nu_{j'l}\lvert j'\rangle\right)=\sum_{j=1}^n\sum_{j'=1}^nu_{ij}^*u_{j'l}\langle j\vert j'\rangle=\sum_{j=1}^n\sum_{j'=1}^nu_{ij}^*u_{j'i}\delta_{jj'}=\sum_{j=1}^nu_{ij}^*u_{jl}=\delta_{il},\\
+        \langle i_B\vert l_B\rangle=&\left(\sum_{k=1}^mv_{ik}\lvert k\rangle\right)^{\dagger}\left(\sum_{k'=1}^mv_{lk'}\lvert k'\rangle\right)=\sum_{k=1}^m\sum_{k'=1}^mv_{ki}^*v_{lk'}\langle k\vert k'\rangle=\sum_{k=1}^m\sum_{k'=1}^mv_{ki}^*v_{lk'}\delta_{kk'}=\sum_{k=1}^mv_{ki}^*u_{lk}=\delta_{il},
+    \end{align}
+    $\lvert i_A\rangle$ and $\lvert i_B\rangle$ form two orthonormal sets, respectively.
+    Moreover, since $\lvert\psi\rangle$ is a normalized pure state,
+    \begin{align}
+        \langle\psi\vert\psi\rangle=\left(\sum_{i=1}^m\lambda_i\lvert i_A\rangle\lvert i_B\rangle\right)^{\dagger}\left(\sum_{l=1}^m\lambda_l\lvert l_A\rangle\lvert l_B\rangle\right)=\sum_{i=1}^m\sum_{l=1}^m\lambda_i^2\langle i_A\vert l_A\rangle\langle i_B\vert l_B\rangle=\sum_{i=1}^m\sum_{l=1}^m\lambda_i\lambda_l\delta_{il}=\sum_{i=1}^m\lambda_i^2=1.
+    \end{align}
+    Therefore, there exists orthonormal states $\lvert i_A\rangle$ for system $A$, and orthonormal states $\lvert i_B\rangle$ of system $B$ such that
+    \begin{align}
+        \lvert\psi\rangle=\sum_i\lambda_i\lvert i_A\rangle\lvert i_B\rangle,
+    \end{align}
+    where $\lambda_i$ are non-negative real number satisfying $\sum_i\lambda_i^2=1$.
 \end{pf}
 
 \ifx\allfiles\undefined
