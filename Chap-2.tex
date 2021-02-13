@@ -2507,7 +2507,55 @@
     where $\rho^{-1}$ is defined to be the inverse of $\rho$, where $\rho$ is considered as an operator acting only on the support of $\rho$. (This definition removes the problem that $\rho$ may not have an inverse.)
 \end{exe}
 \begin{pf}
-    
+    Suppose the spectral decomposition of the density matrix $\rho$ is
+    \begin{align}
+        \rho=\sum_{k=1}^Nq_k\lvert k\rangle\langle k\rvert=\sum_{k=1}^N\lvert\tilde{k}\rangle\langle\tilde{k}\rvert.
+    \end{align}
+    where $q_k$ are the non-zero eigenvalues and $\lvert k\rangle$ are the eigenvectors of $\rho$, $N=\text{rank}(\rho)$ and
+    \begin{align}
+        \lvert\tilde{k}\rangle=\sqrt{q_k}\lvert k\rangle.
+    \end{align}
+    Since $\lvert\psi_i\rangle$ is a state in the support of $\rho$, it can be written as a linear combination of the eigenvectors
+    \begin{align}
+        \lvert\psi_i\rangle=\sum_k\langle k\vert\psi_i\rangle\lvert k\rangle=\sum_kc_{ik}\lvert k\rangle,
+    \end{align}
+    where
+    \begin{align}
+        c_{ik}=\langle k\vert\psi_i\rangle,
+    \end{align}
+    and
+    \begin{align}
+        \sum_{k=1}^N\abs{c_{ik}}^2=1.
+    \end{align}
+    Define
+    \begin{align}
+        p_i=\frac{1}{\sum_{k=1}^N\frac{\abs{c_{ik}}^2}{p_k}}
+    \end{align}
+    and
+    \begin{align}
+        u_{ik}=\frac{\sqrt{p_i}c_{ik}}{\sqrt{q_k}}.
+    \end{align}
+    Since
+    \begin{align}
+        \sum_{k=1}^N\abs{u_{ik}}^2=\sum_{k=1}^N\frac{p_i\abs{c_{ik}}^2}{q_k}=p_i\sum_{k=1}^N\frac{\abs{c_{ik}}^2}{q_k}=1,
+    \end{align}
+    $u_{ik}$ is a unitary matrix.
+    According to Theorem 2.6, the set
+    \begin{align}
+        \lvert\tilde{\psi}_i\rangle=\sum_{k=1}^Nu_{ik}\lvert\tilde{k}\rangle=\sum_{k=1}^N\frac{\sqrt{p_i}c_{ik}}{\sqrt{q_k}}\lvert\tilde{k}\rangle=\sqrt{p_i}\sum_{k=1}^Nc_{ik}\lvert k\rangle=\sqrt{p_i}\lvert\psi_i\rangle,\quad i=1,\cdots,N,
+    \end{align}
+    generate the same density matrix $\rho$,
+    \begin{align}
+        \rho=\sum_{i=1}^N\lvert\tilde{\psi}_i\rangle\langle\tilde{\psi}_i\rvert=\sum_{i=1}^Np_i\lvert\psi_i\rangle\langle\psi_i\rvert.
+    \end{align}
+    Moreover,
+    \begin{align}
+        \frac{1}{\langle\psi_i\rvert\rho^{-1}\lvert\psi_i\rangle}=\frac{1}{\langle\psi_i\rvert\sum_{k=1}^Nq_k^{-1}\lvert k\rangle\langle k\rvert\lvert\psi_i\rangle}=\frac{1}{\sum_{k=1}^Nq_k^{-1}\abs{\langle k\vert\psi_i\rangle}^2}=\frac{1}{\sum_{k=1}^N\frac{\abs{c_{ik}}^2}{q_k}}=p_i.
+    \end{align}
+    Therefore, there is a minimal ensemble for $\rho$ that contains $\lvert\psi_i\rangle$, and moreover that in any such ensemble $\lvert\psi_i\rangle$ must appear with probability
+    \begin{align}
+        p_i=\frac{1}{\langle\psi_i\rvert\rho^{-1}\lvert\psi_i\rangle}.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
