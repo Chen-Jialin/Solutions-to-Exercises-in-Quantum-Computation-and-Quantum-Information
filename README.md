@@ -9,4 +9,6 @@ Some of the solutions refer to the following materials:
 
 [goropikari/SolutionQCQINielsenChuang](github.com/goropikari/SolutionForQuantumComputationAndQuantumInformation)
 
+[Pseudo-Solutions: Quantum Computation and Quantum Information by Nielsen and Chuang](https://serab.net/docs/qcqi/)
+
 I really appreciate the inspiration provided by these materials.
