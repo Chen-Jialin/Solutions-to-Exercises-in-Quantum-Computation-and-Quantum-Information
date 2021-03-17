@@ -2750,7 +2750,38 @@
     Prove that a state $\lvert\psi\rangle$ of a composite system $AB$ is a product state if and only if it has Schmidt number $1$. Prove that $\lvert\psi\rangle$ is a product state if and only if $\rho^A$ (and thus $\rho^B$) are pure states.
 \end{exe}
 \begin{pf}
-    
+    \emph{Sufficiency}: If the state $\lvert\psi\rangle$ has Schmidt number $1$, it can be written as
+    \begin{align}
+        \lvert\psi\rangle=\lambda_1\lvert 1_A\rangle\lvert 1_B\rangle,
+    \end{align}
+    where the normalization condition requires that $\abs{\lambda_1}=1$ and we can actually absorb the phase factor of $\lambda_1$ into $\lvert 1_A\rangle$ or $\lvert 1_B\rangle$, so the phase $\lvert\psi\rangle$ is a product state.\\
+    \emph{Necessity}: If the state $\lvert\psi\rangle$ is a product state, it can be written as the product of the state of $A$ and the state of $B$,
+    \begin{align}
+        \lvert\psi\rangle=\lvert 1_A\rangle\lvert 1_B\rangle,
+    \end{align}
+    so its Schmidt number is $1$.
+
+    \emph{Sufficiency}: If $\rho^A$ (and thus $\rho^B$) are pure states, they can be written as
+    \begin{align}
+        \rho^A=&\lvert 1_A\rangle\langle 1_A\rvert,\\
+        \rho^B=&\lvert 1_B\rangle\langle 1_B\rvert,\\
+        \Longrightarrow\rho=&\rho^A\otimes\rho^B=\lvert 1_A\rangle\lvert 1_B\rangle\langle 1_A\rvert\langle 1_B\rvert=\lvert\psi\rangle\langle\psi\rvert,
+    \end{align}
+    so $\lvert\psi\rangle=\lvert 1_A\rangle\lvert 1_B\rangle$ is a product state.\\
+    \emph{Necessity}: If $\lvert\psi\rangle$ is a product state, it can be written as
+    \begin{align}
+        \lvert\psi\rangle=\lvert 1_A\rangle\lvert 1_B\rangle,
+    \end{align}
+    and its density matrix is
+    \begin{align}
+        \rho=\lvert\psi\rangle\langle\psi\rvert=\lvert 1_A\rangle\lvert 1_B\rangle\langle 1_A\rvert\langle 1_B\rvert,
+    \end{align}
+    so
+    \begin{align}
+        \rho^A=&\tr_B(\rho)=\lvert 1_A\rangle\langle 1_A\rvert,\\
+        \rho^B=&\tr_A(\rho)=\lvert 1_B\rangle\langle 1_B\rvert,
+    \end{align}
+    are pure states.
 \end{pf}
 
 \ifx\allfiles\undefined
