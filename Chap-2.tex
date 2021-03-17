@@ -2791,7 +2791,87 @@
     \end{align}
 \end{exe}
 \begin{pf}
-    
+    State $\frac{\lvert 00\rangle+\lvert 11\rangle}{\sqrt{2}}$ is already in the form of Schmidt decomposition,
+    \begin{align}
+        \frac{\lvert 00\rangle+\lvert 11\rangle}{\sqrt{2}}=\frac{1}{\sqrt{2}}\lvert 0\rangle\lvert 0\rangle+\frac{1}{\sqrt{2}}\lvert 1\rangle\lvert 1\rangle.
+    \end{align}
+    For state $\frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle+\lvert 11\rangle}{2}$, by singular decomposition, we have
+    \begin{align}
+        a=\frac{1}{2}\left[\begin{matrix}
+            1&1\\
+            1&1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            -1&1\\
+            1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            0&0\\
+            0&1
+        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            -1&1\\
+            1&1
+        \end{matrix}\right]=udv,
+    \end{align}
+    where
+    \begin{align}
+        u=v=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            -1&1\\
+            1&1
+        \end{matrix}\right],\\
+        d=&\left[\begin{matrix}
+            0&0\\
+            0&1
+        \end{matrix}\right].
+    \end{align}
+    Hence we define
+    \begin{align}
+        \lvert 1_A\rangle=&u_{11}\lvert 0\rangle+u_{12}\lvert 1\rangle=\frac{1}{\sqrt{2}}(-\lvert 0\rangle+\lvert 1\rangle),\\
+        \lvert 2_A\rangle=&u_{21}\lvert 1\rangle+u_{22}\lvert 1\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle),\\
+        \lvert 1_B\rangle=&v_{11}\lvert 0\rangle+v_{12}\lvert 1\rangle=\frac{1}{\sqrt{2}}(-\lvert 0\rangle+\lvert 1\rangle),\\
+        \lvert 2_B\rangle=&v_{21}\lvert 1\rangle+v_{22}\lvert 1\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle),
+    \end{align}
+    and have Schmidt decomposition
+    \begin{align}
+        \frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle+\lvert 11\rangle}{2}=\sum_{i=1}^2d_{ii}\lvert i_A\rangle\lvert i_B\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle).
+    \end{align}
+    For state $\frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle}{\sqrt{3}}$, by singular decomposition, we have
+    \begin{align}
+        a=\frac{1}{\sqrt{3}}\left[\begin{matrix}
+            1&1\\
+            1&0
+        \end{matrix}\right]=\left[\begin{matrix}
+            -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
+            \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
+        \end{matrix}\right]\left[\begin{matrix}
+            \frac{1-\sqrt{5}}{2\sqrt{3}}&0\\
+            0&\frac{1+\sqrt{5}}{2\sqrt{3}}
+        \end{matrix}\right]\left[\begin{matrix}
+            -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
+            \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
+        \end{matrix}\right]=udv,
+    \end{align}
+    where
+    \begin{align}
+        u=v=&\left[\begin{matrix}
+            -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
+            \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
+        \end{matrix}\right],\\
+        d=&\left[\begin{matrix}
+            \frac{1-\sqrt{5}}{2\sqrt{3}}&0\\
+            0&\frac{1+\sqrt{5}}{2\sqrt{3}}
+        \end{matrix}\right].
+    \end{align}
+    Hence we define
+    \begin{align}
+        \lvert 1_A\rangle=&u_{11}\lvert 0\rangle+u_{12}\lvert 1\rangle=-\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 1\rangle,\\
+        \lvert 2_A\rangle=&u_{21}\lvert 0\rangle+u_{22}\lvert 1\rangle=\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 1\rangle,\\
+        \lvert 1_B\rangle=&v_{11}\lvert 0\rangle+v_{12}\lvert 1\rangle=-\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 1\rangle,\\
+        \lvert 2_B\rangle=&v_{21}\lvert 0\rangle+v_{22}\lvert 1\rangle=\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 1\rangle,
+    \end{align}
+    and have Schmidt decomposition
+    \begin{align}
+        \notag\frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle}{\sqrt{3}}=&\frac{1-\sqrt{5}}{2\sqrt{3}}\left(-\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 1\rangle\right)\otimes\left(-\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 1\rangle\right)\\
+        &+\frac{1+\sqrt{5}}{2\sqrt{3}}\left(\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 1\rangle\right)\otimes\left(\sqrt{\frac{5+\sqrt{5}}{10}}\lvert 0\rangle+\sqrt{\frac{5-\sqrt{5}}{10}}\lvert 1\rangle\right).
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
