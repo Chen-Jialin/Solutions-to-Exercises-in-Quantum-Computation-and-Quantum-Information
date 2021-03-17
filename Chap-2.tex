@@ -2878,7 +2878,21 @@
     Suppose $\lvert\psi\rangle$ and $\lvert\varphi\rangle$ are two pure states of a composite quantum system with components $A$ and $B$, with identical Schmidt coefficients. Show that there are unitary transformations $U$ on system $A$ and $V$ on system $B$ such that $\lvert\psi\rangle=(U\otimes V)\lvert\varphi\rangle$.
 \end{exe}
 \begin{pf}
-    
+    Suppose the two pure states are respectively
+    \begin{align}
+        \lvert\psi\rangle=&\sum_i\lambda_i\lvert\psi_i\rangle_A\lvert\psi_i\rangle_B,\\
+        \lvert\varphi\rangle=&\sum_i\lambda_i\lvert\varphi_i\rangle_A\lvert\varphi_i\rangle_B.
+    \end{align}
+    Define the two unitary matrices as
+    \begin{align}
+        U=&\sum_i\lvert\psi_i\rangle\langle\varphi_i\rvert_A,\\
+        V=&\sum_i\lvert\psi_i\rangle\langle\varphi_i\rvert_B.
+    \end{align}
+    Then
+    \begin{align}
+        \notag(U\otimes V)\lvert\varphi\rangle=&\sum_j\lvert\psi_j\rangle\langle\varphi_j\rvert_A\sum_k\lvert\psi_k\rangle\langle\varphi_k\rvert_B\sum_i\lambda_i\lvert\varphi_i\rangle_A\lvert\varphi_i\rangle_B=\sum_{i,j,k}\lambda_i\lvert\psi_j\rangle_A\langle\varphi_j\vert\varphi_i\rangle_A\lvert\psi_k\rangle_B\langle\varphi_k\vert\varphi_i\rangle_B\\
+        =&\sum_{i,j,k}\delta_{ij}\delta_{ik}\lambda_i\lvert\psi_j\rangle_A\lvert\psi_k\rangle_B=\sum_i\lambda_i\lvert\psi_i\rangle_A\lvert\psi_i\rangle_B.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
