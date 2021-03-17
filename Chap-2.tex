@@ -2718,7 +2718,32 @@
     where $\lambda_i$ are real numbers, and $\lvert i_A\rangle$, $\lvert i_B\rangle$, $\lvert i_C\rangle$ are orthonormal bases of the respective systems.
 \end{exe}
 \begin{sol}
-    
+    Suppose the dimension of the vector spaces of the three component systems are all $d$. Taking the normalization condition and the common phase factor taken into consideration, $2d^3-2$ real parameters are needed to determine the state of the composite system
+    \begin{align}
+        \lvert\psi\rangle=\sum_{j,k,l=1}^dA_{jkl}\lvert j\rangle\lvert k\rangle\lvert l\rangle,
+    \end{align}
+    where $\lvert j\rangle$, $\lvert k\rangle$ and $\lvert l\rangle$ are any fixed orthonormal bases for systems $A$, $B$ and $C$, respectively.
+    To rewrite the state into the form
+    \begin{align}
+        \lvert\psi\rangle=\sum_{i=1}^d\lvert i_A\rangle\lvert i_B\rangle\lvert i_C\rangle,
+    \end{align}
+    where $\lambda_i$ are real numbers, and $\lvert i_A\rangle$, $\lvert i_B\rangle$, $\lvert i_C\rangle$ are orthonormal bases of the respective systems, we need take unitary transforms,
+    \begin{align}
+        \lvert i_A\rangle=&\sum_{j=1}^dU_{ij}\lvert j\rangle,\\
+        \lvert i_B\rangle=&\sum_{k=1}^dV_{ik}\lvert k\rangle,\\
+        \lvert i_C\rangle=&\sum_{l=1}^dW_{il}\lvert l\rangle.
+    \end{align}
+    Each $d\times d$ unitary matrix has $d(d-1)$ real parameters. Hence, we only have $3d(d-1)+2d-2=3d^2-d-2$ real parameters in the rewriting process, which are not enough to solve the problem in general.
+
+    Therefore, there must be quantum state $\lvert\psi\rangle$ of such systems which can not be written in the form
+    \begin{align}
+        \lvert\psi\rangle=\sum_i\lambda_i\lvert i_A\rangle\lvert i_B\rangle\lvert i_C\rangle.
+    \end{align}
+
+    One of the examples is a quantum system consists of three qubits, $A$, $B$, and $C$, whose state is
+    \begin{align}
+        \lvert\psi\rangle=\frac{\lvert 001\rangle+\lvert 010\rangle+\lvert 100\rangle}{\sqrt{3}}.
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
