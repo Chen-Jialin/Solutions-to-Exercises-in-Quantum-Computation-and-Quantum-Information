@@ -2880,18 +2880,18 @@
 \begin{pf}
     Suppose the two pure states are respectively
     \begin{align}
-        \lvert\psi\rangle=&\sum_i\lambda_i\lvert\psi_i\rangle_A\lvert\psi_i\rangle_B,\\
-        \lvert\varphi\rangle=&\sum_i\lambda_i\lvert\varphi_i\rangle_A\lvert\varphi_i\rangle_B.
+        \lvert\psi\rangle=&\sum_i\lambda_i\lvert\psi_{A,i}\rangle\lvert\psi_{B,i}\rangle,\\
+        \lvert\varphi\rangle=&\sum_i\lambda_i\lvert\varphi_{A,i}\rangle\lvert\varphi_{B,i}\rangle.
     \end{align}
     Define the two unitary matrices as
     \begin{align}
-        U=&\sum_i\lvert\psi_i\rangle\langle\varphi_i\rvert_A,\\
-        V=&\sum_i\lvert\psi_i\rangle\langle\varphi_i\rvert_B.
+        U=&\sum_i\lvert\psi_{A,i}\rangle\langle\varphi_{A,i}\rvert,\\
+        V=&\sum_i\lvert\psi_{A,i}\rangle\langle\varphi_{B,i}\rvert.
     \end{align}
     Then
     \begin{align}
-        \notag(U\otimes V)\lvert\varphi\rangle=&\sum_j\lvert\psi_j\rangle\langle\varphi_j\rvert_A\sum_k\lvert\psi_k\rangle\langle\varphi_k\rvert_B\sum_i\lambda_i\lvert\varphi_i\rangle_A\lvert\varphi_i\rangle_B=\sum_{i,j,k}\lambda_i\lvert\psi_j\rangle_A\langle\varphi_j\vert\varphi_i\rangle_A\lvert\psi_k\rangle_B\langle\varphi_k\vert\varphi_i\rangle_B\\
-        =&\sum_{i,j,k}\delta_{ij}\delta_{ik}\lambda_i\lvert\psi_j\rangle_A\lvert\psi_k\rangle_B=\sum_i\lambda_i\lvert\psi_i\rangle_A\lvert\psi_i\rangle_B.
+        \notag(U\otimes V)\lvert\varphi\rangle=&\sum_j\lvert\psi_{A,j}\rangle\langle\varphi_{A,j}\rvert\sum_k\lvert\psi_{B,k}\rangle\langle\varphi_{B,k}\rvert\sum_i\lambda_i\lvert\varphi_{A,i}\rangle\lvert\varphi_{B,i}\rangle=\sum_{i,j,k}\lambda_i\lvert\psi_{A,j}\rangle\langle\varphi_{A,j}\vert\varphi_{A,i}\rangle\lvert\psi_{B,k}\rangle\langle\varphi_{A,k}\vert\varphi_{B,i}\rangle\\
+        =&\sum_{i,j,k}\delta_{ij}\delta_{ik}\lambda_i\lvert\psi_{A,j}\rangle\lvert\psi_{B,k}\rangle=\sum_i\lambda_i\lvert\psi_{A,i}\rangle\lvert\psi_{B,i}\rangle=\lvert\psi\rangle.
     \end{align}
 \end{pf}
 
