@@ -2899,7 +2899,35 @@
     Let $\lvert AR_1\rangle$ and $\lvert AR_2\rangle$ be two purifications of a state $\rho^A$ to a composite system $AR$. Prove that there exists a unitary transformation $U_R$ acting on system $R$ such that $\lvert AR_1\rangle=(I_A\otimes U_R)\lvert AR_2\rangle$.
 \end{exe}
 \begin{pf}
-    
+    Let the Schmidt decomposition of $\lvert AR_1\rangle$ and $\lvert AR_2\rangle$ be respectively
+    \begin{align}
+        \lvert AR_1\rangle=&\sum_i\sqrt{p_i}\lvert\psi_i^A\rangle\lvert\psi_i^R\rangle,\\
+        \lvert AR_2\rangle=&\sum_i\sqrt{q_i}\lvert\varphi_i^A\rangle\lvert\varphi_i^R\rangle.
+    \end{align}
+    Since $\lvert AR_1\rangle$ and $\lvert AR_2\rangle$ are two purifications of state $\rho^A$,
+    \begin{gather}
+        \rho^A=\tr_R(\lvert AR_1\rangle\langle AR_1\rvert)=\tr_R(\lvert AR_2\rangle\langle AR_2\rvert),\\
+        \Longrightarrow\sum_ip_i\lvert\psi_i^A\rangle\langle\psi_i^A\rvert=\sum_iq_i\lvert\varphi_i^A\rangle\langle\varphi_i^A\rvert.
+    \end{gather}
+    Since both $\lvert\psi_i^A\rangle$ and $\lvert\varphi_i^A\rangle$ are orthogonal bases of system $A$ and eigenvectors of $\rho^A$, without loss of generality, we can set
+    \begin{gather}
+        \sqrt{p_i}=\sqrt{q_i}\equiv\lambda_i,\\
+        \lvert\psi_i^A\rangle=\lvert\varphi_i^A\rangle\equiv\lvert i^A\rangle.
+    \end{gather}
+    In this way,
+    \begin{align}
+        \lvert AR_1\rangle=&\sum_i\lambda_i\lvert i^A\rangle\lvert\psi_i^R\rangle,\\
+        \lvert AR_2\rangle=&\sum_i\lambda_i\lvert i^A\rangle\lvert\varphi_i^R\rangle
+    \end{align}
+    Define the unitary transformation as
+    \begin{align}
+        U_R=\sum_i\lvert\psi_i^R\rangle\langle\varphi_i^R\rvert.
+    \end{align}
+    Then
+    \begin{align}
+        \notag(I_A\otimes U_R)\lvert AR_2\rangle=&\left(I_A\otimes\sum_j\lvert\psi_i^R\rangle\langle\varphi_i^R\rvert\right)\sum_i\lambda_i\lvert i^A\rangle\lvert\varphi_i^R\rangle=\sum_{i,j}\lambda_i\lvert i^A\rangle\lvert\psi_j^R\rangle\langle\varphi_j^R\vert\varphi_i^R\rangle=\sum_{i,j}\delta_{ij}\lambda_i\lvert i^A\rangle\lvert\psi_i^R\rangle=\sum_i\lambda_i\lvert i^A\rangle\lvert\psi_i^R\rangle\\
+        =&\lvert AR_2\rangle.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
