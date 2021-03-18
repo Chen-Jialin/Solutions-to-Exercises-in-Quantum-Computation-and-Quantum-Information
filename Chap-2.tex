@@ -2939,7 +2939,47 @@
     \end{itemize}
 \end{exe}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(1)] Since
+        \begin{align}
+            \tr_R\left[\left(\sum_i\sqrt{p_i}\lvert\psi_i\rangle\lvert i\rangle\right)\left(\sum_j\sqrt{p_j^*}\langle\psi_j\rvert\langle j\rvert\right)\right]=\sum_ip_i\lvert\psi_i\rangle\langle\psi_i\rvert=\rho,
+        \end{align}
+        $\sum_i\sqrt{p_i}\lvert\psi_i\rangle\lvert i\rangle$ is a purification of $\rho$.
+        \item[(2)] The probability of obtaining $i$ is
+        \begin{align}
+            \notag p(i)=&\tr\left[(I^A\otimes M_i^R)^\dagger(I_A\otimes M_i^R)\left(\sum_j\sqrt{p_j}\lvert\psi_j\rangle\lvert j\rangle\right)\left(\sum_k\sqrt{p_k^*}\langle\psi_k\rvert\langle k\rvert\right)\right]\\
+            \notag=&\tr\left[\sum_{j,k}\sqrt{p_jp_k^*}\lvert\psi_j\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle i\vert i\rangle\langle i\vert j\rangle\langle k\rvert\right]=\tr\left[\sum_{j,k}\delta_{ij}\sqrt{p_jp_k^*}\lvert\psi_j\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle k\rvert\right]\\
+            =&\tr\left[\sum_k\sqrt{p_ip_k^*}\lvert\psi_i\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle k\rvert\right]=\abs{p_i}.
+        \end{align}
+        The state of the joint system after measurement is
+        \begin{align}
+            \notag\frac{(I^A\otimes M_i^R)^{\dagger}\left(\sum_j\sqrt{p_j}\lvert\psi_j\rangle\lvert j\rangle\right)\left(\sum_k\sqrt{p_k^*}\langle\psi_k\rvert\langle k\rvert\right)(I_A\otimes M_i^R)}{p(i)}=&\frac{\sum_{j,k}\sqrt{p_jp_k^*}\lvert\psi_j\rangle\langle\psi_k\rvert\lvert i\rangle\langle i\vert j\rangle\langle k\vert i\rangle\langle i\rvert}{\abs{p_i}}\\
+            \notag=&\frac{\sum_{j,k}\delta_{ij}\delta_{ik}\sqrt{p_jp_k^*}\lvert\psi_j\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle i\rvert}{\abs{p_i}}\\
+            =&\frac{\abs{p_i}\lvert\psi_i\rangle\langle\psi_i\rvert\otimes\lvert i\rangle\langle i\rvert}{\abs{p_i}}=\lvert\psi_j\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle i\rvert.
+        \end{align}
+        The corresponding state of system $A$ is
+        \begin{align}
+            \tr_R(\lvert\psi_j\rangle\langle\psi_k\rvert\otimes\lvert i\rangle\langle i\rvert)=\lvert\psi_i\rangle\langle\psi_i\rvert,
+        \end{align}
+        i.e. $\lvert\psi_i\rangle$.
+        \item[(3)] Suppose the Schmidt decomposition of the purification $\lvert AR\rangle$ is
+        \begin{align}
+            \lvert AR\rangle=\sum_i\sqrt{q_i}\lvert\varphi_i^A\rangle\lvert\varphi_i^R\rangle.
+        \end{align}
+        According to Theorem 2.6, there exists a unitary matrix $u_{ij}$ such that
+        \begin{align}
+            \sqrt{q_i}\lvert\varphi_i^A\rangle=\sum_{j}u_{ij}\sqrt{p_j}\lvert\psi_i\rangle.
+        \end{align}
+        In this way,
+        \begin{align}
+            \lvert AR\rangle=\sum_i\left(\sum_{j}u_{ij}\sqrt{p_j}\lvert\psi_i\rangle\right)\lvert\varphi_i^R\rangle=\sum_j\sqrt{p_j}\lvert\psi_j\rangle\left(\sum_iu_{ij}\lvert\varphi_i^R\rangle\right)=\sum_j\sqrt{p_j}\lvert\psi_j\rangle\lvert j\rangle=\sum_i\sqrt{p_i}\lvert\psi_i\rangle\lvert i\rangle,
+        \end{align}
+        where
+        \begin{align}
+            \lvert i\rangle=\sum_ju_{ji}\lvert\varphi_j^R\rangle.
+        \end{align}
+        Therefore, there exists an orthonormal basis $\lvert i\rangle$ in which $R$ can be measured such that the corresponding post-measurement state for system $A$ is $\lvert\psi_i\rangle$ with probability $p_i$.
+    \end{itemize}
 \end{sol}
 
 \ifx\allfiles\undefined
