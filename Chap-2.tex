@@ -3107,7 +3107,70 @@
     so the violation of the Bell inequality found in Equation (2.230) is the maximum possible in quantum mechanics.
 \end{prob}
 \begin{pf}
-    
+    \begin{gather}
+        Q=\vec{q}\cdot\vec{\sigma}=q_1\sigma_1+q_2\sigma_2+q_3\sigma_3=q_1\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]+q_2\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]+q_3\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            q_3&q_1-iq_2\\
+            q_1+iq_2&-q_3
+        \end{matrix}\right],\\
+        \Longrightarrow Q^2=\left[\begin{matrix}
+            q_3&q_1-iq_2\\
+            q_1+iq_2&-q_3
+        \end{matrix}\right]\left[\begin{matrix}
+            q_3&q_1-iq_2\\
+            q_1+iq_2&-q_3
+        \end{matrix}\right]=\left[\begin{matrix}
+            q_1^2+q_2^2+q_3^2&0\\
+            0&q_1^2+q_2^2+q_3^2
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I.
+    \end{gather}
+    Similarly,
+    \begin{align}
+        R^2=S^2=T^2=I.
+    \end{align}
+    Hence
+    \begin{align}
+        \notag(Q\otimes S+R\otimes S+R\otimes T-Q\otimes T)^2=&QQ\otimes SS+QR\otimes SS+QR\otimes ST-QQ\otimes ST\\
+        \notag&+RQ\otimes SS+RR\otimes SS+RR\otimes ST-RQ\otimes ST\\
+        \notag&+RQ\otimes TS+RR\otimes TS+RR\otimes TT-RQ\otimes TT\\
+        \notag&-QQ\otimes TS-QR\otimes TS-QR\otimes TT+QQ\otimes TT\\
+        \notag=&I\otimes I+QR\otimes I+QR\otimes ST-I\otimes ST\\
+        \notag&+RQ\otimes I+I\otimes I+I\otimes ST-RQ\otimes ST\\
+        \notag&+RQ\otimes TS+I\otimes TS+I\otimes I-RQ\otimes I\\
+        \notag&-I\otimes TS-QR\otimes TS-QR\otimes I+I\otimes I\\
+        \notag=&4I+QR\otimes ST-RQ\otimes ST+RQ\otimes TS-QR\otimes TS\\
+        =&4I+(QR-RQ)\otimes(ST-TS)=4I+[Q,R]\otimes[S,T].
+    \end{align}
+    The average of the above equation is
+    \begin{align}
+        \langle(Q\otimes S+R\otimes S+R\otimes T-Q\otimes T)^2\rangle=\langle 4I+[Q,R]\otimes[S,T]\rangle=4\langle I\rangle+\langle[Q,S]\rangle\otimes\langle[S,T]\rangle=4+\langle[Q,R]\rangle\otimes\langle[S,T]\rangle,
+    \end{align}
+    where
+    \begin{align}
+        \langle[Q,R]\rangle=\langle\psi\rvert[Q,R]\lvert\psi\rangle=\langle\psi\rvert QR-RQ\lvert\psi\rangle=\langle\psi\rvert QR\lvert\rangle-\langle\psi\rvert RQ\lvert\psi\rangle=2i\re[\langle\psi\rvert QR\lvert\psi\rangle]=2i\re[\langle QR\rangle].
+    \end{align}
+    Note that both $Q$ and $R$ are unitarity, so $QR$ is unitary. Since unitary operators preserve the inner products and thus lengths of vectors, $QR\lvert\psi\rangle$ is still a normalized vector and $\abs{\langle[Q,R]\rangle}\leq 1\Longrightarrow-1\leq\re[\langle QR\rangle]\leq 1$.
+    Similarly,
+    \begin{align}
+        \langle[S,T]\rangle=2i\re[\langle ST\rangle].
+    \end{align}
+    and $-1\leq\re[\langle ST\rangle]\leq 1$.
+    Therefore,
+    \begin{align}
+        \notag\langle Q\otimes S\rangle+\langle R\otimes S\rangle+\langle R\otimes T\rangle-\langle Q\otimes T\rangle\leq&\sqrt{\langle(Q\otimes S+R\otimes S+R\otimes T-Q\otimes T)^2\rangle}=\sqrt{4+\langle[Q,R]\rangle\otimes\langle[S,T]\rangle}\\
+        =&\sqrt{4-4\re[\langle QR\rangle]\re[\langle ST\rangle]}\leq 2\sqrt{2}.
+    \end{align}
 \end{pf}
 
 \ifx\allfiles\undefined
