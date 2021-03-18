@@ -3037,7 +3037,62 @@
     \end{itemize}
 \end{exe}
 \begin{pf}
-    
+    \begin{itemize}
+        \item[(1)] Suppose the Schmidt decomposition of $\lvert\psi\rangle$ is
+        \begin{align}
+            \lvert\psi\rangle=\sum_{i=1}^{\text{Sch}(\psi)}\lambda_i\lvert\psi_i^A\rangle\lvert\psi_i^B\rangle.
+        \end{align}
+        The reduced density matrix is
+        \begin{align}
+            \notag\rho_A=&\tr_B(\lvert\psi\rangle\langle\psi\rvert)=\tr_B\left[\left(\sum_{i=1}^{\text{Sch}(\psi)}\lambda_i\lvert\psi_i^A\rangle\lvert\psi_i^B\rangle\right)\left(\sum_{j=1}^{\text{Sch}(\psi)}\lambda_j^*\langle\psi_j^A\rvert\langle\psi_j^B\rvert\right)\right]\\
+            =&\tr_B\left(\sum_{i,j=1}^{\text{Sch}(\psi)}\lambda_i\lambda_j^*\lvert\psi_i^A\rangle\langle\psi_j^A\rvert\otimes\lvert\psi_i^B\rangle\langle\psi_j^B\rvert\right)=\sum_{i=1}^{\text{Sch}(\psi)}\abs{\lambda_i}^2\lvert\psi_i^A\rangle\langle\psi_i^A\rvert,
+        \end{align}
+        whose rank is equal to the Schmidt number $\text{Sch}(\psi)$.
+        \item[(2)] Suppose the number of terms in the decomposition, $\lvert\psi\rangle=\sum_j\lvert\alpha_j\rangle\lvert\beta_j\rangle$, $J$ is less than $\text{Sch}(\psi)$.
+        The reduced density matrix is
+        \begin{align}
+            \notag\rho_A=&\tr_B(\lvert\psi\rangle\langle\psi\rvert)=\tr_B\left[\left(\sum_{j=1}^J\lvert\alpha_j\rangle\lvert\beta_j\rangle\right)\left(\sum_{k=1}^J\langle\alpha_k\rvert\langle\beta_k\rvert\right)\right]=\tr_B\left(\sum_{j,k=1}^J\lvert\alpha_j\rangle\lvert\beta_j\rangle\langle\alpha_k\rvert\langle\beta_k\rvert\right)\\
+            =&\sum_{i=1}^{\text{Sch}(\psi)}\sum_{j,k=1}^J\lvert\alpha_j\rangle\langle\alpha_k\rvert\langle\psi_i^B\vert\beta_j\rangle\langle\beta_k\vert\psi_i^B\rangle=\sum_{j,k=1}^J\left(\sum_{i=1}^{\text{Sch}(\psi)}\langle\psi_i^B\vert\beta_j\rangle\langle\beta_k\vert\psi_i^B\rangle\right)\lvert\alpha_j\rangle\langle\alpha_k\rvert
+        \end{align}
+        Even if $\lvert\alpha_j\rangle$ are all independent, the rank of the reduced density matrix $\rho^A$ is only $J$, which is less than $\text{Sch}(\psi)$, and thus less than the rank of $\rho^A$.
+        Therefore, the supposition is incorrect and the number of terms in such a decomposition is greater than or equal to the Schmidt number of $\lvert\psi\rangle$, $\text{Sch}(\psi)$.
+        \item[(3)] Suppose the Schmidt decompositions of $\lvert\varphi\rangle$ and $\lvert\gamma\rangle$ are respectively
+        \begin{align}
+            \lvert\varphi\rangle=&\sum_{i=1}^{\text{Sch}(\varphi)}\lvert\varphi_i^A\rangle\lvert\varphi_i^B\rangle,\\
+            \lvert\gamma\rangle=&\sum_{i=1}^{\text{Sch}(\gamma)}\lvert\gamma_i^A\rangle\lvert\gamma_i^B\rangle.
+        \end{align}
+        Without loss of generality, we assume $\text{Sch}(\varphi)\geq\text{Sch}(\gamma)$ and thus the original problem is converted to proving that $\text{Sch}(\varphi)+\text{Sch}(\gamma)\geq\text{Sch}(\psi)$. From
+        \begin{align}
+            \lvert\psi\rangle=\alpha\lvert\varphi\rangle+\beta\lvert\gamma\rangle,
+        \end{align}
+        we have
+        \begin{align}
+            \lvert\varphi\rangle=\frac{\beta}{\alpha}\lvert\gamma\rangle-\frac{1}{\alpha}\lvert\psi\rangle=\frac{\beta}{\alpha}\sum_{i=1}^{\text{Sch}(\gamma)}\lvert\gamma_i^A\rangle\lvert\gamma_i^B\rangle-\frac{1}{\alpha}\sum_{i=1}^{\text{Sch}(\psi)}\lvert\psi_i^A\rangle\lvert\psi_i^B\rangle=\sum_{i=1}^{\text{Sch}(\gamma)+\text{Sch}(\psi)}\delta_i\lvert a_i\rangle\lvert b_i\rangle,
+        \end{align}
+        where
+        \begin{align}
+            \delta_i=&\left\{\begin{array}{ll}
+                \frac{\beta}{\alpha},&1\leq i\leq\text{Sch}(\gamma);\\
+                -\frac{1}{\alpha},&\text{Sch}(\gamma)<i\leq\text{Sch}(\gamma)+\text{Sch}(\psi),
+            \end{array}\right.\\
+            a_i=&\left\{\begin{array}{ll}
+                \gamma_i^A,&1\leq i\leq\text{Sch}(\gamma);\\
+                \psi_i^A,&\text{Sch}(\gamma)<i\leq\text{Sch}(\gamma)+\text{Sch}(\psi),
+            \end{array}\right.\\
+            b_i=&\left\{\begin{array}{ll}
+                \gamma_i^B,&1\leq i\leq\text{Sch}(\gamma);\\
+                \psi_i^B,&\text{Sch}(\gamma)<i\leq\text{Sch}(\gamma)+\text{Sch}(\psi).
+            \end{array}\right.
+        \end{align}
+        Using the conclusion obtained in (2), we have
+        \begin{align}
+            \text{Sch}(\gamma)+\text{Sch}(\psi)\geq\text{Sch}(\varphi).
+        \end{align}
+        Therefore,
+        \begin{align}
+            \text{Sch}(\psi)\geq\abs{\text{Sch}(\varphi)-\text{Sch}(\gamma)}.
+        \end{align}
+    \end{itemize}
 \end{pf}
 
 \ifx\allfiles\undefined

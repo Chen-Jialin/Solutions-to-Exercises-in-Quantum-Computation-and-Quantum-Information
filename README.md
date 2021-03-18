@@ -11,4 +11,6 @@ Some of the solutions refer to the following materials:
 
 [Pseudo-Solutions: Quantum Computation and Quantum Information by Nielsen and Chuang](https://serab.net/docs/qcqi/)
 
+[Problem 2.2 in Nielsen & Chuang - Properties of the Schmidt number](https://quantumcomputing.stackexchange.com/questions/9571/problem-2-2-in-nielsen-chuang-properties-of-the-schmidt-number)
+
 I really appreciate the inspiration provided by these materials.
