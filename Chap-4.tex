@@ -118,7 +118,14 @@
     Show that, up to a global phase, the $\pi/8$ gate satisfies $T=R_z(\pi/4)$.
 \end{exe}
 \begin{pf}
-    
+    Using the conclusion proved in the previous exercise,
+    \begin{align}
+        R_z(\pi/4)=\left[\begin{matrix}
+            e^{-i\pi/8}&0\\
+            0&e^{i\pi/8}
+        \end{matrix}\right]=\exp(-i\pi/8)T,
+    \end{align}
+    so the $\pi/8$ gate satisfies $T=R_z(\pi/4)$ up to a global phase.
 \end{pf}
 
 \ifx\allfiles\undefined
