@@ -34,12 +34,84 @@
 \begin{exe}
     Let $x$ be a real number and $A$ a matrix such that $A^2=I$. Show that
     \begin{align}
+        \label{E4.2}
         \exp(iAx)=\cos(x)I+i\sin(x)A.
     \end{align}
-    Use this result to verify Equation (4.4) through (4.6).
+    Use this result to verify Equation (4.4) through (4.6)\footnote{Equation 4.4: $R_x(\theta)\equiv e^{-i\theta X/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\left[\begin{matrix}
+        \cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\
+        -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+    \end{matrix}\right]$;\\
+    Equation 4.5: $R_y(\theta)\equiv e^{-i\theta Y/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y=\left[\begin{matrix}
+        \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
+        \sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+    \end{matrix}\right]$;\\
+    Equation 4.6: $R_z(\theta)\equiv e^{-i\theta Z/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Z=\left[\begin{matrix}
+        e^{-i\theta/2}&0\\
+        0&e^{i\theta/2}
+    \end{matrix}\right]$.}.
 \end{exe}
 \begin{pf}
-    
+    Similar to Exercise 2.35 and Problem 2.1, the left side of Equation \eqref{E4.2} is
+    \begin{align}
+        \exp(iAx)=\sum_{n=0}^{\infty}\frac{1}{n!}(iAx)^n=\sum_{n=1}^{\infty}\frac{(-1)^n}{(2n)!}(Ax)^{2n}+\sum_{n=0}^{\infty}\frac{i(-1)^n}{(2n+1)!}(Ax)^{2n+1}.
+    \end{align}
+    Note that
+    \begin{align}
+        A^2=I,
+    \end{align}
+    so
+    \begin{align}
+        \exp(iAx)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}+\sum_{n=0}^{\infty}\frac{i(-1)^n}{(2n+1)!}Ax^{2n+1}=\cos(x)I+i\sin(x)A,
+    \end{align}
+    which equals the right side of Equation \eqref{E4.2}.
+    Therefore, Equation \eqref{E4.2} holds.
+
+    Using the above result,
+    \begin{align}
+        \notag R_x(\theta)=&e^{-i\theta X/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)X=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\cos\frac{\theta}{2}\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]\\
+        =&\left[\begin{matrix}
+            \cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\
+            -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+        \end{matrix}\right],
+    \end{align}
+    which verifies Equation (4.4),
+    \begin{align}
+        \notag R_Y(\theta)=&e^{-i\theta Y/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Y=\cos\frac{\theta}{2}-i\sin\frac{\theta}{2}Y=\cos\frac{\theta}{2}\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]\\
+        =&\left[\begin{matrix}
+            \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
+            \sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+        \end{matrix}\right],
+    \end{align}
+    which verifies Equation (4.5), and
+    \begin{align}
+        \notag R_Z(\theta)=&e^{-i\theta Z/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Z=\cos\frac{\theta}{2}-i\sin\frac{\theta}{2}Z=\cos\frac{\theta}{2}\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]\\
+        =&\left[\begin{matrix}
+            \cos\frac{\theta}{2}-i\sin\frac{\theta}{2}&0\\
+            0&\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}
+        \end{matrix}\right]=\left[\begin{matrix}
+            e^{-i\theta/2}&0\\
+            0&e^{i\theta/2}
+        \end{matrix}\right],
+    \end{align}
+    which verifies Equation (4.6).
 \end{pf}
 
 \ifx\allfiles\undefined
