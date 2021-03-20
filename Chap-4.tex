@@ -163,10 +163,46 @@
 \end{pf}
 
 \begin{exe}
-    Prove that $(\hat{n}\cdot\vec{\sigma})^2=I$, and use this to verify Equation (4.8)\footnote{$R_{\hat{n}}(\theta)\equiv\exp(-i\theta\hat{n}\cdot\vec{\sigma}/2)=\cos\left(\frac{\theta}{2}\right)I-i\sin\left(\frac{\pi}{2}\right)(n_xX+n_yY+n_zZ)$.}.
+    Prove that $(\hat{n}\cdot\vec{\sigma})^2=I$, and use this to verify Equation (4.8)\footnote{$R_{\hat{n}}(\theta)\equiv\exp(-i\theta\hat{n}\cdot\vec{\sigma}/2)=\cos\left(\frac{\theta}{2}\right)I-i\sin\left(\frac{\theta}{2}\right)(n_xX+n_yY+n_zZ)$.}.
 \end{exe}
 \begin{pf}
-    
+    Similar to Exercise 2.35,
+    \begin{gather}
+        \hat{n}\cdot\vec{\sigma}=n_x\sigma_1+n_y\sigma_2+n_z\sigma_3=n_x\left[\begin{matrix}
+            0&1\\
+            1&0
+        \end{matrix}\right]+n_y\left[\begin{matrix}
+            0&-i\\
+            i&0
+        \end{matrix}\right]+n_z\left[\begin{matrix}
+            1&0\\
+            0&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            n_z&n_x-in_y\\
+            n_x+in_y&-n_z
+        \end{matrix}\right],\\
+        \Longrightarrow(\hat{n}\cdot\vec{\sigma})^2=\left[\begin{matrix}
+            n_z&n_x-in_y\\
+            n_x+in_y&-n_z
+        \end{matrix}\right]\left[\begin{matrix}
+            n_z&n_x-in_y\\
+            n_x+in_y&-n_z
+        \end{matrix}\right]=\left[\begin{matrix}
+            n_x^2+n_y^2+n_z^2&0\\
+            0&n_x^2+n_y^2+n_z^2
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I.
+    \end{gather}
+
+    Using the above result,
+    \begin{align}
+        \notag R_{\hat{n}}(\theta)=&\exp(-i\theta\hat{n}\cdot\vec{\sigma}/2)=\sum_{k=0}^{\infty}\frac{1}{k!}(-i\theta\hat{n}\cdot\vec{\sigma}/2)=\sum_{k=0}^{\infty}\frac{1}{(2k)!}(-i\theta\hat{n}\cdot\vec{\sigma}/2)^{2k}+\sum_{k=0}^{\infty}\frac{1}{(2k+1)!}(-i\theta\hat{n}\cdot\vec{\sigma}/2)^{2k+1}\\
+        \notag=&\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}\left(\frac{\theta}{2}\right)^{2k}+\sum_{k=0}^{\infty}\frac{-i(-1)^k}{(2k+1)!}\left(\frac{\theta}{2}\right)^{2k+1}(\hat{n}\cdot\vec{\sigma})=\cos\left(\frac{\theta}{2}\right)I-i\sin\left(\frac{\theta}{2}\right)(\hat{n}\cdot\vec{\sigma})\\
+        =&\cos\left(\frac{\theta}{2}\right)I-i\sin\left(\frac{\theta}{2}\right)(n_xX+n_yY+n_zZ),
+    \end{align}
+    which verifies Equation (4.8).
 \end{pf}
 
 \ifx\allfiles\undefined
