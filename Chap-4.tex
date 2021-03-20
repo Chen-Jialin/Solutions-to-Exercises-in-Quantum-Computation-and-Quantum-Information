@@ -132,7 +132,34 @@
     Express the Hadamard gate $H$ as a product of $R_x$ and $R_z$ rotations and $e^{i\varphi}$ for some $\varphi$.
 \end{exe}
 \begin{pf}
-    
+    Since
+    \begin{align}
+        \notag e^{i\pi/2}R_z\left(\frac{\pi}{2}\right)R_x\left(\frac{\pi}{2}\right)R_z\left(\frac{\pi}{2}\right)=&e^{i\pi/2}\left[\begin{matrix}
+            e^{-i\pi/4}&0\\
+            0&e^{i\pi/4}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\pi}{4}&-i\sin\frac{\pi}{4}\\
+            -i\sin\frac{\pi}{4}&\cos\frac{\pi}{4}
+        \end{matrix}\right]\left[\begin{matrix}
+            e^{-i\pi/4}&0\\
+            0&e^{i\pi/4}
+        \end{matrix}\right]\\
+        \notag=&e^{i\pi/2}\left[\begin{matrix}
+            e^{-i\pi/4}\cos\frac{\pi}{4}&-ie^{-i\pi/4}\sin\frac{\pi}{4}\\
+            -ie^{i\pi/4}\sin\frac{\pi}{4}&e^{i\pi/4}\cos\frac{\pi}{4}
+        \end{matrix}\right]\left[\begin{matrix}
+            e^{-i\pi/4}&0\\
+            0&e^{i\pi/4}
+        \end{matrix}\right]\\
+        \notag=&e^{i\pi/2}\left[\begin{matrix}
+            e^{-i\pi/2}\cos\frac{\pi}{4}&-i\sin\frac{\pi}{4}\\
+            -i\sin\frac{\pi}{4}&e^{i\pi/2}\cos\frac{\pi}{4}
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=H,
+    \end{align}
+    the Hadamard gate $H$ can be expressed as a product of $R_x$ and $R_z$ rotations and $e^{i\varphi}$.
 \end{pf}
 
 \ifx\allfiles\undefined
