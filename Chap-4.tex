@@ -285,7 +285,156 @@
     \end{itemize}
 \end{exe}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[1.] Suppose an arbitrary qubit unitary operator is
+        \begin{align}
+            U=\left[\begin{matrix}
+                a&b\\
+                c&d
+            \end{matrix}\right].
+        \end{align}
+        where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
+        \begin{gather}
+            UU^{\dagger}=\left[\begin{matrix}
+                a&b\\
+                c&d
+            \end{matrix}\right]\left[\begin{matrix}
+                a^*&c^*\\
+                b^*&d^*
+            \end{matrix}\right]=\left[\begin{matrix}
+                aa^*+bb^*&ac^*+bd^*\\
+                a^*c+b^*d&cc^*+dd^*
+            \end{matrix}\right]=I=\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right],\\
+            \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0,\\
+            \Longrightarrow c=\mp b^*,\quad d=\pm a^*,\quad\abs{a}^2+\abs{b}^2=1.
+        \end{gather}
+        Hence $U$ can be written as
+        \begin{align}
+            U=\left[\begin{matrix}
+                a&b\\
+                \mp b^*&\pm a^*
+            \end{matrix}\right]=\left\{\begin{array}{ll}
+                \left[\begin{matrix}
+                    a&b\\
+                    -b^*&a^*
+                \end{matrix}\right],&\text{for }\det(U)=1;\\
+                \left[\begin{matrix}
+                    a&b\\
+                    b^*&-a^*
+                \end{matrix}\right],&\text{for }\det(U)=-1,\\
+            \end{array}\right.
+        \end{align}
+        where $\abs{a}^2+\abs{b}^2=1$.
+        Without loss of generality, we can find real number $\alpha$, and $\theta$, and a real three-dimensional unit vector $\hat{n}=n_x\hat{x}+n_y\hat{y}+z\hat{z}$ so that
+        \begin{align}
+            a=&e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right),\\
+            b=&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2},\\
+            e^{i\alpha}=&\left\{\begin{array}{ll}
+                1,&\text{for }\det(U)=1;\\
+                i,&\text{for }\det(U)=-1,\\
+            \end{array}\right.
+        \end{align}
+        which satisfies
+        \begin{align}
+            \abs{a}^2+\abs{b}^2=\cos^2\frac{\theta}{2}+n_z^2\sin^2\frac{\theta}{2}+n_x^2\sin^2\frac{\theta}{2}+n_y^2\sin^2\frac{\theta}{2}=\cos^2\frac{\theta}{2}+\sin^2\frac{\theta}{2}=1,
+        \end{align}
+        for $n_x^2+n_y^2+n_z^2=1$.
+        In this way, the single qubit unitary operator can be written in the form
+        \begin{align}
+            \notag U=&\left[\begin{matrix}
+                a&b\\
+                \mp b^*&\pm a^*
+            \end{matrix}\right]=\left[\begin{matrix}
+                e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
+                \pm e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&\pm e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
+            \end{matrix}\right]\\
+            \notag=&\left\{\begin{array}{ll}
+                \left[\begin{matrix}
+                    e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
+                    e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
+                \end{matrix}\right],&\text{for }\det(U)=1\\
+                \left[\begin{matrix}
+                    e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
+                    -e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&-e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
+                \end{matrix}\right],&\text{for }\det(U)=-1
+            \end{array}\right.\\
+            \notag=&\left\{\begin{array}{ll}
+                \left[\begin{matrix}
+                    \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
+                    (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
+                \end{matrix}\right],&\text{for }\det(U)=1\\
+                \left[\begin{matrix}
+                    i\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-i(in_x+n_y)\sin\frac{\theta}{2}\\
+                    i(-in_x+n_y)\sin\frac{\theta}{2}&i\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
+                \end{matrix}\right],&\text{for }\det(U)=-1
+            \end{array}\right.\\
+            \notag=&\left\{\begin{array}{ll}
+                \left[\begin{matrix}
+                    \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
+                    (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
+                \end{matrix}\right],&\text{for }\det(U)=1\\
+                i\left[\begin{matrix}
+                    \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
+                    (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
+                \end{matrix}\right],&\text{for }\det(U)=-1
+            \end{array}\right.\\
+            \notag=&e^{i\alpha}\left[\begin{matrix}
+                \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
+                (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
+            \end{matrix}\right]\\
+            \notag=&e^{i\alpha}\left\{\cos\theta\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right]-i\sin\theta\left(n_x\left[\begin{matrix}
+                0&1\\
+                1&0
+            \end{matrix}\right]+n_y\left[\begin{matrix}
+                0&-i\\
+                i&0
+            \end{matrix}\right]+n_z\left[\begin{matrix}
+                1&0\\
+                0&-1
+            \end{matrix}\right]\right)\right\}\\
+            \notag=&e^{i\alpha}\left[\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}\left(n_xX+n_yY+n_zZ\right)\right]\\
+            =&\exp(i\alpha)R_{\hat{n}}(\theta).
+        \end{align}
+        \item[2.] The Hadamard gate is
+        \begin{align}
+            H=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+                1&1\\
+                1&-1
+            \end{matrix}\right],
+        \end{align}
+        whose determinant is
+        \begin{align}
+            \det(H)=\abs{\begin{matrix}
+                \frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
+                \frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{2}}
+            \end{matrix}}=-1,
+        \end{align}
+        so we choose
+        \begin{gather}
+            \begin{align}
+                a=&e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)=\frac{1}{\sqrt{2}},\\
+                b=&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}=\frac{1}{\sqrt{2}},\\
+                e^{i\alpha}=&i,
+            \end{align}\\
+            \Longrightarrow\alpha=\frac{\pi}{2},\quad\theta=\pi,\quad\hat{n}=n_x\hat{x}+n_y\hat{y}+n_z\hat{z}=\frac{1}{\sqrt{2}}\hat{x}+\frac{1}{\sqrt{2}}\hat{z}.
+        \end{gather}
+        \item[3.] For phase gate $S$,
+        \begin{gather}
+            \begin{align}
+                e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)=&1,\\
+                -e^{i\alpha}\left(in_x+n_y\right)\sin\frac{\theta}{2}=0,\\
+                e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}=0,\\
+                e^{i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)=i,
+            \end{align}\\
+            \Longrightarrow\alpha=\frac{\pi}{4},\quad\theta=\frac{\pi}{2},\quad\hat{n}=\hat{z}.
+        \end{gather}
+    \end{itemize}
 \end{sol}
 
 \ifx\allfiles\undefined
