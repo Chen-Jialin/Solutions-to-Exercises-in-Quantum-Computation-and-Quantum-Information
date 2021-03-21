@@ -7,10 +7,14 @@ Some of the solutions refer to the following materials:
 
 [Worked Problems in Physics](https://workedproblems.wordpress.com/)
 
-[goropikari/SolutionQCQINielsenChuang](github.com/goropikari/SolutionForQuantumComputationAndQuantumInformation)
+[goropikari/SolutionQCQINielsenChuang](https://github.com/goropikari/SolutionForQuantumComputationAndQuantumInformation)
+
+[NielsenChuang-QuantumComputingSolutions](https://rehaanahmad2013.github.io/NielsenChuang-QuantumComputingSolutions/)
 
 [Pseudo-Solutions: Quantum Computation and Quantum Information by Nielsen and Chuang](https://serab.net/docs/qcqi/)
 
 [Problem 2.2 in Nielsen & Chuang - Properties of the Schmidt number](https://quantumcomputing.stackexchange.com/questions/9571/problem-2-2-in-nielsen-chuang-properties-of-the-schmidt-number)
+
+[Rotations on the Bloch Sphere](http://www.vcpc.univie.ac.at/~ian/hotlist/qc/talks/bloch-sphere-rotations.pdf)
 
 I really appreciate the inspiration provided by these materials.

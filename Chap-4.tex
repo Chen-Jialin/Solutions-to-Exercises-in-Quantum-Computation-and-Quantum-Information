@@ -209,7 +209,47 @@
     One reason why the $R_{\hat{n}}(\theta)$ operators are referred to as rotation operators is the following fact, which you are to prove. Suppose a single qubit has a state represented by Bloch vector $\vec{\lambda}$. Then the effect of the rotation $R_{\hat{n}}(\theta)$ on the state is to rotate it by an angle $\theta$ about the $\hat{n}$ axis of the Bloch sphere. This fact explains the rather mysterious looking factor of two in the definition of the rotation matrices.
 \end{exe}
 \begin{pf}
-    
+    \footnote{\url{http://www.vcpc.univie.ac.at/~ian/hotlist/qc/talks/bloch-sphere-rotations.pdf}}Suppose $\hat{n}$ forms angle $\theta$ with the $z$ axis and the projection of $\hat{n}$ onto the $xy$ plane forms angle $\varphi$ with the $x$ axis, i.e.
+    \begin{align}
+        \hat{n}=n_x\hat{x}+n_y\hat{y}+n_z\hat{z}=\sin\theta\cos\varphi\hat{x}+\sin\theta\sin\varphi\hat{y}+\cos\theta\hat{z}.
+    \end{align}
+    Rotating the Bloch vector $\vec{\lambda}$ about $\hat{n}$ axis by angle $\alpha$ is equivalent to the following operation sequence:
+    \begin{itemize}
+        \item[1.] Rotating about $z$ axis by angle $-\varphi$ so that $\hat{n}$ is rotated onto $xz$ plane;
+        \item[2.] Rotating about $y$ axis by angle $-\theta$ so that $\hat{n}$ coincides with $z$ axis;
+        \item[3.] Rotating about $z$ axis by angle $\alpha$ so $\vec{\lambda}$ is rotated about $\hat{n}$ axis by angle $\alpha$;
+        \item[4.] Rotating about $y$ axis by angle $\theta$ to counteract operation step 2.;
+        \item[5.] Rotating about $z$ axis by angle $\theta$ to counteract operation step 1. so that $\hat{n}$ is rotated back to its original position,
+    \end{itemize}
+    i.e.,
+    \begin{align}
+        \notag&R_z(\varphi)R_y(\theta)R_z(\alpha)R_y(-\theta)R_z(-\varphi)\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y\right]\left[\cos\frac{\alpha}{2}I-i\sin\frac{\alpha}{2}Z\right]\left[\cos\frac{\theta}{2}I+i\sin\frac{\theta}{2}Y\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos\frac{\theta}{2}\cos\frac{\alpha}{2}I-i\cos\frac{\theta}{2}\sin\frac{\alpha}{2}Z-i\sin\frac{\theta}{2}\cos\frac{\alpha}{2}Y-\sin\frac{\theta}{2}\sin\frac{\alpha}{2}YZ\right]\left[\cos\frac{\theta}{2}I+i\sin\frac{\theta}{2}Y\right]\\
+        \notag&\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos\frac{\theta}{2}\cos\frac{\alpha}{2}I-i\cos\frac{\theta}{2}\sin\frac{\alpha}{2}Z-i\sin\frac{\theta}{2}\cos\frac{\alpha}{2}Y-i\sin\frac{\theta}{2}\sin\frac{\alpha}{2}X\right]\left[\cos\frac{\theta}{2}I+i\sin\frac{\theta}{2}Y\right]\\
+        \notag&\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos^2\frac{\theta}{2}\cos\frac{\alpha}{2}I-i\cos^2\frac{\theta}{2}\sin\frac{\alpha}{2}Z-i\sin\frac{\theta}{2}\cos\frac{\theta}{2}\cos\frac{\alpha}{2}Y-i\sin\frac{\theta}{2}\cos\frac{\theta}{2}\sin\frac{\alpha}{2}X\right.\\
+        &\left.+i\cos\frac{\theta}{2}\sin\frac{\theta}{2}\cos\frac{\alpha}{2}Y+\cos\frac{\theta}{2}\sin\frac{\theta}{2}\sin\frac{\alpha}{2}ZY+\sin^2\frac{\theta}{2}\cos\frac{\alpha}{2}Y^2+\sin^2\frac{\theta}{2}\sin\frac{\alpha}{2}XY\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos^2\frac{\theta}{2}\cos\frac{\alpha}{2}I-i\cos^2\frac{\theta}{2}\sin\frac{\alpha}{2}Z-i\sin\frac{\theta}{2}\cos\frac{\theta}{2}\cos\frac{\alpha}{2}Y-i\sin\frac{\theta}{2}\cos\frac{\theta}{2}\sin\frac{\alpha}{2}X\right.\\
+        \notag&\left.+i\cos\frac{\theta}{2}\sin\frac{\theta}{2}\cos\frac{\alpha}{2}Y-i\cos\frac{\theta}{2}\sin\frac{\theta}{2}\sin\frac{\alpha}{2}X+\sin^2\frac{\theta}{2}\cos\frac{\alpha}{2}I+i\sin^2\frac{\theta}{2}\sin\frac{\alpha}{2}Z\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}I-i\sin\frac{\varphi}{2}Z\right]\left[\cos\frac{\alpha}{2}I-i\cos\theta\sin\frac{\alpha}{2}Z-i\sin\theta\sin\frac{\alpha}{2}X\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}I-i\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}Z-i\cos\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X-i\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}Z-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}Z^2\right.\\
+        \notag&\left.-\sin\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}ZX\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}I-i\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}Z-i\cos\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X-i\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}Z-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}I-i\sin\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}Y\right]\\
+        \notag&\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\left[\left(\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}\right)I-i\left(\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}+\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}\right)Z-i\cos\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X\right.\\
+        \notag&\left.-i\sin\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}Y\right]\left[\cos\frac{\varphi}{2}I+i\sin\frac{\varphi}{2}Z\right]\\
+        \notag=&\cos\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}\right)I-i\cos\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}+\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}\right)Z-i\cos^2\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X\\
+        \notag&-i\sin\frac{\varphi}{2}\cos\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}Y+i\sin\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}\right)Z+\sin\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}+\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}\right)Z^2\\
+        \notag&+\cos\frac{\varphi}{2}\sin\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}XZ+\sin^2\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}YZ\\
+        \notag=&\cos\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}\right)I-i\cos\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}+\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}\right)Z-i\cos^2\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X\\
+        \notag&-i\sin\frac{\varphi}{2}\cos\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}Y+i\sin\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\frac{\alpha}{2}-\sin\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}\right)Z+\sin\frac{\varphi}{2}\left(\cos\frac{\varphi}{2}\cos\theta\sin\frac{\alpha}{2}+\sin\frac{\varphi}{2}\cos\frac{\alpha}{2}\right)I\\
+        \notag&-i\cos\frac{\varphi}{2}\sin\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}Y+i\sin^2\frac{\varphi}{2}\sin\theta\sin\frac{\alpha}{2}X\\
+        =&\cos\frac{\alpha}{2}I-i\sin\frac{\alpha}{2}\left(\cos\varphi\sin\theta X+\sin\varphi\sin\theta Y+\cos\theta Z\right)=\cos\frac{\alpha}{2}I-i(n_xX+n_yY+n_zZ),
+    \end{align}
+    which equals $R_{\hat{n}}(\alpha)$.
+    Therefore, the effect of the rotation $R_{\hat{n}}(\theta)$ on the state is to rotate it by an angle $\theta$ about the $\hat{n}$ axis of the Bloch sphere.
 \end{pf}
 
 \ifx\allfiles\undefined
