@@ -211,6 +211,7 @@
 \begin{pf}
     \footnote{\url{http://www.vcpc.univie.ac.at/~ian/hotlist/qc/talks/bloch-sphere-rotations.pdf}}Suppose $\hat{n}$ forms angle $\theta$ with the $z$ axis and the projection of $\hat{n}$ onto the $xy$ plane forms angle $\varphi$ with the $x$ axis, i.e.
     \begin{align}
+        \label{E4.8}
         \hat{n}=n_x\hat{x}+n_y\hat{y}+n_z\hat{z}=\sin\theta\cos\varphi\hat{x}+\sin\theta\sin\varphi\hat{y}+\cos\theta\hat{z}.
     \end{align}
     Rotating the Bloch vector $\vec{\lambda}$ about $\hat{n}$ axis by angle $\alpha$ is equivalent to the following operation sequence:
@@ -444,7 +445,45 @@
     \end{matrix}\right]$.}.
 \end{exe}
 \begin{sol}
-    
+    Suppose an arbitrary qubit unitary operator is
+        \begin{align}
+            U=\left[\begin{matrix}
+                a&b\\
+                c&d
+            \end{matrix}\right].
+        \end{align}
+        where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
+        \begin{gather}
+            UU^{\dagger}=\left[\begin{matrix}
+                a&b\\
+                c&d
+            \end{matrix}\right]\left[\begin{matrix}
+                a^*&c^*\\
+                b^*&d^*
+            \end{matrix}\right]=\left[\begin{matrix}
+                aa^*+bb^*&ac^*+bd^*\\
+                a^*c+b^*d&cc^*+dd^*
+            \end{matrix}\right]=I=\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right],\\
+            \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0.
+        \end{gather}
+        For
+        \begin{align}
+            a=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2},\\
+            b=&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
+            c=&e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2},\\
+            d=&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2},
+        \end{align}
+        it can be satisfied that
+        \begin{align}
+            aa^*+bb^*=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\left[-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\right]=\cos^2\frac{\gamma}{2}+\sin^2\frac{\gamma}{2}=1,\\
+            cc^*+dd^*=&e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}+e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=\sin^2\frac{\gamma}{2}+\sin^2\frac{\gamma}{2}=1,\\
+            \notag ac^*+bd^*=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=e^{-\beta}\cos\frac{\gamma}{2}-e^{-\beta}\cos\frac{\gamma}{2}\\
+            =&0.
+        \end{align}
+        Therefore, any single unitary operator may be written in the form (4.12).
 \end{sol}
 
 \ifx\allfiles\undefined
