@@ -490,7 +490,118 @@
     Give a decomposition analogous to Theorem 4.1 but using $R_x$ instead of $R_z$.
 \end{exe}
 \begin{sol}
-    
+    Suppose an arbitrary qubit unitary operator is
+    \begin{align}
+        U=\left[\begin{matrix}
+            a&b\\
+            c&d
+        \end{matrix}\right],
+    \end{align}
+    where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
+    \begin{gather}
+        UU^{\dagger}=\left[\begin{matrix}
+            a&b\\
+            c&d
+        \end{matrix}\right]\left[\begin{matrix}
+            a^*&c^*\\
+            b^*&d^*
+        \end{matrix}\right]=\left[\begin{matrix}
+            aa^*+bb^*&ac^*+bd^*\\
+            a^*c+b^*d&cc^*+dd^*
+        \end{matrix}\right]=I=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right],\\
+        \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0.
+    \end{gather}
+    The $X-Y$ decomposition of rotation is
+    \begin{align}
+        \notag&e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)=e^{i\alpha}\left[\begin{matrix}
+            \cos\frac{\beta}{2}&-i\sin\frac{\beta}{2}\\
+            -i\sin\frac{\beta}{2}&\cos\frac{\beta}{2}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\gamma}{2}&-\sin\frac{\gamma}{2}\\
+            \sin\frac{\gamma}{2}&\cos\frac{\gamma}{2}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\delta}{2}&-i\sin\frac{\delta}{2}\\
+            -i\sin\frac{\delta}{2}&\cos\frac{\delta}{2}
+        \end{matrix}\right]\\
+        \notag&=e^{i\alpha}\left[\begin{matrix}
+            \cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}&-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\\
+            -i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}+\cos\frac{\beta}{2}\sin\frac{\gamma}{2}&i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}+\cos\frac{\beta}{2}\cos\frac{\gamma}{2}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\delta}{2}&-i\sin\frac{\delta}{2}\\
+            -i\sin\frac{\delta}{2}&\cos\frac{\delta}{2}
+        \end{matrix}\right]\\
+        \notag&=e^{i\alpha}\\
+        \notag&\left[\begin{smallmatrix}
+            \left(\cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\cos\frac{\delta}{2}-i\left(-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\sin\frac{\delta}{2}&-i\left(\cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\sin\frac{\delta}{2}+\left(-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\cos\frac{\delta}{2}\\
+            \left(-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}+\cos\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\cos\frac{\delta}{2}-i\left(i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}+\cos\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\sin\frac{\delta}{2}&-i\left(-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}+\cos\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\sin\frac{\delta}{2}+\left(i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}+\cos\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\cos\frac{\delta}{2}
+        \end{smallmatrix}\right]\\
+        \notag&=e^{i\alpha}\\
+        \notag&\left[\begin{smallmatrix}
+            \cos\frac{\gamma}{2}\left(\cos\frac{\beta}{2}\cos\frac{\delta}{2}-\sin\frac{\beta}{2}\sin\frac{\delta}{2}\right)+i\sin\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\cos\frac{\delta}{2}+\cos\frac{\beta}{2}\sin\frac{\delta}{2}\right)&\sin\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\sin\frac{\delta}{2}-\cos\frac{\beta}{2}\cos\frac{\delta}{2}\right)+i\cos\frac{\gamma}{2}\left(-\cos\frac{\beta}{2}\sin\frac{\delta}{2}-\sin\frac{\beta}{2}\cos\frac{\delta}{2}\right)\\
+            \sin\frac{\gamma}{2}\left(\cos\frac{\beta}{2}\cos\frac{\delta}{2}+\sin\frac{\beta}{2}\sin\frac{\delta}{2}\right)+i\cos\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\cos\frac{\delta}{2}-\cos\frac{\beta}{2}\sin\frac{\delta}{2}\right)&\cos\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\sin\frac{\delta}{2}+\cos\frac{\beta}{2}\cos\frac{\delta}{2}\right)+i\sin\frac{\gamma}{2}\left(-\cos\frac{\beta}{2}\sin\frac{\delta}{2}+\sin\frac{\beta}{2}\cos\frac{\delta}{2}\right)
+        \end{smallmatrix}\right]\\
+        \notag&=e^{i\alpha}\left[\begin{matrix}
+            \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
+            \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
+        \end{matrix}\right]\\
+    \end{align}
+    Since
+    \begin{align}
+        \notag&e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)[e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)]^{\dagger}\\
+        \notag=&e^{i\alpha}\left[\begin{matrix}
+            \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
+            \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
+        \end{matrix}\right]\times\\
+        \notag&e^{-i\alpha}\left[\begin{matrix}
+            \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
+            \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
+        \end{matrix}\right]^{\dagger}\\
+        \notag=&\left[\begin{matrix}
+            \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
+            \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
+        \end{matrix}\right]\times\\
+        \notag&\left[\begin{matrix}
+            \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
+            -\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
+        \end{matrix}\right]\\
+        \notag=&\left[\begin{smallmatrix}
+            \left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}\right)+\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right),\\
+            \left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)+\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right);\\
+            \left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)+\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right),\\
+            \left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)+\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)
+        \end{smallmatrix}\right]\\
+        \notag=&\left[\begin{smallmatrix}
+            \cos^2\frac{\gamma}{2}\cos^2\frac{\beta+\delta}{2}+\sin^2\frac{\gamma}{2}\sin^2\frac{\beta-\delta}{2}+\sin^2\frac{\gamma}{2}\cos^2\frac{\beta-\delta}{2}+\cos^2\frac{\gamma}{2}\sin^2\frac{\beta+\delta}{2}&0\\
+            0&\sin^2\frac{\gamma}{2}\cos^2\frac{\beta-\delta}{2}+\cos^2\frac{\gamma}{2}\sin^2\frac{\beta+\delta}{2}+\cos^2\frac{\gamma}{2}\cos^2\frac{\beta+\delta}{2}+\sin^2\frac{\gamma}{2}\sin^2\frac{\beta-\delta}{2}
+        \end{smallmatrix}\right]\\
+        =&\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=I.
+    \end{align}
+    the $X-Y$ decomposition of rotations is also unitary.
+    For arbitrary $a$, $b$, $c$, $d$ such that $U$ is unitary, let
+    \begin{align}
+        a=&e^{i\alpha}\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right),\\
+        b=&e^{i\alpha}\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right),\\
+        c=&e^{i\alpha}\left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right),\\
+        d=&e^{i\alpha}\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right),
+    \end{align}
+    i.e., set
+    \begin{align}
+        \alpha=&-\frac{i}{2}\ln(ad-bc),\\
+        \gamma=&\arccos\frac{a^2-b^2-c^2+b^2}{2(ad-bc)},\\
+        \beta=&i\left(\arctan\frac{b+c}{a+d}-\arctan\frac{a-d}{b-c}\right),\\
+        \delta=&i\left(\arctan\frac{b+c}{a+d}+\arctan\frac{a-d}{b-c}\right).
+    \end{align}
+    Then
+    \begin{align}
+        U=e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta),
+    \end{align}
+    which is a $X-Y$ decomposition of rotations analogous to Theorem 4.1.
 \end{sol}
 
 \ifx\allfiles\undefined
