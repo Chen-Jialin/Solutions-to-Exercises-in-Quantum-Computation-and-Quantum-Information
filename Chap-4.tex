@@ -469,19 +469,57 @@
             \end{matrix}\right],\\
             \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0.
         \end{gather}
-        For
+        Since
+        \begin{align}
+            \notag&\left[\begin{matrix}
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right]\left[\begin{matrix}
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right]^{\dagger}\\
+            \notag=&\left[\begin{matrix}
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right]\left[\begin{matrix}
+                e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}\\
+                -e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}&e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right]\\
+            \notag=&\left[\begin{matrix}
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}+e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2};\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}-e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}+e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right]\\
+            =&\left[\begin{matrix}
+                1&0\\
+                0&1
+            \end{matrix}\right],
+        \end{align}
+        the matrix $\left[\begin{matrix}
+            e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+            e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+        \end{matrix}\right]$ is also unitary.
+        For arbitrary $a$, $b$, $c$, and $d$ such that $U$ is unitary, let
         \begin{align}
             a=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2},\\
             b=&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
             c=&e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2},\\
             d=&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2},
         \end{align}
-        it can be satisfied that
+        i.e., set
         \begin{align}
-            aa^*+bb^*=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\left[-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\right]=\cos^2\frac{\gamma}{2}+\sin^2\frac{\gamma}{2}=1,\\
-            cc^*+dd^*=&e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}+e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=\sin^2\frac{\gamma}{2}+\sin^2\frac{\gamma}{2}=1,\\
-            \notag ac^*+bd^*=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=e^{-\beta}\cos\frac{\gamma}{2}-e^{-\beta}\cos\frac{\gamma}{2}\\
-            =&0.
+            \alpha=&-\frac{i}{2}\ln(ad-bc),\\
+            \beta=&\frac{i}{2}\ln\frac{ab}{cd},\\
+            \delta=&\frac{i}{2}\ln\frac{ac}{bd},\\
+            \gamma=&\arccos\abs{ad+bc}.
+        \end{align}
+        Then
+        \begin{align}
+            U=\left[\begin{matrix}
+                e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+                e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+            \end{matrix}\right].
         \end{align}
         Therefore, any single unitary operator may be written in the form (4.12).
 \end{sol}
