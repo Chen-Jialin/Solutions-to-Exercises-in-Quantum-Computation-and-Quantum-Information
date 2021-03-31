@@ -650,7 +650,11 @@
     for appropriate choices of $\alpha$, $\beta$, $\gamma$ and $\delta$.
 \end{exe}
 \begin{pf}
-    
+    There is something wrong with this Exercise. Imagine that $\hat{m}$ and $\hat{n}$ are almost parallel but not parallel. In this case, we can not rotate a Bloch vector from paralleling with $\hat{n}$ to anti-paralleling with $\hat{n}$ by first rotating the vector about $\hat{n}$ by some angle $\delta$, then about $\hat{m}$ by some angle $\gamma$, and finally about $\hat{n}$ by some angle $\beta$, with a phase $\alpha$ added. However, this rotation can be represented by unitary operator $U=X$. Therefore, some single qubit unitary $U$ may not be written
+    \begin{align}
+        U=e^{i\alpha}R_{\hat{n}}(\beta)R_{\hat{m}}(\gamma)R_{\hat{n}}(\delta),
+    \end{align}
+    with any choices of $\alpha$, $\beta$, $\gamma$ and $\delta$.
 \end{pf}
 
 \ifx\allfiles\undefined
