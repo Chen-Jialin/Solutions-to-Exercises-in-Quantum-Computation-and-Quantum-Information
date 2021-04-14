@@ -55,9 +55,11 @@
 \RequirePackage{esint} % 特殊积分号 Special integral signs
 
 % 图片 Figures
-\RequirePackage{graphicx} % 图片 Graphics
+\RequirePackage{graphicx} % 插入图片 Insert graphics
 \RequirePackage{float} % 强制设定图片位置 Set the positions of figures mandatorily
 \RequirePackage{subfigure} % figure环境中子图 Subfigures in the figure environment
+\RequirePackage{tikz} % 绘图 Create graphics
+\usetikzlibrary{quantikz} % Plot quantum circuit diagrams
 
 % 表格 Tables
 \RequirePackage{multirow} % 表内多行单元格合并 Tables with merged multi-row cells
