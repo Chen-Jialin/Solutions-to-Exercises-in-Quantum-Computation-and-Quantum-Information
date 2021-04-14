@@ -807,7 +807,47 @@
     \end{itemize}
 \end{exe}
 \begin{pf}
-    
+    \begin{itemize}
+        \item[(1)] A rotation through an angle $\beta_1$ about the axis $\hat{n}_1$ followed by a rotation through an angle $\beta_2$ about an axis $\hat{n}_2$ is given by
+        \begin{align}
+            \notag R_{\hat{n}_2}(\beta_2)R_{\hat{n}_1}(\beta_1)=&\left[c_2I-is_2(n_{2x}X+n_{2y}Y+n_{2z}Z)\right]\left[c_1I-is_1(n_{1x}X+n_{1y}Y+n_{1z}Z)\right]\\
+            \notag=&c_2c_1I-ic_2s_1(n_{1x}X+n_{1y}Y+n_{1z}Z)-is_2c_1(n_{2x}X+n_{2y}Y+n_{2z}Z)\\
+            \notag&-s_2s_1(n_{2x}X+n_{2y}Y+n_{2z}Z)(n_{1x}X+n_{1y}Y+n_{1z}Z)\\
+            \notag=&c_2c_1I-ic_2s_1(n_{1x}X+n_{1y}Y+n_{1z}Z)-is_2c_1(n_{2x}X+n_{2y}Y+n_{2z}Z)\\
+            \notag&-s_2s_1(n_{2x}n_{1x}XX+n_{2x}n_{1y}XY+n_{2x}n_{1z}XZ+n_{2y}n_{1x}YX+n_{2y}n_{1y}YY+n_{2y}n_{1z}YZ\\
+            \notag&+n_{2z}n_{1x}ZX+n_{2z}n_{1y}ZY+n_{2z}n_{1z}ZZ)\\
+            \notag=&c_2c_1I-ic_2s_1(n_{1x}X+n_{1y}Y+n_{1z}Z)-is_2c_1(n_{2x}X+n_{2y}Y+n_{2z}Z)\\
+            \notag&-s_2s_1(n_{2x}n_{1x}I+in_{2x}n_{1y}Z-in_{2x}n_{1z}Y-in_{2y}n_{1x}Z+n_{2y}n_{1y}I+in_{2y}n_{1z}X\\
+            \notag&+in_{2z}n_{1x}Y-in_{2z}n_{1y}X+n_{2z}n_{1z}I)\\
+            \notag=&[c_2c_1-s_2s_1(n_{1x}n_{2x}+n_{2y}n_{1y}+n_{2z}n_{1z})]I-i[c_2s_1n_{1x}+s_2c_1n_{2x}+s_2s_1(n_{2y}n_{1z}-n_{2z}n_{1y})]X\\
+            \notag&-i[c_2s_1n_{1y}+s_2c_1n_{2y}+s_2s_1(-n_{2x}n_{1z}+n_{2z}n_{1x})]Y\\
+            &-i[c_2s_1n_{1z}+s_2c_1n_{2z}+s_2s_1(n_{2x}n_{1y}-n_{2y}n_1x)]Z.
+        \end{align}
+        The rotation through an angle $\beta_{12}$ about an axis $\hat{n}_{12}$ where
+        \begin{align}
+            c_{12}=&c_1c_2-s_1s_2\hat{n}_1\hat{n}_2,\\
+            s_{12}\hat{n}_{12}=&s_1c_2\hat{n}_1+c_1s_2\hat{n}_2-s_1s_2\hat{n}_2\times\hat{n}_1,
+        \end{align}
+        i.e.,
+        \begin{align}
+            c_{12}=&c_1c_2-s_1s_2(n_{1x}n_{2x}+n_{1y}n_{2y}+n_{1z}n_{2z}),\\
+            s_{12}n_{12x}=&s_1c_2n_{1x}+c_1s_2n_{2x}-s_1s_2(n_{2y}n_{1z}-n_{2z}n_{1y}),\\
+            s_{12}n_{12y}=&s_1c_2n_{1y}+c_1s_2n_{2y}-s_1s_2(n_{2z}n_{1x}-n_{2x}n_{1z}),\\
+            s_{12}n_{12z}=&s_1c_2n_{1z}+c_1s_2n_{2z}-s_1s_2(n_{2x}n_{1y}-n_{2y}n_{1x}),
+        \end{align}
+        is given by
+        \begin{align}
+            \notag R_{\hat{n}_{12}}(\beta_{12})=&c_{12}I-is_{12}(n_{12x}X+n_{12y}Y+n_{12z}Z)\\
+            \notag=&[c_1c_2-s_1s_2(n_{1x}n_{2x}+n_{1y}n_{2y}+n_{1z}n_{2z})]I-i[s_1c_2n_{1x}+c_1s_2n_{2x}-s_1s_2(n_{2y}n_{1z}-n_{2z}n_{1y})]X\\
+            &-i[s_1c_2n_{1y}+c_1s_2n_{2y}-s_1s_2(n_{2z}n_{1x}-n_{2x}n_{1z})]Y-i[s_1c_2n_{1z}+c_1s_2n_{2z}-s_1s_2(n_{2x}n_{1y}-n_{2y}n_{1x})]Z.
+        \end{align}
+        Therefore, if a rotation through an angle $\beta_1$ about the axis $\hat{n}_1$ is followed by a rotation through an angle $\beta_2$ about an axis $\hat{n}_2$, then the overall rotation is through an angle $\beta_{12}$ about an axis $\hat{n}_{12}$.
+        \item[(b)] If $\beta_1=\beta_2$ and $\hat{n}_1=\hat{z}$, then $c=c_1=c_2$, $s=s_1=s_2$, $n_{1x}=n_{1y}=0$, $n_{1z}=1$, and these equations simplify to
+        \begin{align}
+            c_{12}=&c_1c_2-s_1s_2\hat{n}_1\hat{n}_2=c^2-s^2\hat{z}\cdot\hat{n}_2,\\
+            s_{12}\hat{n}_{12}=&s_1c_2\hat{n}_1+c_1s_2\hat{n}_2-s_1s_2\hat{n}_2\times\hat{n}_1=sc(\hat{z}+\hat{n})-s^2\hat{n}_2\times\hat{z}.
+        \end{align}
+    \end{itemize}
 \end{pf}
 
 \ifx\allfiles\undefined
