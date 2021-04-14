@@ -915,7 +915,46 @@
     and two Hadamard gates, specifying the control and target qubits.
 \end{exe}
 \begin{sol}
-    
+    Since
+    \begin{align}
+        (I\otimes H)\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&1&0\\
+            0&0&0&-1
+        \end{matrix}\right](I\otimes H)=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1&0&0\\
+            1&-1&0&0\\
+            0&0&1&1\\
+            0&0&1&-1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&1&0\\
+            0&0&0&-1
+        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1&0&0\\
+            1&-1&0&0\\
+            0&0&1&1\\
+            0&0&1&-1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&0&1\\
+            0&0&1&0
+        \end{matrix}\right],
+    \end{align}
+    \begin{center}
+        \begin{quantikz}
+            \qw & \ctrl{1} & \qw\\
+            \qw & \targ{} & \qw
+        \end{quantikz}
+        $=$
+        \begin{quantikz}
+            \qw & \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \gate{H} & \gate{Z} & \gate{H} & \qw
+        \end{quantikz}
+    \end{center}
 \end{sol}
 
 \ifx\allfiles\undefined
