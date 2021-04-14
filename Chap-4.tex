@@ -789,6 +789,27 @@
     \end{align}
 \end{pf}
 
+\begin{exe}[Composition of single qubit operations]
+    The Bloch representation gives a nice way to visualize the effect of composing two rotations.
+    \begin{itemize}
+        \item[(1)] Prove that if a rotation through an angle $\beta_1$ about the axis $\hat{n}_1$ is followed by a rotation through an angle $\beta_2$ about an axis $\hat{n}_2$, then the overall rotation is through an angle $\beta_{12}$ about an axis $\hat{n}_{12}$ given by
+        \begin{align}
+            c_{12}=&c_1c_2-s_1s_2\hat{n}_1\cdot\hat{n}_2\\
+            s_{12}\hat{n}_{12}=&s_1c_2\hat{n}_1+c_1s_2\hat{n}_2-s_1s_2\hat{n}_2\times\hat{n}_1,
+        \end{align}
+        where $c_i=\cos(\beta_i/2)$, $s_i=\sin(\beta_i/2)$, $c_{12}=\cos(\beta_{12}/2)$, and $s_{12}=\sin(\beta_{12}/2)$.
+        \item[(2)] Show that if $\beta_1=\beta_2$ and $\hat{n}_1=\hat{z}$ these equations simplify to
+        \begin{align}
+            c_{12}=&c^2-s^2\hat{z}\cdot\hat{n}_2\\
+            s_{12}\hat{n}_{12}=&sc(\hat{z}+\hat{n})-s^2\hat{n}_2\times\hat{z},
+        \end{align}
+        where $c=c_1$ and $s=s_1$.
+    \end{itemize}
+\end{exe}
+\begin{pf}
+    
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
