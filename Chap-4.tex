@@ -1006,15 +1006,109 @@
     \end{center}
     Introducing basis states $\lvert\pm\rangle=(\lvert 0\rangle\pm\lvert 1\rangle)/\sqrt{2}$, use this circuit identity to show that the effect of a CNOT with the first qubit as control and the second qubit as target is as follows:
     \begin{align}
+        \label{E4.20-1}
         \lvert+\rangle\lvert+\rangle\rightarrow&\lvert+\rangle\lvert+\rangle\\
         \lvert-\rangle\lvert+\rangle\rightarrow&\lvert-\rangle\lvert+\rangle\\
         \lvert+\rangle\lvert-\rangle\rightarrow&\lvert-\rangle\lvert-\rangle\\
+        \label{E4.20-4}
         \lvert-\rangle\lvert-\rangle\rightarrow&\lvert+\rangle\lvert-\rangle,
     \end{align}
     Thus, with respect to this new basis, the state of the target qubit is not changed, while the state of the control qubit is flipped if the target starts as $\lvert-\rangle$, otherwise it is left alone. That is, in this basis, targe and control have essentially interchanged roles!
 \end{exe}
 \begin{pf}
-    
+    Since
+    \begin{align}
+        \notag(H\otimes H)\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&0&1\\
+            0&0&1&0
+        \end{matrix}\right](H\otimes H)=&\left(\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\right)\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&0&1\\
+            0&0&1&0
+        \end{matrix}\right]\left(\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\right)\\
+        =&\frac{1}{2}\left[\begin{matrix}
+            1&1&1&1\\
+            1&-1&1&-1\\
+            1&1&-1&-1\\
+            1&-1&-1&1
+        \end{matrix}\right]\left[\begin{matrix}
+            1&0&0&0\\
+            0&1&0&0\\
+            0&0&0&1\\
+            0&0&1&0
+        \end{matrix}\right]\frac{1}{2}\left[\begin{matrix}
+            1&1&1&1\\
+            1&-1&1&-1\\
+            1&1&-1&-1\\
+            1&-1&-1&1
+        \end{matrix}\right]=\left[\begin{matrix}
+            1&0&0&0\\
+            0&0&0&1\\
+            0&0&1&0\\
+            0&1&0&0
+        \end{matrix}\right],
+    \end{align}
+    \begin{center}
+        \begin{quantikz}
+            \qw & \gate{H} & \ctrl{1} & \gate{H} & \qw\\
+            \qw & \gate{H} & \targ{} & \gate{H} & \qw
+        \end{quantikz}
+        $=$
+        \begin{quantikz}
+            \qw & \targ{} & \qw\\
+            \qw & \ctrl{-1} & \qw
+        \end{quantikz}
+    \end{center}
+    A CNOT with the first qubit as control and the second qubit as target
+    \begin{center}
+        \begin{quantikz}
+            \qw & \ctrl{1} & \qw\\
+            \qw & \targ{} & \qw
+        \end{quantikz}
+    \end{center}
+    is equivalent to
+    \begin{center}
+        \begin{quantikz}
+            \qw & \gate{H} & \gate{H} & \ctrl{1} & \gate{H} & \gate{H} & \qw\\
+            \qw & \gate{H} & \gate{H} & \targ{} & \gate{H} & \gate{H} & \qw
+        \end{quantikz}
+        $=$
+        \begin{quantikz}
+            \qw & \gate{H} & \targ{} & \gate{H} & \qw\\
+            \qw & \gate{H} & \ctrl{-1} & \gate{H} & \qw
+        \end{quantikz}
+    \end{center}
+    Inputting the state given by from \eqref{E4.20-1} to \eqref{E4.20-4} to the above circuit, the state changing progress is shown in table \ref{E4.20-table}.
+    \begin{table}[h]
+        \centering
+        \caption{State changing progress for different inputs into CNOT.}
+        \label{E4.20-table}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        & Input             & After the first set of $H$ gates & After the CNOT gate & Output            \\ \hline
+        \multirow{4}{*}{state} & $\lvert++\rangle$ & $\lvert 00\rangle$ & $\lvert 00\rangle$ & $\lvert++\rangle$ \\ \cline{2-5} 
+        & $\lvert-+\rangle$ & $\lvert 10\rangle$               & $\lvert 10\rangle$  & $\lvert-+\rangle$ \\ \cline{2-5} 
+        & $\lvert+-\rangle$ & $\lvert 01\rangle$               & $\lvert 11\rangle$  & $\lvert--\rangle$ \\ \cline{2-5} 
+        & $\lvert--\rangle$ & $\lvert 11\rangle$               & $\lvert 01\rangle$  & $\lvert+-\rangle$ \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Therefore, the effect of a CNOT with the first qubit as control and the second qubit as target is as given by from \eqref{E4.20-1} to \eqref{E4.20-4}.
 \end{pf}
 
 \ifx\allfiles\undefined
