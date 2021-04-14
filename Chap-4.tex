@@ -661,7 +661,72 @@
     Give $A$, $B$, $C$, and $\alpha$ for the Hadamard gate.
 \end{exe}
 \begin{sol}
-    
+    The Hadamard gate can be written as
+    \begin{align}
+        H\equiv\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\beta)=\left[\begin{matrix}
+            e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+            e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+        \end{matrix}\right],
+    \end{align}
+    i.e.,
+    \begin{align}
+        e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}=&\frac{1}{\sqrt{2}},\\
+        -e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}=&\frac{1}{\sqrt{2}},\\
+        e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}=&\frac{1}{\sqrt{2}},\\
+        e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=&-\frac{1}{\sqrt{2}},
+    \end{align}
+    so
+    \begin{align}
+        \alpha=&\frac{\pi}{2},\\
+        \beta=&0,\\
+        \delta=&\pi,\\
+        \gamma=&\frac{\pi}{2}.
+    \end{align}
+    In this way, for the Hadamard gate,
+    \begin{align}
+        H=e^{i\alpha}AXBXC,
+    \end{align}
+    where
+    \begin{align}
+        \alpha=&\frac{\pi}{2},\\
+        A=&R_z(\beta)R_y(\gamma/2)=\left[\begin{matrix}
+            e^{-i\beta/2}&0\\
+            0&e^{i\beta/2}
+        \end{matrix}\right]\left[\begin{matrix}
+            \cos\frac{\gamma}{4}&-\sin\frac{\gamma}{4}\\
+            \sin\frac{\gamma}{4}&\cos\frac{\gamma}{4}
+        \end{matrix}\right]=\left[\begin{matrix}
+            e^{-i\beta/2}\cos\frac{\gamma}{4}&-e^{-i\beta/2}\sin\frac{\gamma}{4}\\
+            e^{i\beta/2}\sin\frac{\gamma}{4}&e^{i\beta/2}\cos\frac{\gamma}{4}
+        \end{matrix}\right]=\left[\begin{matrix}
+            \cos\frac{\pi}{8}&-\sin\frac{\pi}{8}\\
+            \sin\frac{\pi}{8}&\cos\frac{\pi}{8}
+        \end{matrix}\right],\\
+        \notag B=&R_y(-\gamma/2)R_z(-(\delta+\beta)/2)=\left[\begin{matrix}
+            \cos\left(-\frac{\gamma}{4}\right)&-\sin\left(-\frac{\gamma}{4}\right)\\
+            \sin\left(-\frac{\gamma}{4}\right)&\cos\left(-\frac{\gamma}{4}\right)
+        \end{matrix}\right]\left[\begin{matrix}
+            e^{i(\delta+\beta)/4}&0\\
+            0&e^{-i(\delta+\beta)/4}
+        \end{matrix}\right]=\left[\begin{matrix}
+            e^{i(\delta+\beta)/4}\cos\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\sin\frac{\gamma}{4}\\
+            -e^{i(\delta+\beta)/4}\sin\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\cos\frac{\gamma}{4}
+        \end{matrix}\right]\\
+        =&\left[\begin{matrix}
+            e^{i\pi/4}\cos\frac{\pi}{8}&e^{-i\pi/4}\sin\frac{\pi}{8}\\
+            -e^{i\pi/4}\sin\frac{\pi}{8}&e^{-i\pi/4}\cos\frac{\pi}{8}
+        \end{matrix}\right],\\
+        C=&R_z((\delta-\beta)/2)=\left[\begin{matrix}
+            e^{-i(\delta-\beta)/4}&0\\
+            0&e^{i(\delta-\beta)/4}
+        \end{matrix}\right]=\left[\begin{matrix}
+            e^{-i\pi/4}&0\\
+            0&e^{i\pi/4}
+        \end{matrix}\right]
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
