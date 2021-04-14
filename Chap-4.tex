@@ -870,7 +870,36 @@
     in the computational basis?
 \end{exe}
 \begin{sol}
-    
+    For the first quantum circuit, the $4\times 4$ unitary is
+    \begin{align}
+        I\otimes H=\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1&0&0\\
+            1&-1&0&0\\
+            0&0&1&1\\
+            0&0&1&-1
+        \end{matrix}\right].
+    \end{align}
+    The unitary matrix for the second quantum circuit is
+    \begin{align}
+        H\otimes I=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&1\\
+            1&-1
+        \end{matrix}\right]\otimes\left[\begin{matrix}
+            1&0\\
+            0&1
+        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            1&0&1&0\\
+            0&1&0&1\\
+            1&0&-1&0\\
+            0&1&0&-1
+        \end{matrix}\right].
+    \end{align}
 \end{sol}
 
 \ifx\allfiles\undefined
