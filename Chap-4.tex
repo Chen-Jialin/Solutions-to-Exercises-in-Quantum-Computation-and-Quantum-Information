@@ -991,6 +991,32 @@
     The CNOT gate exchanges the coefficients of $\lvert 10\rangle\langle 10\rvert$ component and $\lvert 11\rangle\langle 11\rvert$ component, $\lvert 10\rangle\langle 11\rvert$ component and $\lvert 11\rangle\langle 10\rvert$ component.
 \end{sol}
 
+\begin{exe}[CNOT basis transformations]
+    Unlike ideal classical gates, ideal quantum gates do not have (as electrical engineers say) `high-impedance' inputs. In fact, the role of role of `control' and `target' are arbitrary -- they depend on what basis you think of a device as operating in. We have described how the CNOT behaves with respect to the computational basis, and in this description the state of the control qubit is not changed. However, if we work in a different basis then the control qubit \emph{does} change: we will show that its phase is flipped depending on the state of the `target' qubits! Show that
+    \begin{center}
+        \begin{quantikz}
+            \qw & \gate{H} & \ctrl{1} & \gate{H} & \qw\\
+            \qw & \gate{H} & \targ{} & \gate{H} & \qw
+        \end{quantikz}
+        $=$
+        \begin{quantikz}
+            \qw & \targ{} & \qw\\
+            \qw & \ctrl{-1} & \qw
+        \end{quantikz}
+    \end{center}
+    Introducing basis states $\lvert\pm\rangle=(\lvert 0\rangle\pm\lvert 1\rangle)/\sqrt{2}$, use this circuit identity to show that the effect of a CNOT with the first qubit as control and the second qubit as target is as follows:
+    \begin{align}
+        \lvert+\rangle\lvert+\rangle\rightarrow&\lvert+\rangle\lvert+\rangle\\
+        \lvert-\rangle\lvert+\rangle\rightarrow&\lvert-\rangle\lvert+\rangle\\
+        \lvert+\rangle\lvert-\rangle\rightarrow&\lvert-\rangle\lvert-\rangle\\
+        \lvert-\rangle\lvert-\rangle\rightarrow&\lvert+\rangle\lvert-\rangle,
+    \end{align}
+    Thus, with respect to this new basis, the state of the target qubit is not changed, while the state of the control qubit is flipped if the target starts as $\lvert-\rangle$, otherwise it is left alone. That is, in this basis, targe and control have essentially interchanged roles!
+\end{exe}
+\begin{pf}
+    
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
