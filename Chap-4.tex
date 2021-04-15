@@ -1112,7 +1112,7 @@
 \end{pf}
 
 \begin{exe}
-    Verify that Figure 4.8\footnote{\begin{quantikz}
+    Verify that Figure 4.8\footnote{\label{Figure-4.8}\begin{quantikz}
     \qw & \ctrl{1} & \qw\\
     \qw & \ctrl{1} & \qw\\
     \qw & \gate{H} & \qw
@@ -1154,6 +1154,31 @@
 \begin{pf}
     
 \end{pf}
+
+\begin{exe}[Fredkin gate construction]
+    Recall that the Fredkin (controlled-swap) gate performs the transform
+    \begin{align}
+        \left[\begin{matrix}
+            1&0&0&0&0&0&0&0\\
+            0&1&0&0&0&0&0&0\\
+            0&0&1&0&0&0&0&0\\
+            0&0&0&1&0&0&0&0\\
+            0&0&0&0&1&0&0&0\\
+            0&0&0&0&0&0&1&0\\
+            0&0&0&0&0&1&0&0\\
+            0&0&0&0&0&0&0&1
+        \end{matrix}\right].
+    \end{align}
+    \begin{itemize}
+        \item[(1)] Give a quantum circuit which use three Toffoli gates to Construct the Fredkin gate (\emph{Hint}: think of the swap gate Construction --- you can control each gate, one at a time).
+        \item[(2)] Show that the first and the last Toffoli gates can be replaced by CNOT gates.
+        \item[(3)] Now replace the middle Toffoli gate with the circuit in Figure 4.8\textsuperscript{\ref{Figure-4.8}} to obtain a Fredkin gate construction using only six two-qubit gates.
+        \item[(4)] Can you come up with an even simpler construction, with only five two-qubit gates?
+    \end{itemize}
+\end{exe}
+\begin{sol}
+    
+\end{sol}
 
 \ifx\allfiles\undefined
 \end{document}
