@@ -1215,6 +1215,24 @@
     
 \end{sol}
 
+\begin{exe}
+    For $U=V^2$ with $V$ unitary, construct a $C^5(U)$ gate analogous to that in Figure 4.10\footnote{\begin{quantikz}
+        \lstick[wires=5]{control qubits} & \lstick{$\lvert c_1\rangle$} & \ctrl{1} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{1}\\
+        & \lstick{$\lvert c_2\rangle$} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{4}\\
+        & \lstick{$\lvert c_3\rangle$} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw & \qw & \ctrl{3} & \qw\\
+        & \lstick{$\lvert c_4\rangle$} & \qw & \qw & \ctrl{3} & \qw & \qw & \qw & \ctrl{3} & \qw & \qw\\
+        & \lstick{$\lvert c_5\rangle$} & \qw & \qw & \qw & \ctrl{3} & \qw & \ctrl{3} & \qw & \qw & \qw\\
+        \lstick[wires=4]{work qubits} & \lstick{$\lvert 0\rangle$} & \targ{} & \ctrl{1} & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \targ{}\\
+        & \lstick{$\lvert 0\rangle$} & \qw & \targ{} & \ctrl{1} & \qw & \qw & \qw & \ctrl{1} & \targ{} & \qw\\
+        & \lstick{$\lvert 0\rangle$} & \qw & \qw & \targ{} & \ctrl{1} & \qw & \ctrl{1} & \targ{} & \qw & \qw\\
+        & \lstick{$\lvert 0\rangle$} & \qw & \qw & \qw & \targ{} & \ctrl{1} & \targ{} & \qw & \qw & \qw\\
+        \lstick{target qubit} & & \qw & \qw & \qw & \qw & \gate{U} & \qw & \qw & \qw & \qw\\
+    \end{quantikz}}, but using no work qubits. You may use controlled-$V$ and controlled-$V^{\dagger}$ gates.
+\end{exe}
+\begin{sol}
+    
+\end{sol}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
