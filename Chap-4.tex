@@ -1180,6 +1180,21 @@
     
 \end{sol}
 
+\begin{exe}
+    Show that the circuit:
+    \begin{center}
+        \begin{quantikz}
+            \qw & \qw & \qw & \qw & \ctrl{2} & \qw & \qw & \qw & \qw\\
+            \qw & \qw & \ctrl{1} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \gate{R_y\;\pi/} & \targ{} & \gate{R_y\;\pi/} & \targ{} & \gate{R_y\;-\pi/} & \targ{} & \gate{R_y\;-\pi/} & \qw
+        \end{quantikz}
+    \end{center}
+    differs from a Toffoli gate only by relative phases. That is, the circuit takes $\lvert c_1,c_2,t\rangle$ to $e^{i\theta}\lvert c_1,c_2,t\otimes c_1\cdot c_2\rangle$, where $e^{i\theta(c_1,c_2,t)}$ is some relative phase factor. Such gates can sometimes be useful in experimental implementations, where it may be much easier to implement a gate that is the same as the Toffoli up to relative phases that it is to do the Toffoli directly.
+\end{exe}
+\begin{pf}
+    
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
