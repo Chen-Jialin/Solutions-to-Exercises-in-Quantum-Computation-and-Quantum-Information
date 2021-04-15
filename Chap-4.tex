@@ -1111,6 +1111,21 @@
     Therefore, the effect of a CNOT with the first qubit as control and the second qubit as target is as given by from \eqref{E4.20-1} to \eqref{E4.20-4}.
 \end{pf}
 
+\begin{exe}
+    Verify that Figure 4.8\footnote{\begin{quantikz}
+    \qw & \ctrl{1} & \qw\\
+    \qw & \ctrl{1} & \qw\\
+    \qw & \gate{H} & \qw
+    \end{quantikz}$=$\begin{quantikz}
+    \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{2} & \qw\\
+    \qw & \ctrl{1} & \targ{} & \ctrl{1} & \targ{} & \qw & \qw\\
+    \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw
+    \end{quantikz}} implements the $C^2U$ operation.
+\end{exe}
+\begin{pf}
+    
+\end{pf}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
