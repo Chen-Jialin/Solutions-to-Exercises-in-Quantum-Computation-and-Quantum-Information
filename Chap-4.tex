@@ -1120,10 +1120,103 @@
     \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{2} & \qw\\
     \qw & \ctrl{1} & \targ{} & \ctrl{1} & \targ{} & \qw & \qw\\
     \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw
-    \end{quantikz}} implements the $C^2U$ operation.
+    \end{quantikz}\\Figure 4.8. Circuit for the $C^2(U)$ gate. $V$ is any unitary operator satisfying $V^2=U$. The special case $V=(1-i)(1+iX)/2$ corresponds to the Toffoli gate.} implements the $C^2(U)$ operation.
 \end{exe}
 \begin{pf}
-    
+    Inputting the computational basis states to the Figure 4.8\textsuperscript{\ref{Figure-4.8}}, the state changing progress is shown in table \ref{E4.21-state-changing-progress}.
+    \begin{table}[h]
+        \centering
+        \caption{State changing progress for the computational basis stats input to Figure 4.8\textsuperscript{\ref{Figure-4.8}}.}
+        \label{E4.21-state-changing-progress}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+         &
+          Input &
+          After the $1$st $V$ &
+          After the $1$st CNOT &
+          After $V^{\dagger}$ &
+          After the $2$nd CNOT &
+          Output \\ \hline
+        \multirow{8}{*}{States} &
+          $\lvert 000\rangle$ &
+          $\lvert 000\rangle$ &
+          $\lvert 000\rangle$ &
+          $\lvert 000\rangle$ &
+          $\lvert 000\rangle$ &
+          $\lvert 000\rangle$ \\ \cline{2-7} 
+         &
+          $\lvert 001\rangle$ &
+          $\lvert 001\rangle$ &
+          $\lvert 001\rangle$ &
+          $\lvert 001\rangle$ &
+          $\lvert 001\rangle$ &
+          $\lvert 001\rangle$ \\ \cline{2-7} 
+         &
+          $\lvert 010\rangle$ &
+          $\lvert 01\rangle\otimes V\lvert 0\rangle$ &
+          $\lvert 01\rangle\otimes V\lvert 0\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 01\rangle\otimes V^{\dagger}V\lvert 0\rangle$\\ $=\lvert 010\rangle$\end{tabular} &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 01\rangle\otimes V^{\dagger}V\lvert 0\rangle$\\ $=\lvert 010\rangle$\end{tabular} &
+          $\lvert 010\rangle$ \\ \cline{2-7} 
+         &
+          $\lvert 011\rangle$ &
+          $\lvert 01\rangle\otimes V\lvert 1\rangle$ &
+          $\lvert 01\rangle\otimes V\lvert 1\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 01\rangle\otimes V^{\dagger}V\lvert 1\rangle$\\ $=\lvert 011\rangle$\end{tabular} &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 01\rangle\otimes V^{\dagger}V\lvert 1\rangle$\\ $=\lvert 011\rangle$\end{tabular} &
+          $\lvert 011\rangle$ \\ \cline{2-7} 
+         &
+          $\lvert 100\rangle$ &
+          $\lvert 100\rangle$ &
+          $\lvert 110\rangle$ &
+          $\lvert 11\rangle V^{\dagger}\lvert 0\rangle$ &
+          $\lvert 10\rangle V^{\dagger}\lvert 0\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 10\rangle VV^{\dagger}\lvert 0\rangle$\\ $=\lvert 100\rangle$\end{tabular} \\ \cline{2-7} 
+         &
+          $\lvert 101\rangle$ &
+          $\lvert 101\rangle$ &
+          $\lvert 111\rangle$ &
+          $\lvert 11\rangle V^{\dagger}\lvert 1\rangle$ &
+          $\lvert 10\rangle V^{\dagger}\lvert 1\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 10\rangle VV^{\dagger}\lvert 1\rangle$\\ $=\lvert 101\rangle$\end{tabular} \\ \cline{2-7} 
+         &
+          $\lvert 110\rangle$ &
+          $\lvert 11\rangle\otimes V\lvert 0\rangle$ &
+          $\lvert 10\rangle\otimes V\lvert 0\rangle$ &
+          $\lvert 10\rangle\otimes V\lvert 0\rangle$ &
+          $\lvert 11\rangle\otimes V\lvert 0\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 11\rangle\otimes V^2\lvert 0\rangle$\\ $=\lvert 11\rangle\otimes U\lvert 0\rangle$\end{tabular} \\ \cline{2-7} 
+         &
+          $\lvert 111\rangle$ &
+          $\lvert 11\rangle\otimes V\lvert 1\rangle$ &
+          $\lvert 10\rangle\otimes V\lvert 1\rangle$ &
+          $\lvert 10\rangle\otimes V\lvert 1\rangle$ &
+          $\lvert 11\rangle\otimes V\lvert 1\rangle$ &
+          \begin{tabular}[c]{@{}c@{}}$\lvert 11\rangle\otimes V^2\lvert 0\rangle$\\ $=\lvert 11\rangle\otimes U\lvert 1\rangle$\end{tabular} \\ \hline
+        \end{tabular}
+    \end{table}
+
+    The truth table of $C^2(U)$ operation is shown in table \ref{E4.21-C2U-truth-table}.
+    \begin{table}[h]
+        \centering
+        \caption{Truth table of $C^2(U)$.}
+        \label{E4.21-C2U-truth-table}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{Inputs}                              & \multicolumn{3}{c|}{Outputs}                               \\ \hline
+        Control 1         & Control 2         & Target            & Control 1         & Control 2         & Target             \\ \hline
+        $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$  \\ \hline
+        $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$  \\ \hline
+        $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$  \\ \hline
+        $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$  \\ \hline
+        $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 0\rangle$  \\ \hline
+        $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$  \\ \hline
+        $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 0\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $U\lvert 0\rangle$ \\ \hline
+        $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $\lvert 1\rangle$ & $U\lvert 1\rangle$ \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Therefore, Figure 4.8\textsuperscript{\ref{Figure-4.8}} implements the $C^2(U)$ operation.
 \end{pf}
 
 \begin{exe}
