@@ -19,4 +19,6 @@ Some of the solutions refer to the following materials:
 
 [Rotations on the Bloch Sphere](http://www.vcpc.univie.ac.at/~ian/hotlist/qc/talks/bloch-sphere-rotations.pdf)
 
+[How to reduce circuit elements of a decomposed C^2(U) operation?](https://quantumcomputing.stackexchange.com/questions/7082/how-to-reduce-circuit-elements-of-a-decomposed-c2u-operation)
+
 I really appreciate the inspiration provided by these materials.
