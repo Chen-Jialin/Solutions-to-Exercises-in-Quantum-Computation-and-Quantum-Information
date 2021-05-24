@@ -140,43 +140,26 @@
 \providecommand{\tr}{\,\mathrm{tr}\,} % 矩阵的迹 Trace of matrix
 
 % 题目和题解风格 Problem and solution style
+\newtheoremstyle{Problem} % Theorem style name
+{} % Space above theorem, being left empty means default
+{} % Space below theorem, being left empty means default
+{} % Theorem body font
+{} % Theorem indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{ } % Space after theorem head, whitespace means normal interword space
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % Theorem head spec, being left empty means default
+\theoremstyle{Problem} % Set theorem style
 \ifUsingEnglish
-    \newtheoremstyle{Problem} % Theorem style name
-    {} % Space above theorem, being left empty means default
-    {} % Space below theorem, being left empty means default
-    {} % Theorem body font
-    {} % Theorem indent amount
-    {\bfseries} % Theorem head font
-    {.} % Punctuation after theorem head
-    { } % Space after theorem head, whitespace means normal interword space
-    {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % Theorem head spec, being left empty means default
-    \theoremstyle{Problem} % Set theorem style
     \newtheorem{prob}{Problem}[chapter] % Problem
     \newtheorem{exe}{Exercise}[chapter] % Exercise
+    \newtheorem{cor}{Corollary}[chapter] % Corollary
     \providecommand{\Solution}{Solution} % "Solution" in solution environment (sol)
     \providecommand{\Proof}{Proof} % "Proof" in proof environment (pf)
 \else
-    \newtheoremstyle{Problem} % 定理风格名称
-    {} % 定理上方空间尺寸, 留空为默认
-    {} % 定理下方空间尺寸, 留空为默认
-    {} % 定理主体字体
-    {} % 定理缩进量
-    {\bfseries} % 定理开头字体
-    {.} % 定理开头后所接标点
-    { } % 定理开头后所接空间尺寸, 空格为默认词间距
-    {第\thmnumber{ #2}\thmname{ #1}\thmnote{ (#3)}} % 定理开头格式, 留空为默认
-    \theoremstyle{Problem} % 设定定理风格
-    \newtheorem{prob}{题}[chapter] % 题目
-    \newtheoremstyle{Exercise} % 定理风格名称
-    {} % 定理上方空间尺寸, 留空为默认
-    {} % 定理下方空间尺寸, 留空为默认
-    {} % 定理主体字体
-    {} % 定理缩进量
-    {\bfseries} % 定理开头字体
-    {.} % 定理开头后所接标点
-    { } % 定理开头后所接空间尺寸, 空格为默认词间距
-    {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % 定理开头格式, 留空为默认
+    \newtheorem{prob}{问题}[chapter] % 问题
     \newtheorem{exe}{习题}[chapter] % 习题
+    \newtheorem{cor}{引理}[chapter] % 引理
     \providecommand{\Solution}{解} % 题解环境 (sol) 中的“解”
     \providecommand{\Proof}{证} % 证明环境 (pf) 中的“证”
 \fi
