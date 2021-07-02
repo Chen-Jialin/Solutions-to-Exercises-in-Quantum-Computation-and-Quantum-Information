@@ -80,6 +80,7 @@
 \RequirePackage{color} % 文本颜色 Text color
 \RequirePackage{hyperref} % 超链接 Hyperlink
 \RequirePackage{framed} % 文本加框 Framed text
+\RequirePackage{footmisc} % 脚注引用 Footnote reference
 
 % 页眉和页脚 Header & footer
 % #1 习题集标题 Exercise book title

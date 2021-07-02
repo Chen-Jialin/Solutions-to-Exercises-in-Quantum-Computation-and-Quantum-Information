@@ -525,7 +525,7 @@
 \end{sol}
 
 \begin{exe}[X-Y decomposition of rotations]
-    Give a decomposition analogous to Theorem 4.1\footnote{($Z-Y$ decomposition for single qubit) Suppose $U$ is a unitary operation on a single qubit. Then there exist real numbers $\alpha$, $\beta$, $\gamma$ and $\delta$ such that $U=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)$.} but using $R_x$ instead of $R_z$.
+    Give a decomposition analogous to Theorem 4.1\footnote{($Z-Y$ decomposition for single qubit) Suppose $U$ is a unitary operation on a single qubit. Then there exist real numbers $\alpha$, $\beta$, $\gamma$ and $\delta$ such that $U=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)$.\label{Thm-4.1-Z-Y-decomp-for-a-single-qubit}} but using $R_x$ instead of $R_z$.
 \end{exe}
 \begin{sol}
     Suppose an arbitrary qubit unitary operator is
@@ -1171,11 +1171,11 @@
 \begin{pf}
     \footnote{Reference: \url{https://quantumcomputing.stackexchange.com/questions/7082/how-to-reduce-circuit-elements-of-a-decomposed-c2u-operation}}Using the equation in Figure 4.6\footnote{\begin{quantikz}
         \qw & \ctrl{1} & \qw\\
-        \qw & \gate{H} & \qw
+        \qw & \gate{U} & \qw
     \end{quantikz}$=$\begin{tikzcd}[ampersand replacement=\&]
         \qw \& \qw \& \ctrl{1} \& \qw \& \ctrl{1} \& \gate{\left[\begin{matrix}1&0\\0&e^{i\alpha}\end{matrix}\right]} \& \qw\\
         \qw \& \gate{C} \& \targ{} \& \gate{B} \& \targ{} \& \gate{A} \& \qw
-    \end{tikzcd}} and the conclusion obtained in the last Exercise, we can transform the $C^2(U)$ gate into
+    \end{tikzcd}\label{Fig-4.6-controlled-U-construction}} and the conclusion obtained in the last Exercise, we can transform the $C^2(U)$ gate into
     \begin{center}
         \begin{quantikz}
             \qw & \ctrl{1} & \qw\\
@@ -1383,10 +1383,228 @@
 \end{pf}
 
 \begin{exe}
-    Construct a $C^1(U)$ gate for $U=R_x(\theta)$ and $U=R_y(\theta)$, using only CNOT and single qubit gates. Can you reduce the number of single qubit gates needed in the Construction from three to two?
+    Construct a $C^1(U)$ gate for $U=R_x(\theta)$ and $U=R_y(\theta)$, using only CNOT and single qubit gates. Can you reduce the number of single qubit gates needed in the construction from three to two?
 \end{exe}
 \begin{sol}
-    
+    For $U=R_x(\theta)$, using Theorem 4.1\footref{Thm-4.1-Z-Y-decomp-for-a-single-qubit}, it can be written as
+    \begin{align}
+        U=R_x(\theta)=\begin{bmatrix}
+            \cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\
+            -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+        \end{bmatrix}=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)=\begin{bmatrix}
+            e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+            e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+        \end{bmatrix},
+    \end{align}
+    i.e.,
+    \begin{align}
+        e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}=&\cos\frac{\theta}{2},\\
+        -e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}=&-i\sin\frac{\theta}{2},\\
+        e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}=&-i\sin\frac{\theta}{2},\\
+        e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=&\cos\frac{\theta}{2},
+    \end{align}
+    so
+    \begin{align}
+        \alpha=&0,\\
+        \beta=&-\frac{\pi}{2},\\
+        \delta=&\frac{\pi}{2},\\
+        \gamma=&\theta.
+    \end{align}
+    Using the Corollary 4.2 in textbook\footnote{Suppose $U$ is a unitary gate on a single qubit. Then there exist unitary operators $A$, $B$, $C$ on a single qubit such that $ABC=I$ and $U=e^{i\alpha}AXBXC$, where $\alpha$ is some overall phase factor, $A=R_z(\beta)R_y(\gamma/2)$, $B=R_y(-\gamma/2)R_z(-(\delta+\beta)/2)$, $C=R_z((\delta-\beta)/2)$.\label{Cor-4.2-U=exp(i alpha)AXBXC}},
+    \begin{align}
+        U=R_x(\theta)=e^{i\alpha}AXBXC,
+    \end{align}
+    where
+    \begin{align}
+        \alpha=&0,\\
+        A=&R_z(\beta)R_y(\gamma/2)=\begin{bmatrix}
+            e^{-i\beta/2}&0\\
+            0&e^{i\beta/2}
+        \end{bmatrix}\begin{bmatrix}
+            \cos\frac{\gamma}{4}&-\sin\frac{\gamma}{4}\\
+            \sin\frac{\gamma}{4}&\cos\frac{\gamma}{4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{-i\beta/2}\cos\frac{\gamma}{4}&-e^{-i\beta/2}\sin\frac{\gamma}{4}\\
+            e^{i\beta/2}\sin\frac{\gamma}{4}&e^{i\beta/2}\cos\frac{\gamma}{4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{i\pi/4}\cos\frac{\theta}{4}&-e^{i\pi/4}\sin\frac{\theta}{4}\\
+            e^{-i\pi/4}\sin\frac{\theta}{4}&e^{-i\pi/4}\cos\frac{\theta}{4}
+        \end{bmatrix},\\
+        \notag B=&R_y(-\gamma/2)R_z(-(\delta+\beta)/2)=\begin{bmatrix}
+            \cos\left(-\frac{\gamma}{4}\right)&-\sin\left(-\frac{\gamma}{4}\right)\\
+            \sin\left(-\frac{\gamma}{4}\right)&\cos\left(-\frac{\gamma}{4}\right)
+        \end{bmatrix}\begin{bmatrix}
+            e^{i(\delta+\beta)/4}&0\\
+            0&e^{-i(\delta+\beta)/4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{i(\delta+\beta)/4}\cos\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\sin\frac{\gamma}{4}\\
+            -e^{i(\delta+\beta)/4}\sin\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\cos\frac{\gamma}{4}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
+            \cos\frac{\theta}{4}&\sin\frac{\theta}{4}\\
+            -\sin\frac{\theta}{4}&\cos\frac{\theta}{4}
+        \end{bmatrix},\\
+        C=&R_z((\delta-\beta)/2)=\begin{bmatrix}
+            e^{-i(\delta-\beta)/4}&0\\
+            0&e^{i(\delta-\beta)/4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{-i\pi/4}&0\\
+            0&e^{i\pi/4}
+        \end{bmatrix}.
+    \end{align}
+    Using the equation in Figure 4.6\footref{Fig-4.6-controlled-U-construction}, we can transform the $C^1(U)$ gate into
+    \begin{center}
+        \begin{quantikz}
+            \qw & \ctrl{1} & \qw\\
+            \qw & \gate{U} & \qw
+        \end{quantikz}$=$\begin{quantikz}
+            \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \gate{C} & \targ{} & \gate{B} & \targ{} & \gate{A} & \qw
+        \end{quantikz}
+    \end{center}
+    Using the Corollary \ref{E4.23-cor-1} which we will show bellow, we can exchange the $C$ gate and the CNOT, and reduce the number of single qubit gates needed in the construction from three to two,
+    \begin{center}
+        \begin{quantikz}
+            \qw & \ctrl{1} & \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \targ{} & \gate{D} & \targ{} & \gate{A} & \qw\\
+        \end{quantikz}
+    \end{center}
+    where the unitary matrix for $D$ gate is
+    \begin{align}
+        D=CB=\begin{bmatrix}
+            e^{-i\pi/4}\cos\frac{\theta}{4}&e^{-i\pi/4}\sin\frac{\theta}{4}\\
+            -e^{i\pi/4}\sin\frac{\theta}{4}&e^{i\pi/4}\sin\frac{\theta}{4}
+        \end{bmatrix}.
+    \end{align}
+    \begin{cor}
+        \label{E4.23-cor-1}
+        \begin{quantikz}
+            \qw & \qw & \ctrl{1} & \qw\\
+            \qw & \gate{C} & \targ{} & \qw
+        \end{quantikz}$=$\begin{quantikz}
+            \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \targ{} & \gate{C} & \qw
+        \end{quantikz}
+    \end{cor}
+    \begin{pf}
+        The unitary matrix for the left side of the Corollary \ref{E4.23-cor-1} is
+        \begin{align}
+            C\times\text{CNOT}=\begin{bmatrix}
+                e^{-i\pi/4}&0&0&0\\
+                0&e^{i\pi/4}&0&0\\
+                0&0&e^{-i\pi/4}&0\\
+                0&0&0&e^{i\pi/4}
+            \end{bmatrix}\begin{bmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&0&1\\
+                0&0&1&0
+            \end{bmatrix}=\begin{bmatrix}
+                e^{-i\pi/4}&0&0&0\\
+                0&e^{i\pi/4}&0&0\\
+                0&0&0&e^{-\pi/4}\\
+                0&0&e^{i\pi/4}&0
+            \end{bmatrix},
+        \end{align}
+        and the matrix for the right side of the Corollary \ref{E4.23-cor-1} is
+        \begin{align}
+            \text{CNOT}\times C=\begin{bmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&0&1\\
+                0&0&1&0
+            \end{bmatrix}\begin{bmatrix}
+                e^{-i\pi/4}&0&0&0\\
+                0&e^{i\pi/4}&0&0\\
+                0&0&e^{-i\pi/4}&0\\
+                0&0&0&e^{i\pi/4}
+            \end{bmatrix}=\begin{bmatrix}
+                e^{-i\pi/4}&0&0&0\\
+                0&e^{i\pi/4}&0&0\\
+                0&0&0&e^{-\pi/4}\\
+                0&0&e^{i\pi/4}&0
+            \end{bmatrix}
+        \end{align}
+        which are the same. Therefore, the Corollary \ref{E4.23-cor-1} holds.
+    \end{pf}
+
+    For $U=R_y(\theta)$, using Theorem 4.1\footref{Thm-4.1-Z-Y-decomp-for-a-single-qubit}, it can be written as
+    \begin{align}
+        U=R_y(\theta)=\begin{bmatrix}
+            \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
+            \sin\frac{\theta}{2}&\cos\frac{\theta}{2}
+        \end{bmatrix}=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)=\begin{bmatrix}
+            e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
+            e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
+        \end{bmatrix}
+    \end{align}
+    i.e.,
+    \begin{align}
+        e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}=&\cos\frac{\theta}{2},\\
+        -e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}=&-\sin\frac{\theta}{2},\\
+        e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}=&\sin\frac{\theta}{2},\\
+        e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}=&\cos\frac{\theta}{2},
+    \end{align}
+    so
+    \begin{align}
+        \alpha=&0,\\
+        \beta=&0,\\
+        \delta=&0,\\
+        \gamma=&\theta.
+    \end{align}
+    Using the Corollary 4.2\footref{Cor-4.2-U=exp(i alpha)AXBXC} in textbook,
+    \begin{align}
+        U=R_y(\theta)=e^{i\alpha}AXBXC,
+    \end{align}
+    where
+    \begin{align}
+        \alpha=&0,\\
+        A=&R_z(\beta)R_y(\gamma/2)=\begin{bmatrix}
+            e^{-i\beta/2}&0\\
+            0&e^{i\beta/2}
+        \end{bmatrix}\begin{bmatrix}
+            \cos\frac{\gamma}{4}&-\sin\frac{\gamma}{4}\\
+            \sin\frac{\gamma}{4}&\cos\frac{\gamma}{4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{-i\beta/2}\cos\frac{\gamma}{4}&-e^{-i\beta/2}\sin\frac{\gamma}{4}\\
+            e^{i\beta/2}\sin\frac{\gamma}{4}&e^{i\beta/2}\cos\frac{\gamma}{4}
+        \end{bmatrix}=\begin{bmatrix}
+            \cos\frac{\theta}{4}&-\sin\frac{\theta}{4}\\
+            \sin\frac{\theta}{4}&\cos\frac{\theta}{4}
+        \end{bmatrix},\\
+        \notag B=&R_y(-\gamma/2)R_z(-(\delta+\beta)/2)=\begin{bmatrix}
+            \cos\left(-\frac{\gamma}{4}\right)&-\sin\left(-\frac{\gamma}{4}\right)\\
+            \sin\left(-\frac{\gamma}{4}\right)&\cos\left(-\frac{\gamma}{4}\right)
+        \end{bmatrix}\begin{bmatrix}
+            e^{i(\delta+\beta)/4}&0\\
+            0&e^{-i(\delta+\beta)/4}
+        \end{bmatrix}=\begin{bmatrix}
+            e^{i(\delta+\beta)/4}\cos\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\sin\frac{\gamma}{4}\\
+            -e^{i(\delta+\beta)/4}\sin\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\cos\frac{\gamma}{4}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
+            \cos\frac{\theta}{4}&\sin\frac{\theta}{4}\\
+            -\sin\frac{\theta}{4}&\cos\frac{\theta}{4}
+        \end{bmatrix},\\
+        C=&R_z((\delta-\beta)/2)=\begin{bmatrix}
+            e^{-i(\delta-\beta)/4}&0\\
+            0&e^{i(\delta-\beta)/4}
+        \end{bmatrix}=\begin{bmatrix}
+            1&0\\
+            0&1
+        \end{bmatrix}.
+    \end{align}
+    Using the equation in Figure 4.6\footref{Fig-4.6-controlled-U-construction}, we can transform the $C^1(U)$ gate into
+    \begin{center}
+        \begin{quantikz}
+            \qw & \ctrl{1} & \qw\\
+            \qw & \gate{U} & \qw
+        \end{quantikz}$=$\begin{quantikz}
+            \qw & \ctrl{1} & \qw & \ctrl{1} & \qw & \qw\\
+            \qw & \targ{} & \gate{B} & \targ{} & \gate{A} & \qw
+        \end{quantikz}
+    \end{center}
+    where there is only two single qubit gates.
 \end{sol}
 
 \begin{exe}
