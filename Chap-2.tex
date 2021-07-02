@@ -25,18 +25,18 @@
 \begin{sol}
     The matrix representation for $A$ with respect to the input basis $\lvert 0\rangle$, $\lvert 1\rangle$ and the output basis $\lvert 0\rangle$ and $\lvert 1\rangle$ is
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 
     Keep $\lvert 0\rangle$ and $\lvert 1\rangle$ as the input basis and choose $\lvert+\rangle=(\lvert 0\rangle+\lvert 1\rangle)/\sqrt{2}$ and $\lvert-\rangle=(\lvert 0\rangle-\lvert 1\rangle)/\sqrt{2}$ as the output basis, then $A$ can be regarded as a linear operator from $V$ to $V$ such that $A\lvert 0\rangle=(\lvert+\rangle-\lvert-\rangle)/\sqrt{2}$ and $A\lvert 1\rangle=(\lvert 0\rangle+\lvert 1\rangle)/\sqrt{2}$. In this way, the matrix representation for $A$ is
     \begin{align}
-        \frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \frac{1}{\sqrt{2}}\begin{bmatrix}
             1&-1\\
             1&1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -243,48 +243,48 @@
     \end{align}
     The eigenequations of $X$
     \begin{align}
-        X\lvert v_1\rangle=\left[\begin{matrix}
+        X\lvert v_1\rangle=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             b_1\\
             a_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\quad X\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad X\lvert v_2\rangle=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             b_2\\
             a_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\begin{bmatrix}
             -a_2\\
             -b_2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             -1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle).
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle).
     \end{align}
     The diagonal representation of $X$ is
     \begin{align}
-        X=\left[\begin{matrix}
+        X=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-\langle 1\rvert).
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle-\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-\langle 1\rvert).
     \end{align}
     The characteristic equation of $Y$
     \begin{align}
@@ -299,48 +299,48 @@
     \end{align}
     The eigenequations of $Y$
     \begin{align}
-        Y\lvert v_1\rangle=\left[\begin{matrix}
+        Y\lvert v_1\rangle=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             -ib_1\\
             ia_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\quad Y\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad Y\lvert v_2\rangle=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             -ib_2\\
             ia_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\begin{bmatrix}
             -a_2\\
             -b_2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             i
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle),\quad\lvert v_2\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             -i
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle).
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle).
     \end{align}
     The diagonal representation of $Y$ is
     \begin{align}
-        Y=\left[\begin{matrix}
+        Y=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+i\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-i\langle 1\rvert).
+        \end{bmatrix}=\frac{1}{\sqrt{2}}(\lvert 0\rangle+i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert+i\langle 1\rvert)-\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)\frac{1}{\sqrt{2}}(\langle 0\rvert-i\langle 1\rvert).
     \end{align}
     The characteristic equation of $Z$
     \begin{align}
@@ -355,92 +355,92 @@
     \end{align}
     The eigenequations of $Z$
     \begin{align}
-        Z\lvert v_1\rangle=\left[\begin{matrix}
+        Z\lvert v_1\rangle=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             a_1\\
             -b_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\quad Z\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad Z\lvert v_2\rangle=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             -b_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\begin{bmatrix}
             -a_2\\
             -b_2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\left[\begin{matrix}
+        \lvert v_1\rangle=\begin{bmatrix}
             1\\
             0
-        \end{matrix}\right]=\lvert 0\rangle,\quad\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lvert 0\rangle,\quad\lvert v_2\rangle=\begin{bmatrix}
             0\\
             1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     The diagonal representation of $Z$ is
     \begin{align}
-        Z=\left[\begin{matrix}
+        Z=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\lvert 0\rangle\langle 0\rvert-\lvert 1\rangle\langle 1\rvert.
+        \end{bmatrix}=\lvert 0\rangle\langle 0\rvert-\lvert 1\rangle\langle 1\rvert.
     \end{align}
 \end{sol}
 
 \begin{exe}
     Prove that the matrix
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]
+        \end{bmatrix}
     \end{align}
     is not diagonalizable.
 \end{exe}
 \begin{pf}
     The matrix is not normal,
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}=\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}=\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&1\\
             0&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right]\neq\left[\begin{matrix}
+        \end{bmatrix}\neq\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&1\\
             0&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     so it is not diagonalizable.
 \end{pf}
@@ -556,65 +556,65 @@
     $\sigma_0$ is Hermitian and unitary.
     Since
     \begin{align}
-        \sigma_1^{\dagger}=\left[\begin{matrix}
+        \sigma_1^{\dagger}=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\sigma_1,
+        \end{bmatrix}=\sigma_1,
     \end{align}
     and
     \begin{align}
-        \sigma_1^{\dagger}\sigma_1=\left[\begin{matrix}
+        \sigma_1^{\dagger}\sigma_1=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,
+        \end{bmatrix}=I,
     \end{align}
     $\sigma_1$ is Hermitian and unitary.
     Since
     \begin{align}
-        \sigma_2^{\dagger}=\left[\begin{matrix}
+        \sigma_2^{\dagger}=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\sigma_2,
+        \end{bmatrix}=\sigma_2,
     \end{align}
     and
     \begin{align}
-        \sigma_2^{\dagger}\sigma_2=\left[\begin{matrix}
+        \sigma_2^{\dagger}\sigma_2=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,
+        \end{bmatrix}=I,
     \end{align}
     $\sigma_2$ is Hermitian and unitary.
     Since
     \begin{align}
-        \sigma_3^{\dagger}=\left[\begin{matrix}
+        \sigma_3^{\dagger}=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\sigma_3,
+        \end{bmatrix}=\sigma_3,
     \end{align}
     and
     \begin{align}
-        \sigma_3^{\dagger}\sigma_3=\left[\begin{matrix}
+        \sigma_3^{\dagger}\sigma_3=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,
+        \end{bmatrix}=I,
     \end{align}
     $\sigma_3$ is Hermitian and unitary.
 \end{pf}
@@ -731,30 +731,30 @@
 \begin{sol}
     \begin{align}
         \lvert\psi\rangle^{\otimes 2}=&\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)=\frac{1}{2}(\lvert 0\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 1\rangle+\lvert 1\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 1\rangle)\\
-        =&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        =&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]=\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
             1\\
             1\\
             1\\
             1
-        \end{matrix}\right],\\
+        \end{bmatrix},\\
         \notag\lvert\psi\rangle^{\otimes 3}=&\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle+\lvert 1\rangle)=\frac{1}{2\sqrt{2}}(\lvert 0\rangle\lvert 0\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 0\rangle\lvert 1\rangle+\lvert 0\rangle\lvert 1\rangle\lvert 0\rangle+\lvert 0\rangle\lvert 1\rangle\lvert 1\rangle\\
         &+\lvert 1\rangle\lvert 0\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 0\rangle\lvert 1\rangle+\lvert 1\rangle\lvert 1\rangle\lvert 0\rangle+\lvert 1\rangle\lvert 1\rangle\lvert 1\rangle)\\
-        =&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        =&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1\\
             1
-        \end{matrix}\right]=\frac{1}{2\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{2\sqrt{2}}\begin{bmatrix}
             1\\
             1\\
             1\\
@@ -763,7 +763,7 @@
             1\\
             1\\
             1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -774,64 +774,64 @@
     \begin{itemize}
         \item[(a)] The matrix representation of the tensor product of $X$ and $Z$:
         \begin{align}
-            X\otimes Z=\left[\begin{matrix}
+            X\otimes Z=\begin{bmatrix}
                 0&1\\
                 1&0
-            \end{matrix}\right]\otimes\left[\begin{matrix}
+            \end{bmatrix}\otimes\begin{bmatrix}
                 1&0\\
                 0&-1
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 0&0&1&0\\
                 0&0&0&-1\\
                 1&0&0&0\\
                 0&-1&0&0
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         The matrix representation of the tensor product of $Z$ and $X$:
         \begin{align}
-            Z\otimes X=\left[\begin{matrix}
+            Z\otimes X=\begin{bmatrix}
                 1&0\\
                 0&-1
-            \end{matrix}\right]\otimes\left[\begin{matrix}
+            \end{bmatrix}\otimes\begin{bmatrix}
                 0&1\\
                 1&0
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 0&1&0&0\\
                 1&0&0&0\\
                 0&0&0&-1\\
                 0&0&-1&0
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         Therefore, the tensor product $X\otimes Z$ and $Z\otimes X$ are not commutative.
         \item[(b)] The matrix representation of the tensor product of $I$ and $X$:
         \begin{align}
-            I\otimes X=\left[\begin{matrix}
+            I\otimes X=\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right]\otimes\left[\begin{matrix}
+            \end{bmatrix}\otimes\begin{bmatrix}
                 0&1\\
                 1&0
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 0&1&0&0\\
                 1&0&0&0\\
                 0&0&0&1\\
                 0&0&1&0
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         \item[(c)] The matrix representation of the tensor product of $X$ and $I$:
         \begin{align}
-            X\otimes I=\left[\begin{matrix}
+            X\otimes I=\begin{bmatrix}
                 0&1\\
                 1&0
-            \end{matrix}\right]\otimes\left[\begin{matrix}
+            \end{bmatrix}\otimes\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 0&0&1&0\\
                 0&0&0&1\\
                 1&0&0&0\\
                 0&1&0&0
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         Therefore, the tensor product $I\otimes X$ and $X\otimes I$ are not commutative.
     \end{itemize}
@@ -848,31 +848,31 @@
     \begin{itemize}
         \item[(a)] 
         \begin{align}
-            (A\otimes B)^*=\left[\begin{matrix}
+            (A\otimes B)^*=\begin{bmatrix}
                 A_{11}B&A_{12}B&\cdots&A_{1n}B\\
                 A_{21}B&A_{22}B&\cdots&A_{2n}B\\
                 \vdots&\vdots&\vdots&\vdots\\
                 A_{m1}B&A_{m2}B&\cdots&A_{mn}B
-            \end{matrix}\right]^*=\left[\begin{matrix}
+            \end{bmatrix}^*=\begin{bmatrix}
                 A_{11}^*B^*&A_{12}^*B^*&\cdots&A_{1n}^*B^*\\
                 A_{21}^*B^*&A_{22}^*B^*&\cdots&A_{2n}^*B^*\\
                 \vdots&\vdots&\vdots&\vdots\\
                 A_{m1}^*B^*&A_{m2}^*B^*&\cdots&A_{mn}^*B^*
-            \end{matrix}\right]=A^*\otimes B^*.
+            \end{bmatrix}=A^*\otimes B^*.
         \end{align}
         \item[(b)] 
         \begin{align}
-            (A\otimes B)^T=\left[\begin{matrix}
+            (A\otimes B)^T=\begin{bmatrix}
                 A_{11}B&A_{12}B&\cdots&A_{1n}B\\
                 A_{21}B&A_{22}B&\cdots&A_{2n}B\\
                 \vdots&\vdots&\vdots&\vdots\\
                 A_{m1}B&A_{m2}B&\cdots&A_{mn}B
-            \end{matrix}\right]^T=\left[\begin{matrix}
+            \end{bmatrix}^T=\begin{bmatrix}
                 A_{11}B^T&A_{21}B^T&\cdots&A_{m1}B^T\\
                 A_{12}B^T&A_{22}B^T&\cdots&A_{m2}B^T\\
                 \vdots&\vdots&\vdots&\vdots\\
                 A_{1n}B^T&A_{2n}B^T&\cdots&A_{mn}B^T
-            \end{matrix}\right]=A^T\otimes B^T.
+            \end{bmatrix}=A^T\otimes B^T.
         \end{align}
         \item[(c)] 
         \begin{align}
@@ -987,44 +987,44 @@
     \end{align}
     The matrix representation for $H^{\otimes 2}$ is
     \begin{align}
-        H^{\otimes 2}=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H^{\otimes 2}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
             1&1&1&1\\
             1&-1&1&-1\\
             1&1&-1&-1\\
             1&-1&-1&1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
 \begin{exe}
     Find the square root and logarithm of the matrix
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             4&3\\
             3&4
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{exe}
 \begin{sol}
     The square root of the matrix is
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             2&\sqrt{3}\\
             \sqrt{3}&2
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     The logarithm of the matrix is
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             \ln 4&\ln 3\\
             \ln 3&\ln 4
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -1228,72 +1228,72 @@
 \begin{pf}
     The commutation relations for the Pauli matrices are
     \begin{align}
-        [X,Y]=&XY-YX=\left[\begin{matrix}
+        [X,Y]=&XY-YX=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             i&0\\
             0&-i
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             -i&0\\
             0&i
-        \end{matrix}\right]=2i\left[\begin{matrix}
+        \end{bmatrix}=2i\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=2iZ,\\
-        [Y,Z]=&YZ-ZY=\left[\begin{matrix}
+        \end{bmatrix}=2iZ,\\
+        [Y,Z]=&YZ-ZY=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&i\\
             i&0
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             0&-i\\
             -i&0
-        \end{matrix}\right]=2i\left[\begin{matrix}
+        \end{bmatrix}=2i\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=2iX,\\
-        [Z,X]=&ZX-XZ=\left[\begin{matrix}
+        \end{bmatrix}=2iX,\\
+        [Z,X]=&ZX-XZ=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&1\\
             -1&0
-        \end{matrix}\right]-\left[\begin{matrix}
+        \end{bmatrix}-\begin{bmatrix}
             0&-1\\
             1&0
-        \end{matrix}\right]=2i\left[\begin{matrix}
+        \end{bmatrix}=2i\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=2iY,
+        \end{bmatrix}=2iY,
     \end{align}
     and
     \begin{align}
@@ -1318,94 +1318,94 @@
 \end{exe}
 \begin{pf}
     \begin{align}
-        \{\sigma_1,\sigma_2\}=&\sigma_1\sigma_2+\sigma_2\sigma_1=\left[\begin{matrix}
+        \{\sigma_1,\sigma_2\}=&\sigma_1\sigma_2+\sigma_2\sigma_1=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             i&0\\
             0&-i
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             -i&0\\
             0&i
-        \end{matrix}\right]=0,\\
-        \{\sigma_2,\sigma_3\}=&\sigma_2\sigma_3+\sigma_3\sigma_2=\left[\begin{matrix}
+        \end{bmatrix}=0,\\
+        \{\sigma_2,\sigma_3\}=&\sigma_2\sigma_3+\sigma_3\sigma_2=\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&i\\
             i&0
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             0&-i\\
             -i&0
-        \end{matrix}\right]=0,\\
-        \{\sigma_3,\sigma_1\}=&\sigma_3\sigma_1+\sigma_1\sigma_3=\left[\begin{matrix}
+        \end{bmatrix}=0,\\
+        \{\sigma_3,\sigma_1\}=&\sigma_3\sigma_1+\sigma_1\sigma_3=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&1\\
             -1&0
-        \end{matrix}\right]+\left[\begin{matrix}
+        \end{bmatrix}+\begin{bmatrix}
             0&-1\\
             1&0
-        \end{matrix}\right]=0,\\
+        \end{bmatrix}=0,\\
         \sigma_0^2=&I^2=I,\\
-        \sigma_1^2=&\left[\begin{matrix}
+        \sigma_1^2=&\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,\\
-        \sigma_2^2=&\left[\begin{matrix}
+        \end{bmatrix}=I,\\
+        \sigma_2^2=&\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,\\
-        \sigma_3^2=&\left[\begin{matrix}
+        \end{bmatrix}=I,\\
+        \sigma_3^2=&\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I.
+        \end{bmatrix}=I.
     \end{align}
     Therefore, in general,
     \begin{align}
@@ -1554,48 +1554,48 @@
 \begin{exe}
     Find the left and right polar decomposition of the matrix
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{exe}
 \begin{sol}
     Left polar decomposition:
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=UJ,
+        \end{bmatrix}=UJ,
     \end{align}
     where
     \begin{align}
-        J=\sqrt{\left[\begin{matrix}
+        J=\sqrt{\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]}.
+        \end{bmatrix}}.
     \end{align}
     Since
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&1\\
             0&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     whose characteristic equation
     \begin{align}
@@ -1610,101 +1610,101 @@
     \end{align}
     and eigenequations
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right]\lvert v_1\rangle=&\left[\begin{matrix}
+        \end{bmatrix}\lvert v_1\rangle=&\begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             2a_1+b_1\\
             a_1+b_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\\
-        \left[\begin{matrix}
+        \end{bmatrix},\\
+        \begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right]\lvert v_2\rangle=&\left[\begin{matrix}
+        \end{bmatrix}\lvert v_2\rangle=&\begin{bmatrix}
             2&1\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             2a_2+b_2\\
             a_2+b_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]
+        \end{bmatrix}
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\left[\begin{matrix}
+        \lvert v_1\rangle=\begin{bmatrix}
             \sqrt{\frac{5+\sqrt{5}}{10}}\\
             \sqrt{\frac{5-\sqrt{5}}{10}}
-        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad\lvert v_2\rangle=\begin{bmatrix}
             \sqrt{\frac{5-\sqrt{5}}{10}}\\
             -\sqrt{\frac{5+\sqrt{5}}{10}}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     we have
     \begin{align}
-        J=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\left[\begin{matrix}
+        J=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\begin{bmatrix}
             1.3416&0.4472\\
             0.4472&0.8944
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     and
     \begin{align}
-        U=\left[\begin{matrix}
+        U=\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]J^{-1}\approx\left[\begin{matrix}
+        \end{bmatrix}J^{-1}\approx\begin{bmatrix}
             0.8944&-0.4472\\
             0.4472&0.8944
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     Right polar decomposition:
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]=KU,
+        \end{bmatrix}=KU,
     \end{align}
     where
     \begin{align}
-        K=\sqrt{\left[\begin{matrix}
+        K=\sqrt{\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}}.
+        \end{bmatrix}^{\dagger}}.
     \end{align}
     Since
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]^{\dagger}=\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}=\begin{bmatrix}
             1&0\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&1\\
             0&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     whose characteristic equation
     \begin{align}
@@ -1719,55 +1719,55 @@
     \end{align}
     and eigenequations
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right]\lvert v_1\rangle=&\left[\begin{matrix}
+        \end{bmatrix}\lvert v_1\rangle=&\begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             a_1+b_1\\
             a_1+2b_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\frac{3+\sqrt{5}}{2}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\\
-        \left[\begin{matrix}
+        \end{bmatrix},\\
+        \begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right]\lvert v_2\rangle=&\left[\begin{matrix}
+        \end{bmatrix}\lvert v_2\rangle=&\begin{bmatrix}
             1&1\\
             1&2
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             a_2+b_2\\
             a_2+2b_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\frac{3-\sqrt{5}}{2}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\left[\begin{matrix}
+        \lvert v_1\rangle=\begin{bmatrix}
             \sqrt{\frac{5-\sqrt{5}}{10}}\\
             \sqrt{\frac{5+\sqrt{5}}{10}}
-        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad\lvert v_2\rangle=\begin{bmatrix}
             \sqrt{\frac{5+\sqrt{5}}{10}}\\
             -\sqrt{\frac{5-\sqrt{5}}{10}}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     we have
     \begin{align}
-        K=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\left[\begin{matrix}
+        K=\sqrt{\frac{3+\sqrt{5}}{2}}\lvert v_1\rangle\langle v_1\rvert+\sqrt{\frac{3-\sqrt{5}}{2}}\lvert v_2\rangle\langle v_2\rvert\approx\begin{bmatrix}
             0.8944&0.4472\\
             0.4472&1.3416
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -1779,22 +1779,22 @@
 \begin{pf}
     Since
     \begin{align}
-        H^{\dagger}H=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H^{\dagger}H=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]^{\dagger}\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I,
+        \end{bmatrix}=I,
     \end{align}
     the Hadamard gate $H$ is unitary.
 \end{pf}
@@ -1804,16 +1804,16 @@
 \end{exe}
 \begin{pf}
     \begin{align}
-        H^2=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H^2=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I.
+        \end{bmatrix}=I.
     \end{align}
 \end{pf}
 
@@ -1834,42 +1834,42 @@
     \end{align}
     The eigenequations of $H$
     \begin{align}
-        H\lvert v_1\rangle=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H\lvert v_1\rangle=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             a_1+b_1\\
             a_1-b_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\\
-        H\lvert v_2\rangle=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix},\\
+        H\lvert v_2\rangle=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             a_2+b_2\\
             a_2-b_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\begin{bmatrix}
             -a_2\\
             -b_2
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\left[\begin{matrix}
+        \lvert v_1\rangle=\begin{bmatrix}
             \sqrt{\frac{2+\sqrt{2}}{2}}\\
             \sqrt{\frac{2-\sqrt{2}}{2}}
-        \end{matrix}\right],\quad\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix},\quad\lvert v_2\rangle=\begin{bmatrix}
             \sqrt{\frac{2-\sqrt{2}}{4}}\\
             -\sqrt{\frac{2+\sqrt{2}}{4}}
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -1981,27 +1981,27 @@
 \begin{sol}
     The average value of $X$ is
     \begin{align}
-        \langle 0\rvert X\lvert 0\rangle=\left[\begin{matrix}
+        \langle 0\rvert X\lvert 0\rangle=\begin{bmatrix}
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1\\
             0
-        \end{matrix}\right]=0.
+        \end{bmatrix}=0.
     \end{align}
     The average value of $X^2$ is
     \begin{align}
-        \langle 0\rvert X^2\lvert 0\rangle=\left[\begin{matrix}
+        \langle 0\rvert X^2\lvert 0\rangle=\begin{bmatrix}
             1&0
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]^2\left[\begin{matrix}
+        \end{bmatrix}^2\begin{bmatrix}
             1\\
             0
-        \end{matrix}\right]=1.
+        \end{bmatrix}=1.
     \end{align}
     The standard deviation of $X$ is
     \begin{align}
@@ -2014,19 +2014,19 @@
 \end{exe}
 \begin{pf}
     \begin{align}
-        \vec{v}\cdot\vec{\sigma}=v_1\sigma_1+v_2\sigma_2+v_3\sigma_3=v_1\left[\begin{matrix}
+        \vec{v}\cdot\vec{\sigma}=v_1\sigma_1+v_2\sigma_2+v_3\sigma_3=v_1\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]+v_2\left[\begin{matrix}
+        \end{bmatrix}+v_2\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]+v_3\left[\begin{matrix}
+        \end{bmatrix}+v_3\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             v_3&v_1-iv_2\\
             v_1+iv_2&-v_3
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     The characteristic equation of $\vec{v}\cdot\vec{\sigma}$
     \begin{align}
@@ -2041,79 +2041,79 @@
     \end{align}
     The eigenequations
     \begin{align}
-        (\vec{v}\cdot\vec{\sigma})\lvert v_1\rangle=&\left[\begin{matrix}
+        (\vec{v}\cdot\vec{\sigma})\lvert v_1\rangle=&\begin{bmatrix}
             v_3&v_1-iv_2\\
             v_1+iv_2&-v_3
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             v_3a_1+(v_1-iv_2)b_1\\
             (v_1+iv_2)a_1-v_3b_1
-        \end{matrix}\right]=\lambda_1\lvert v_1\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_1\lvert v_1\rangle=\begin{bmatrix}
             a_1\\
             b_1
-        \end{matrix}\right],\\
-        (\vec{v}\cdot\vec{\sigma})\lvert v_2\rangle=&\left[\begin{matrix}
+        \end{bmatrix},\\
+        (\vec{v}\cdot\vec{\sigma})\lvert v_2\rangle=&\begin{bmatrix}
             v_3&v_1-iv_2\\
             v_1+iv_2&-v_3
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a_2\\
             b_2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             v_3a_2+(v_1-iv_2)b_2\\
             (v_1+iv_2)a_2-v_3b_2
-        \end{matrix}\right]=\lambda_2\lvert v_2\rangle=\left[\begin{matrix}
+        \end{bmatrix}=\lambda_2\lvert v_2\rangle=\begin{bmatrix}
             -a_2\\
             -b_2
-        \end{matrix}\right]
+        \end{bmatrix}
     \end{align}
     give the corresponding eigenvectors
     \begin{align}
-        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\begin{bmatrix}
             1+v_3\\
             v_1+iv_2
-        \end{matrix}\right],\quad\lvert v_2\rangle=\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+        \end{bmatrix},\quad\lvert v_2\rangle=\frac{1}{\sqrt{2(1-v_3)}}\begin{bmatrix}
             v_3-1\\
             v_1+iv_2
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     The projectors onto the corresponding eigensapces are
     \begin{align}
-        \notag P_+=&\lvert v_1\rangle\langle v_1\rvert=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+        \notag P_+=&\lvert v_1\rangle\langle v_1\rvert=\frac{1}{\sqrt{2(1+v_3)}}\begin{bmatrix}
             1+v_3\\
             v_1+iv_2
-        \end{matrix}\right]\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2(1+v_3)}}\begin{bmatrix}
             1+v_3&v_1-iv_2
-        \end{matrix}\right]\\
-        \notag=&\frac{1}{2(1+v_3)}\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag=&\frac{1}{2(1+v_3)}\begin{bmatrix}
             (1+v_3)^2&(1+v_3)(v_1-iv_2)\\
             (v_1+iv_2)(1+v_3)&(v_1+iv_2)(v_1-iv_2)
-        \end{matrix}\right]=\frac{1}{2(1+v_3)}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{2(1+v_3)}\begin{bmatrix}
             (1+v_3)^2&(1+v_3)(v_1-iv_2)\\
             (v_1+iv_2)(1+v_3)&(1+v_3)(1-v_3)
-        \end{matrix}\right]\\
-        =&\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\frac{1}{2}\begin{bmatrix}
             1+v_3&v_1-iv_2\\
             v_1+iv_2&1-v_3
-        \end{matrix}\right]=(I+\vec{v}\cdot\vec{\sigma})/2,\\
-        \notag P_-=&\lvert v_2\rangle\langle v_2\rvert=\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+        \end{bmatrix}=(I+\vec{v}\cdot\vec{\sigma})/2,\\
+        \notag P_-=&\lvert v_2\rangle\langle v_2\rvert=\frac{1}{\sqrt{2(1-v_3)}}\begin{bmatrix}
             v_3-1\\
             v_1+iv_2
-        \end{matrix}\right]\frac{1}{\sqrt{2(1-v_3)}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2(1-v_3)}}\begin{bmatrix}
             v_3-1&v_1-iv_2
-        \end{matrix}\right]\\
-        \notag=&\frac{1}{2(1-v_3)}\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag=&\frac{1}{2(1-v_3)}\begin{bmatrix}
             (v_3-1)^2&(v_3-1)(v_1-iv_2)\\
             (v_1+iv_2)(v_3-1)&(v_1+iv_2)(v_1-iv_2)
-        \end{matrix}\right]=\frac{1}{2(1-v_3)}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{2(1-v_3)}\begin{bmatrix}
             (1-v_3)^2&-(1-v_3)(v_1-iv_2)\\
             -(v_1+iv_2)(1-v_3)&(1+v_3)(1-v_3)
-        \end{matrix}\right]\\
-        =&\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\frac{1}{2}\begin{bmatrix}
             1-v_3&-(v_1-iv_2)\\
             v_1+iv_2&1+v_3
-        \end{matrix}\right]=(I-\vec{v}\cdot\vec{\sigma})/2.
+        \end{bmatrix}=(I-\vec{v}\cdot\vec{\sigma})/2.
     \end{align}
 \end{pf}
 
@@ -2123,22 +2123,22 @@
 \begin{sol}
     The probability of obtaining $+1$ for a measurement of $\vec{v}\cdot\vec{\sigma}$ is
     \begin{align}
-        p(1)=\langle 0\rvert P_+\lvert 0\rangle=\left[\begin{matrix}
+        p(1)=\langle 0\rvert P_+\lvert 0\rangle=\begin{bmatrix}
             1&0
-        \end{matrix}\right]\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{2}\begin{bmatrix}
             1-v_3&-(v_1-iv_2)\\
             v_1+iv_2&1+v_3
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1\\
             0
-        \end{matrix}\right]=\frac{1-v_3}{2}.
+        \end{bmatrix}=\frac{1-v_3}{2}.
     \end{align}
     The state of the system after the measurement if $+1$ is obtained is
     \begin{align}
-        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\left[\begin{matrix}
+        \lvert v_1\rangle=\frac{1}{\sqrt{2(1+v_3)}}\begin{bmatrix}
             1+v_3\\
             v_1+iv_2
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
@@ -2381,26 +2381,26 @@
 \begin{sol}
     \item[(1)] An arbitrary $2\times 2$ matrix $\rho$ can be expressed as a linear combination of $I$, $\sigma_1$, $\sigma_2$, $\sigma_3$,
     \begin{align}
-        \notag\rho=&\left[\begin{matrix}
+        \notag\rho=&\begin{bmatrix}
             \rho_{11}&\rho_{12}\\
             \rho_{21}&\rho_{22}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             \frac{1}{2}(\rho_{11}+\rho_{22})+\frac{1}{2}(\rho_{11}-\rho_{22})&\frac{1}{2}(\rho_{12}+\rho_{21})+i(-i)\frac{1}{2}(\rho_{12}-\rho_{21})\\
             \frac{1}{2}(\rho_{12}+\rho_{21})+i\cdot i(\rho_{12}-\rho_{21})&\frac{1}{2}(\rho_{11}+\rho_{22})-\frac{1}{2}(\rho_{11}-\rho_{22})
-        \end{matrix}\right]\\
-        \notag=&\frac{1}{2}(\rho_{11}+\rho_{22})\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag=&\frac{1}{2}(\rho_{11}+\rho_{22})\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]+\frac{1}{2}(\rho_{12}+\rho_{21})\left[\begin{matrix}
+        \end{bmatrix}+\frac{1}{2}(\rho_{12}+\rho_{21})\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]+\frac{i}{2}(\rho_{12}-\rho_{21})\left[\begin{matrix}
+        \end{bmatrix}+\frac{i}{2}(\rho_{12}-\rho_{21})\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]+\frac{1}{2}(\rho_{11}-\rho_{22})\left[\begin{matrix}
+        \end{bmatrix}+\frac{1}{2}(\rho_{11}-\rho_{22})\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\\
+        \end{bmatrix}\\
         =&\frac{1}{2}(\rho_{11}+\rho_{22})I+\frac{1}{2}(\rho_{12}+\rho_{21})\sigma_1+\frac{i}{2}(\rho_{12}-\rho_{21})\sigma_2+\frac{1}{2}(\rho_{11}-\rho_{22})\sigma_3
     \end{align}
     If $\rho$ is an arbitrary density matrix, then it has trace of $1$,
@@ -2448,16 +2448,16 @@
     \end{gather}
     In this way, the trace of the square of the density matrix equals $1$,
     \begin{align}
-        \tr(\rho^2)=\tr\left(\left[\begin{matrix}
+        \tr(\rho^2)=\tr\left(\begin{bmatrix}
             \rho_{11}&\rho_{12}\\
             \rho_{21}&\rho_{22}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \rho_{11}&\rho_{12}\\
             \rho_{21}&\rho_{22}
-        \end{matrix}\right]\right)=\tr\left[\begin{matrix}
+        \end{bmatrix}\right)=\tr\begin{bmatrix}
             \rho_{11}^2+\rho_{12}\rho_{21}&\rho_{11}\rho_{12}+\rho_{12}\rho_{22}\\
             \rho_{21}\rho_{11}+\rho_{22}\rho_{21}&\rho_{21}\rho_{12}+\rho_{22}^2
-        \end{matrix}\right]=\rho_{11}^2+\rho_{22}^2+2\rho_{12}\rho_{21}=1.
+        \end{bmatrix}=\rho_{11}^2+\rho_{22}^2+2\rho_{12}\rho_{21}=1.
     \end{align}
     Therefore, the state $\rho$ is pure.\\
     \emph{Sufficiency}: If the state $\rho$ is pure, the trace of its square is $1$,
@@ -2479,16 +2479,16 @@
     \end{align}
     The density matrix of the pure state is
     \begin{align}
-        \notag\rho=&\left(\cos\frac{\theta}{2}\lvert 0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\lvert 1\rangle\right)\left(\cos\frac{\theta}{2}\langle 0\rvert+e^{-i\varphi}\sin\frac{\theta}{2}\langle 1\rvert\right)=\left[\begin{matrix}
+        \notag\rho=&\left(\cos\frac{\theta}{2}\lvert 0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\lvert 1\rangle\right)\left(\cos\frac{\theta}{2}\langle 0\rvert+e^{-i\varphi}\sin\frac{\theta}{2}\langle 1\rvert\right)=\begin{bmatrix}
             \cos\frac{\theta}{2}\\
             e^{i\varphi}\sin\frac{\theta}{2}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\theta}{2}&e^{-i\varphi}\sin\frac{\theta}{2}
-        \end{matrix}\right]\\
-        =&\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
             \cos^2\frac{\theta}{2}&e^{-i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}\\
             e^{i\varphi}\sin\frac{\theta}{2}\cos\frac{\theta}{2}&\sin^2\frac{\theta}{2}
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     According to the description we have given, the Bloch vector is
     \begin{align}
@@ -2669,10 +2669,10 @@
     for some matrix $a$ of complex numbers $a_{jk}$.
     Without loss of generality, set $n>m$. By the singular value decomposition,
     \begin{align}
-        a=u\left[\begin{matrix}
+        a=u\begin{bmatrix}
             d\\
             0
-        \end{matrix}\right]v,
+        \end{bmatrix}v,
     \end{align}
     where $u$ is an $n\times n$ unitary matrix, $v$ is an $m\times m$ unitary matrix, $d$ is an $m\times m$ diagonal matrix with non-negative real elements, and $\left[\begin{smallmatrix}
         d\\
@@ -2799,30 +2799,30 @@
     \end{align}
     For state $\frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle+\lvert 11\rangle}{2}$, by singular decomposition, we have
     \begin{align}
-        a=\frac{1}{2}\left[\begin{matrix}
+        a=\frac{1}{2}\begin{bmatrix}
             1&1\\
             1&1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             -1&1\\
             1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&0\\
             0&1
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             -1&1\\
             1&1
-        \end{matrix}\right]=udv,
+        \end{bmatrix}=udv,
     \end{align}
     where
     \begin{align}
-        u=v=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        u=v=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             -1&1\\
             1&1
-        \end{matrix}\right],\\
-        d=&\left[\begin{matrix}
+        \end{bmatrix},\\
+        d=&\begin{bmatrix}
             0&0\\
             0&1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     Hence we define
     \begin{align}
@@ -2837,30 +2837,30 @@
     \end{align}
     For state $\frac{\lvert 00\rangle+\lvert 01\rangle+\lvert 10\rangle}{\sqrt{3}}$, by singular decomposition,
     \begin{align}
-        a=\frac{1}{\sqrt{3}}\left[\begin{matrix}
+        a=\frac{1}{\sqrt{3}}\begin{bmatrix}
             1&1\\
             1&0
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
             \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \frac{1-\sqrt{5}}{2\sqrt{3}}&0\\
             0&\frac{1+\sqrt{5}}{2\sqrt{3}}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
             \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
-        \end{matrix}\right]=udv,
+        \end{bmatrix}=udv,
     \end{align}
     where
     \begin{align}
-        u=v=&\left[\begin{matrix}
+        u=v=&\begin{bmatrix}
             -\sqrt{\frac{5-\sqrt{5}}{10}}&\sqrt{\frac{5+\sqrt{5}}{10}}\\
             \sqrt{\frac{5+\sqrt{5}}{10}}&\sqrt{\frac{5-\sqrt{5}}{10}}
-        \end{matrix}\right],\\
-        d=&\left[\begin{matrix}
+        \end{bmatrix},\\
+        d=&\begin{bmatrix}
             \frac{1-\sqrt{5}}{2\sqrt{3}}&0\\
             0&\frac{1+\sqrt{5}}{2\sqrt{3}}
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     Hence we define
     \begin{align}
@@ -3112,32 +3112,32 @@
 \end{prob}
 \begin{pf}
     \begin{gather}
-        Q=\vec{q}\cdot\vec{\sigma}=q_1\sigma_1+q_2\sigma_2+q_3\sigma_3=q_1\left[\begin{matrix}
+        Q=\vec{q}\cdot\vec{\sigma}=q_1\sigma_1+q_2\sigma_2+q_3\sigma_3=q_1\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]+q_2\left[\begin{matrix}
+        \end{bmatrix}+q_2\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]+q_3\left[\begin{matrix}
+        \end{bmatrix}+q_3\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             q_3&q_1-iq_2\\
             q_1+iq_2&-q_3
-        \end{matrix}\right],\\
-        \Longrightarrow Q^2=\left[\begin{matrix}
+        \end{bmatrix},\\
+        \Longrightarrow Q^2=\begin{bmatrix}
             q_3&q_1-iq_2\\
             q_1+iq_2&-q_3
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             q_3&q_1-iq_2\\
             q_1+iq_2&-q_3
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             q_1^2+q_2^2+q_3^2&0\\
             0&q_1^2+q_2^2+q_3^2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I.
+        \end{bmatrix}=I.
     \end{gather}
     Similarly,
     \begin{align}

@@ -37,18 +37,18 @@
         \label{E4.2}
         \exp(iAx)=\cos(x)I+i\sin(x)A.
     \end{align}
-    Use this result to verify Equation (4.4) through (4.6)\footnote{Equation 4.4: $R_x(\theta)\equiv e^{-i\theta X/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\left[\begin{matrix}
+    Use this result to verify Equation (4.4) through (4.6)\footnote{Equation 4.4: $R_x(\theta)\equiv e^{-i\theta X/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\begin{bmatrix}
         \cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\
         -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}
-    \end{matrix}\right]$;\\
-    Equation 4.5: $R_y(\theta)\equiv e^{-i\theta Y/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y=\left[\begin{matrix}
+    \end{bmatrix}$;\\
+    Equation 4.5: $R_y(\theta)\equiv e^{-i\theta Y/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y=\begin{bmatrix}
         \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
         \sin\frac{\theta}{2}&\cos\frac{\theta}{2}
-    \end{matrix}\right]$;\\
-    Equation 4.6: $R_z(\theta)\equiv e^{-i\theta Z/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Z=\left[\begin{matrix}
+    \end{bmatrix}$;\\
+    Equation 4.6: $R_z(\theta)\equiv e^{-i\theta Z/2}=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Z=\begin{bmatrix}
         e^{-i\theta/2}&0\\
         0&e^{i\theta/2}
-    \end{matrix}\right]$.}.
+    \end{bmatrix}$.}.
 \end{exe}
 \begin{pf}
     Similar to Exercise 2.35 and Problem 2.1, the left side of Equation \eqref{E4.2} is
@@ -68,48 +68,48 @@
 
     Using the above result,
     \begin{align}
-        \notag R_x(\theta)=&e^{-i\theta X/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)X=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\cos\frac{\theta}{2}\left[\begin{matrix}
+        \notag R_x(\theta)=&e^{-i\theta X/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)X=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}X=\cos\frac{\theta}{2}\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+        \end{bmatrix}-i\sin\frac{\theta}{2}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\\
-        =&\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
             \cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\
             -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     which verifies Equation (4.4),
     \begin{align}
-        \notag R_Y(\theta)=&e^{-i\theta Y/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Y=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y=\cos\frac{\theta}{2}\left[\begin{matrix}
+        \notag R_Y(\theta)=&e^{-i\theta Y/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Y=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Y=\cos\frac{\theta}{2}\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+        \end{bmatrix}-i\sin\frac{\theta}{2}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\\
-        =&\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
             \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
             \sin\frac{\theta}{2}&\cos\frac{\theta}{2}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     which verifies Equation (4.5), and
     \begin{align}
-        \notag R_Z(\theta)=&e^{-i\theta Z/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Z=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Z=\cos\frac{\theta}{2}\left[\begin{matrix}
+        \notag R_Z(\theta)=&e^{-i\theta Z/2}=\cos\left(-\frac{\theta}{2}\right)I+i\sin\left(-\frac{\theta}{2}\right)Z=\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}Z=\cos\frac{\theta}{2}\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]-i\sin\frac{\theta}{2}\left[\begin{matrix}
+        \end{bmatrix}-i\sin\frac{\theta}{2}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\\
-        =&\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
             \cos\frac{\theta}{2}-i\sin\frac{\theta}{2}&0\\
             0&\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             e^{-i\theta/2}&0\\
             0&e^{i\theta/2}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     which verifies Equation (4.6).
 \end{pf}
@@ -120,10 +120,10 @@
 \begin{pf}
     Using the conclusion proved in the previous exercise,
     \begin{align}
-        R_z(\pi/4)=\left[\begin{matrix}
+        R_z(\pi/4)=\begin{bmatrix}
             e^{-i\pi/8}&0\\
             0&e^{i\pi/8}
-        \end{matrix}\right]=\exp(-i\pi/8)T,
+        \end{bmatrix}=\exp(-i\pi/8)T,
     \end{align}
     so the $\pi/8$ gate satisfies $T=R_z(\pi/4)$ up to a global phase.
 \end{pf}
@@ -134,30 +134,30 @@
 \begin{pf}
     Since
     \begin{align}
-        \notag e^{i\pi/2}R_z\left(\frac{\pi}{2}\right)R_x\left(\frac{\pi}{2}\right)R_z\left(\frac{\pi}{2}\right)=&e^{i\pi/2}\left[\begin{matrix}
+        \notag e^{i\pi/2}R_z\left(\frac{\pi}{2}\right)R_x\left(\frac{\pi}{2}\right)R_z\left(\frac{\pi}{2}\right)=&e^{i\pi/2}\begin{bmatrix}
             e^{-i\pi/4}&0\\
             0&e^{i\pi/4}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\pi}{4}&-i\sin\frac{\pi}{4}\\
             -i\sin\frac{\pi}{4}&\cos\frac{\pi}{4}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             e^{-i\pi/4}&0\\
             0&e^{i\pi/4}
-        \end{matrix}\right]\\
-        \notag=&e^{i\pi/2}\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag=&e^{i\pi/2}\begin{bmatrix}
             e^{-i\pi/4}\cos\frac{\pi}{4}&-ie^{-i\pi/4}\sin\frac{\pi}{4}\\
             -ie^{i\pi/4}\sin\frac{\pi}{4}&e^{i\pi/4}\cos\frac{\pi}{4}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             e^{-i\pi/4}&0\\
             0&e^{i\pi/4}
-        \end{matrix}\right]\\
-        \notag=&e^{i\pi/2}\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag=&e^{i\pi/2}\begin{bmatrix}
             e^{-i\pi/2}\cos\frac{\pi}{4}&-i\sin\frac{\pi}{4}\\
             -i\sin\frac{\pi}{4}&e^{i\pi/2}\cos\frac{\pi}{4}
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=H,
+        \end{bmatrix}=H,
     \end{align}
     the Hadamard gate $H$ can be expressed as a product of $R_x$ and $R_z$ rotations and $e^{i\varphi}$.
 \end{pf}
@@ -168,32 +168,32 @@
 \begin{pf}
     Similar to Exercise 2.35,
     \begin{gather}
-        \hat{n}\cdot\vec{\sigma}=n_x\sigma_1+n_y\sigma_2+n_z\sigma_3=n_x\left[\begin{matrix}
+        \hat{n}\cdot\vec{\sigma}=n_x\sigma_1+n_y\sigma_2+n_z\sigma_3=n_x\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]+n_y\left[\begin{matrix}
+        \end{bmatrix}+n_y\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]+n_z\left[\begin{matrix}
+        \end{bmatrix}+n_z\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             n_z&n_x-in_y\\
             n_x+in_y&-n_z
-        \end{matrix}\right],\\
-        \Longrightarrow(\hat{n}\cdot\vec{\sigma})^2=\left[\begin{matrix}
+        \end{bmatrix},\\
+        \Longrightarrow(\hat{n}\cdot\vec{\sigma})^2=\begin{bmatrix}
             n_z&n_x-in_y\\
             n_x+in_y&-n_z
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             n_z&n_x-in_y\\
             n_x+in_y&-n_z
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             n_x^2+n_y^2+n_z^2&0\\
             0&n_x^2+n_y^2+n_z^2
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I.
+        \end{bmatrix}=I.
     \end{gather}
 
     Using the above result,
@@ -278,10 +278,10 @@
         \item[2.] Find values for $\alpha$, $\theta$, and $\hat{n}$ giving the Hadamard gate $H$.
         \item[3.] Find value for $\alpha$, $\theta$, and $\hat{n}$ giving the phase gate
         \begin{align}
-            S=\left[\begin{matrix}
+            S=\begin{bmatrix}
                 1&0\\
                 0&i
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
     \end{itemize}
 \end{exe}
@@ -289,43 +289,43 @@
     \begin{itemize}
         \item[1.] Suppose an arbitrary qubit unitary operator is
         \begin{align}
-            U=\left[\begin{matrix}
+            U=\begin{bmatrix}
                 a&b\\
                 c&d
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
         \begin{gather}
-            UU^{\dagger}=\left[\begin{matrix}
+            UU^{\dagger}=\begin{bmatrix}
                 a&b\\
                 c&d
-            \end{matrix}\right]\left[\begin{matrix}
+            \end{bmatrix}\begin{bmatrix}
                 a^*&c^*\\
                 b^*&d^*
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 aa^*+bb^*&ac^*+bd^*\\
                 a^*c+b^*d&cc^*+dd^*
-            \end{matrix}\right]=I=\left[\begin{matrix}
+            \end{bmatrix}=I=\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right],\\
+            \end{bmatrix},\\
             \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0,\\
             \Longrightarrow c=\mp b^*,\quad d=\pm a^*,\quad\abs{a}^2+\abs{b}^2=1.
         \end{gather}
         Hence $U$ can be written as
         \begin{align}
-            U=\left[\begin{matrix}
+            U=\begin{bmatrix}
                 a&b\\
                 \mp b^*&\pm a^*
-            \end{matrix}\right]=\left\{\begin{array}{ll}
-                \left[\begin{matrix}
+            \end{bmatrix}=\left\{\begin{array}{ll}
+                \begin{bmatrix}
                     a&b\\
                     -b^*&a^*
-                \end{matrix}\right],&\text{for }\det(U)=1;\\
-                \left[\begin{matrix}
+                \end{bmatrix},&\text{for }\det(U)=1;\\
+                \begin{bmatrix}
                     a&b\\
                     b^*&-a^*
-                \end{matrix}\right],&\text{for }\det(U)=-1,\\
+                \end{bmatrix},&\text{for }\det(U)=-1,\\
             \end{array}\right.
         \end{align}
         where $\abs{a}^2+\abs{b}^2=1$.
@@ -345,69 +345,69 @@
         for $n_x^2+n_y^2+n_z^2=1$.
         In this way, the single qubit unitary operator can be written in the form
         \begin{align}
-            \notag U=&\left[\begin{matrix}
+            \notag U=&\begin{bmatrix}
                 a&b\\
                 \mp b^*&\pm a^*
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
                 \pm e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&\pm e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
-            \end{matrix}\right]\\
+            \end{bmatrix}\\
             \notag=&\left\{\begin{array}{ll}
-                \left[\begin{matrix}
+                \begin{bmatrix}
                     e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
                     e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
-                \end{matrix}\right],&\text{for }\det(U)=1\\
-                \left[\begin{matrix}
+                \end{bmatrix},&\text{for }\det(U)=1\\
+                \begin{bmatrix}
                     e^{i\alpha}\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-e^{i\alpha}(in_x+n_y)\sin\frac{\theta}{2}\\
                     -e^{-i\alpha}(-in_x+n_y)\sin\frac{\theta}{2}&-e^{-i\alpha}\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
-                \end{matrix}\right],&\text{for }\det(U)=-1
+                \end{bmatrix},&\text{for }\det(U)=-1
             \end{array}\right.\\
             \notag=&\left\{\begin{array}{ll}
-                \left[\begin{matrix}
+                \begin{bmatrix}
                     \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
                     (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
-                \end{matrix}\right],&\text{for }\det(U)=1\\
-                \left[\begin{matrix}
+                \end{bmatrix},&\text{for }\det(U)=1\\
+                \begin{bmatrix}
                     i\left(\cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}\right)&-i(in_x+n_y)\sin\frac{\theta}{2}\\
                     i(-in_x+n_y)\sin\frac{\theta}{2}&i\left(\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}\right)
-                \end{matrix}\right],&\text{for }\det(U)=-1
+                \end{bmatrix},&\text{for }\det(U)=-1
             \end{array}\right.\\
             \notag=&\left\{\begin{array}{ll}
-                \left[\begin{matrix}
+                \begin{bmatrix}
                     \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
                     (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
-                \end{matrix}\right],&\text{for }\det(U)=1\\
-                i\left[\begin{matrix}
+                \end{bmatrix},&\text{for }\det(U)=1\\
+                i\begin{bmatrix}
                     \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
                     (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
-                \end{matrix}\right],&\text{for }\det(U)=-1
+                \end{bmatrix},&\text{for }\det(U)=-1
             \end{array}\right.\\
-            \notag=&e^{i\alpha}\left[\begin{matrix}
+            \notag=&e^{i\alpha}\begin{bmatrix}
                 \cos\frac{\theta}{2}-in_z\sin\frac{\theta}{2}&-(in_x+n_y)\sin\frac{\theta}{2}\\
                 (-in_x+n_y)\sin\frac{\theta}{2}&\cos\frac{\theta}{2}+in_z\sin\frac{\theta}{2}
-            \end{matrix}\right]\\
-            \notag=&e^{i\alpha}\left\{\cos\theta\left[\begin{matrix}
+            \end{bmatrix}\\
+            \notag=&e^{i\alpha}\left\{\cos\theta\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right]-i\sin\theta\left(n_x\left[\begin{matrix}
+            \end{bmatrix}-i\sin\theta\left(n_x\begin{bmatrix}
                 0&1\\
                 1&0
-            \end{matrix}\right]+n_y\left[\begin{matrix}
+            \end{bmatrix}+n_y\begin{bmatrix}
                 0&-i\\
                 i&0
-            \end{matrix}\right]+n_z\left[\begin{matrix}
+            \end{bmatrix}+n_z\begin{bmatrix}
                 1&0\\
                 0&-1
-            \end{matrix}\right]\right)\right\}\\
+            \end{bmatrix}\right)\right\}\\
             \notag=&e^{i\alpha}\left[\cos\frac{\theta}{2}I-i\sin\frac{\theta}{2}\left(n_xX+n_yY+n_zZ\right)\right]\\
             =&\exp(i\alpha)R_{\hat{n}}(\theta).
         \end{align}
         \item[2.] The Hadamard gate is
         \begin{align}
-            H=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+            H=\frac{1}{\sqrt{2}}\begin{bmatrix}
                 1&1\\
                 1&-1
-            \end{matrix}\right],
+            \end{bmatrix},
         \end{align}
         whose determinant is
         \begin{align}
@@ -439,67 +439,67 @@
 \end{sol}
 
 \begin{exe}
-    Explain why any single qubit unitary operator may be written in the form (4.12)\footnote{$U=\left[\begin{matrix}
+    Explain why any single qubit unitary operator may be written in the form (4.12)\footnote{$U=\begin{bmatrix}
         e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
         e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-    \end{matrix}\right]$.}.
+    \end{bmatrix}$.}.
 \end{exe}
 \begin{sol}
     Suppose an arbitrary qubit unitary operator is
         \begin{align}
-            U=\left[\begin{matrix}
+            U=\begin{bmatrix}
                 a&b\\
                 c&d
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
         \begin{gather}
-            UU^{\dagger}=\left[\begin{matrix}
+            UU^{\dagger}=\begin{bmatrix}
                 a&b\\
                 c&d
-            \end{matrix}\right]\left[\begin{matrix}
+            \end{bmatrix}\begin{bmatrix}
                 a^*&c^*\\
                 b^*&d^*
-            \end{matrix}\right]=\left[\begin{matrix}
+            \end{bmatrix}=\begin{bmatrix}
                 aa^*+bb^*&ac^*+bd^*\\
                 a^*c+b^*d&cc^*+dd^*
-            \end{matrix}\right]=I=\left[\begin{matrix}
+            \end{bmatrix}=I=\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right],\\
+            \end{bmatrix},\\
             \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0.
         \end{gather}
         Since
         \begin{align}
-            \notag&\left[\begin{matrix}
+            \notag&\begin{bmatrix}
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right]\left[\begin{matrix}
+            \end{bmatrix}\begin{bmatrix}
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right]^{\dagger}\\
-            \notag=&\left[\begin{matrix}
+            \end{bmatrix}^{\dagger}\\
+            \notag=&\begin{bmatrix}
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right]\left[\begin{matrix}
+            \end{bmatrix}\begin{bmatrix}
                 e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}\\
                 -e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}&e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right]\\
-            \notag=&\left[\begin{matrix}
+            \end{bmatrix}\\
+            \notag=&\begin{bmatrix}
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}+e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2};\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}-e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2},\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}e^{-i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}+e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}e^{-i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right]\\
-            =&\left[\begin{matrix}
+            \end{bmatrix}\\
+            =&\begin{bmatrix}
                 1&0\\
                 0&1
-            \end{matrix}\right],
+            \end{bmatrix},
         \end{align}
-        the matrix $\left[\begin{matrix}
+        the matrix $\begin{bmatrix}
             e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
             e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-        \end{matrix}\right]$ is also unitary.
+        \end{bmatrix}$ is also unitary.
         For arbitrary $a$, $b$, $c$, and $d$ such that $U$ is unitary, let
         \begin{align}
             a=&e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2},\\
@@ -516,10 +516,10 @@
         \end{align}
         Then
         \begin{align}
-            U=\left[\begin{matrix}
+            U=\begin{bmatrix}
                 e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
                 e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-            \end{matrix}\right].
+            \end{bmatrix}.
         \end{align}
         Therefore, any single unitary operator may be written in the form (4.12).
 \end{sol}
@@ -530,47 +530,47 @@
 \begin{sol}
     Suppose an arbitrary qubit unitary operator is
     \begin{align}
-        U=\left[\begin{matrix}
+        U=\begin{bmatrix}
             a&b\\
             c&d
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     where $a$, $b$, $c$, and $d$ are complex numbers. Since $U$ is unitary,
     \begin{gather}
-        UU^{\dagger}=\left[\begin{matrix}
+        UU^{\dagger}=\begin{bmatrix}
             a&b\\
             c&d
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             a^*&c^*\\
             b^*&d^*
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             aa^*+bb^*&ac^*+bd^*\\
             a^*c+b^*d&cc^*+dd^*
-        \end{matrix}\right]=I=\left[\begin{matrix}
+        \end{bmatrix}=I=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right],\\
+        \end{bmatrix},\\
         \Longrightarrow aa^*+bb^*=cc^*+dd^*=1,\quad ac^*+bd^*=0.
     \end{gather}
     The $X-Y$ decomposition of rotation is
     \begin{align}
-        \notag&e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)=e^{i\alpha}\left[\begin{matrix}
+        \notag&e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)=e^{i\alpha}\begin{bmatrix}
             \cos\frac{\beta}{2}&-i\sin\frac{\beta}{2}\\
             -i\sin\frac{\beta}{2}&\cos\frac{\beta}{2}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\gamma}{2}&-\sin\frac{\gamma}{2}\\
             \sin\frac{\gamma}{2}&\cos\frac{\gamma}{2}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\delta}{2}&-i\sin\frac{\delta}{2}\\
             -i\sin\frac{\delta}{2}&\cos\frac{\delta}{2}
-        \end{matrix}\right]\\
-        \notag&=e^{i\alpha}\left[\begin{matrix}
+        \end{bmatrix}\\
+        \notag&=e^{i\alpha}\begin{bmatrix}
             \cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}&-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\\
             -i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}+\cos\frac{\beta}{2}\sin\frac{\gamma}{2}&i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}+\cos\frac{\beta}{2}\cos\frac{\gamma}{2}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\delta}{2}&-i\sin\frac{\delta}{2}\\
             -i\sin\frac{\delta}{2}&\cos\frac{\delta}{2}
-        \end{matrix}\right]\\
+        \end{bmatrix}\\
         \notag&=e^{i\alpha}\\
         \notag&\left[\begin{smallmatrix}
             \left(\cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\cos\frac{\delta}{2}-i\left(-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\sin\frac{\delta}{2}&-i\left(\cos\frac{\beta}{2}\cos\frac{\gamma}{2}-i\sin\frac{\beta}{2}\sin\frac{\gamma}{2}\right)\sin\frac{\delta}{2}+\left(-\cos\frac{\beta}{2}\sin\frac{\gamma}{2}-i\sin\frac{\beta}{2}\cos\frac{\gamma}{2}\right)\cos\frac{\delta}{2}\\
@@ -581,30 +581,30 @@
             \cos\frac{\gamma}{2}\left(\cos\frac{\beta}{2}\cos\frac{\delta}{2}-\sin\frac{\beta}{2}\sin\frac{\delta}{2}\right)+i\sin\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\cos\frac{\delta}{2}+\cos\frac{\beta}{2}\sin\frac{\delta}{2}\right)&\sin\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\sin\frac{\delta}{2}-\cos\frac{\beta}{2}\cos\frac{\delta}{2}\right)+i\cos\frac{\gamma}{2}\left(-\cos\frac{\beta}{2}\sin\frac{\delta}{2}-\sin\frac{\beta}{2}\cos\frac{\delta}{2}\right)\\
             \sin\frac{\gamma}{2}\left(\cos\frac{\beta}{2}\cos\frac{\delta}{2}+\sin\frac{\beta}{2}\sin\frac{\delta}{2}\right)+i\cos\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\cos\frac{\delta}{2}-\cos\frac{\beta}{2}\sin\frac{\delta}{2}\right)&\cos\frac{\gamma}{2}\left(-\sin\frac{\beta}{2}\sin\frac{\delta}{2}+\cos\frac{\beta}{2}\cos\frac{\delta}{2}\right)+i\sin\frac{\gamma}{2}\left(-\cos\frac{\beta}{2}\sin\frac{\delta}{2}+\sin\frac{\beta}{2}\cos\frac{\delta}{2}\right)
         \end{smallmatrix}\right]\\
-        \notag&=e^{i\alpha}\left[\begin{matrix}
+        \notag&=e^{i\alpha}\begin{bmatrix}
             \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
             \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
-        \end{matrix}\right]\\
+        \end{bmatrix}\\
     \end{align}
     Since
     \begin{align}
         \notag&e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)[e^{i\alpha}R_z(\beta)R_x(\gamma)R_z(\delta)]^{\dagger}\\
-        \notag=&e^{i\alpha}\left[\begin{matrix}
+        \notag=&e^{i\alpha}\begin{bmatrix}
             \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
             \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
-        \end{matrix}\right]\times\\
-        \notag&e^{-i\alpha}\left[\begin{matrix}
+        \end{bmatrix}\times\\
+        \notag&e^{-i\alpha}\begin{bmatrix}
             \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
             \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
-        \end{matrix}\right]^{\dagger}\\
-        \notag=&\left[\begin{matrix}
+        \end{bmatrix}^{\dagger}\\
+        \notag=&\begin{bmatrix}
             \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
             \sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
-        \end{matrix}\right]\times\\
-        \notag&\left[\begin{matrix}
+        \end{bmatrix}\times\\
+        \notag&\begin{bmatrix}
             \cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}&\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\\
             -\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}&\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}
-        \end{matrix}\right]\\
+        \end{bmatrix}\\
         \notag=&\left[\begin{smallmatrix}
             \left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}+i\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}\right)+\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right),\\
             \left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right)\left(\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}+i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)+\left(-\sin\frac{\gamma}{2}\cos\frac{\beta-\delta}{2}-i\cos\frac{\gamma}{2}\sin\frac{\beta+\delta}{2}\right)\left(\cos\frac{\gamma}{2}\cos\frac{\beta+\delta}{2}-i\sin\frac{\gamma}{2}\sin\frac{\beta-\delta}{2}\right);\\
@@ -615,10 +615,10 @@
             \cos^2\frac{\gamma}{2}\cos^2\frac{\beta+\delta}{2}+\sin^2\frac{\gamma}{2}\sin^2\frac{\beta-\delta}{2}+\sin^2\frac{\gamma}{2}\cos^2\frac{\beta-\delta}{2}+\cos^2\frac{\gamma}{2}\sin^2\frac{\beta+\delta}{2}&0\\
             0&\sin^2\frac{\gamma}{2}\cos^2\frac{\beta-\delta}{2}+\cos^2\frac{\gamma}{2}\sin^2\frac{\beta+\delta}{2}+\cos^2\frac{\gamma}{2}\cos^2\frac{\beta+\delta}{2}+\sin^2\frac{\gamma}{2}\sin^2\frac{\beta-\delta}{2}
         \end{smallmatrix}\right]\\
-        =&\left[\begin{matrix}
+        =&\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=I.
+        \end{bmatrix}=I.
     \end{align}
     the $X-Y$ decomposition of rotations is also unitary.
     For arbitrary $a$, $b$, $c$, and $d$ such that $U$ is unitary, let
@@ -663,13 +663,13 @@
 \begin{sol}
     The Hadamard gate can be written as
     \begin{align}
-        H\equiv\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H\equiv\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\beta)=\left[\begin{matrix}
+        \end{bmatrix}=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\beta)=\begin{bmatrix}
             e^{i(\alpha-\beta/2-\delta/2)}\cos\frac{\gamma}{2}&-e^{i(\alpha-\beta/2+\delta/2)}\sin\frac{\gamma}{2}\\
             e^{i(\alpha+\beta/2-\delta/2)}\sin\frac{\gamma}{2}&e^{i(\alpha+\beta/2+\delta/2)}\cos\frac{\gamma}{2}
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     i.e.,
     \begin{align}
@@ -692,40 +692,40 @@
     where
     \begin{align}
         \alpha=&\frac{\pi}{2},\\
-        A=&R_z(\beta)R_y(\gamma/2)=\left[\begin{matrix}
+        A=&R_z(\beta)R_y(\gamma/2)=\begin{bmatrix}
             e^{-i\beta/2}&0\\
             0&e^{i\beta/2}
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             \cos\frac{\gamma}{4}&-\sin\frac{\gamma}{4}\\
             \sin\frac{\gamma}{4}&\cos\frac{\gamma}{4}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             e^{-i\beta/2}\cos\frac{\gamma}{4}&-e^{-i\beta/2}\sin\frac{\gamma}{4}\\
             e^{i\beta/2}\sin\frac{\gamma}{4}&e^{i\beta/2}\cos\frac{\gamma}{4}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             \cos\frac{\pi}{8}&-\sin\frac{\pi}{8}\\
             \sin\frac{\pi}{8}&\cos\frac{\pi}{8}
-        \end{matrix}\right],\\
-        \notag B=&R_y(-\gamma/2)R_z(-(\delta+\beta)/2)=\left[\begin{matrix}
+        \end{bmatrix},\\
+        \notag B=&R_y(-\gamma/2)R_z(-(\delta+\beta)/2)=\begin{bmatrix}
             \cos\left(-\frac{\gamma}{4}\right)&-\sin\left(-\frac{\gamma}{4}\right)\\
             \sin\left(-\frac{\gamma}{4}\right)&\cos\left(-\frac{\gamma}{4}\right)
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             e^{i(\delta+\beta)/4}&0\\
             0&e^{-i(\delta+\beta)/4}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             e^{i(\delta+\beta)/4}\cos\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\sin\frac{\gamma}{4}\\
             -e^{i(\delta+\beta)/4}\sin\frac{\gamma}{4}&e^{-i(\delta+\beta)/4}\cos\frac{\gamma}{4}
-        \end{matrix}\right]\\
-        =&\left[\begin{matrix}
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
             e^{i\pi/4}\cos\frac{\pi}{8}&e^{-i\pi/4}\sin\frac{\pi}{8}\\
             -e^{i\pi/4}\sin\frac{\pi}{8}&e^{-i\pi/4}\cos\frac{\pi}{8}
-        \end{matrix}\right],\\
-        C=&R_z((\delta-\beta)/2)=\left[\begin{matrix}
+        \end{bmatrix},\\
+        C=&R_z((\delta-\beta)/2)=\begin{bmatrix}
             e^{-i(\delta-\beta)/4}&0\\
             0&e^{i(\delta-\beta)/4}
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             e^{-i\pi/4}&0\\
             0&e^{i\pi/4}
-        \end{matrix}\right]
+        \end{bmatrix}
     \end{align}
 \end{sol}
 
@@ -737,45 +737,45 @@
 \end{exe}
 \begin{pf}
     \begin{align}
-        HXH=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        HXH=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]=Z,\\
-        HYH=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=Z,\\
+        HYH=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             0&-i\\
             i&0
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&i\\
             -i&0
-        \end{matrix}\right]=-Y,\\
-        HZH=&\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=-Y,\\
+        HZH=&\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0\\
             0&-1
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             0&1\\
             1&0
-        \end{matrix}\right]=X.
+        \end{bmatrix}=X.
     \end{align}
 \end{pf}
 
@@ -872,77 +872,77 @@
 \begin{sol}
     For the first quantum circuit, the $4\times 4$ unitary is
     \begin{align}
-        I\otimes H=\left[\begin{matrix}
+        I\otimes H=\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1&0&0\\
             1&-1&0&0\\
             0&0&1&1\\
             0&0&1&-1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     The unitary matrix for the second quantum circuit is
     \begin{align}
-        H\otimes I=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        H\otimes I=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\otimes\left[\begin{matrix}
+        \end{bmatrix}\otimes\begin{bmatrix}
             1&0\\
             0&1
-        \end{matrix}\right]=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&0&1&0\\
             0&1&0&1\\
             1&0&-1&0\\
             0&1&0&-1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
 \end{sol}
 
 \begin{exe}[Building CNOT from from controlled-$Z$ gates]
     Construct a CNOT gate from one controlled-$Z$ gate, that is, the gate whose action in the computational basis is specified by the unitary matrix
     \[
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&1&0\\
             0&0&0&-1
-        \end{matrix}\right],
+        \end{bmatrix},
     \]
     and two Hadamard gates, specifying the control and target qubits.
 \end{exe}
 \begin{sol}
     Since
     \begin{align}
-        (I\otimes H)\left[\begin{matrix}
+        (I\otimes H)\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&1&0\\
             0&0&0&-1
-        \end{matrix}\right](I\otimes H)=\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}(I\otimes H)=\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1&0&0\\
             1&-1&0&0\\
             0&0&1&1\\
             0&0&1&-1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&1&0\\
             0&0&0&-1
-        \end{matrix}\right]\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1&0&0\\
             1&-1&0&0\\
             0&0&1&1\\
             0&0&1&-1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&0&1\\
             0&0&1&0
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     \begin{center}
         \begin{quantikz}
@@ -974,12 +974,12 @@
 \begin{pf}
     Since the unitary matrices of the two quantum circuits are both
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&1&0\\
             0&0&0&-1
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     these two quantum circuits equal.
 \end{pf}
@@ -1018,50 +1018,50 @@
 \begin{pf}
     Since
     \begin{align}
-        \notag(H\otimes H)\left[\begin{matrix}
+        \notag(H\otimes H)\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&0&1\\
             0&0&1&0
-        \end{matrix}\right](H\otimes H)=&\left(\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}(H\otimes H)=&\left(\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\right)\left[\begin{matrix}
+        \end{bmatrix}\right)\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&0&1\\
             0&0&1&0
-        \end{matrix}\right]\left(\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\left(\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\otimes\frac{1}{\sqrt{2}}\left[\begin{matrix}
+        \end{bmatrix}\otimes\frac{1}{\sqrt{2}}\begin{bmatrix}
             1&1\\
             1&-1
-        \end{matrix}\right]\right)\\
-        =&\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}\right)\\
+        =&\frac{1}{2}\begin{bmatrix}
             1&1&1&1\\
             1&-1&1&-1\\
             1&1&-1&-1\\
             1&-1&-1&1
-        \end{matrix}\right]\left[\begin{matrix}
+        \end{bmatrix}\begin{bmatrix}
             1&0&0&0\\
             0&1&0&0\\
             0&0&0&1\\
             0&0&1&0
-        \end{matrix}\right]\frac{1}{2}\left[\begin{matrix}
+        \end{bmatrix}\frac{1}{2}\begin{bmatrix}
             1&1&1&1\\
             1&-1&1&-1\\
             1&1&-1&-1\\
             1&-1&-1&1
-        \end{matrix}\right]=\left[\begin{matrix}
+        \end{bmatrix}=\begin{bmatrix}
             1&0&0&0\\
             0&0&0&1\\
             0&0&1&0\\
             0&1&0&0
-        \end{matrix}\right],
+        \end{bmatrix},
     \end{align}
     \begin{center}
         \begin{quantikz}
@@ -1173,7 +1173,7 @@
         \qw & \ctrl{1} & \qw\\
         \qw & \gate{U} & \qw
     \end{quantikz}$=$\begin{tikzcd}[ampersand replacement=\&]
-        \qw \& \qw \& \ctrl{1} \& \qw \& \ctrl{1} \& \gate{\left[\begin{matrix}1&0\\0&e^{i\alpha}\end{matrix}\right]} \& \qw\\
+        \qw \& \qw \& \ctrl{1} \& \qw \& \ctrl{1} \& \gate{\begin{bmatrix}1&0\\0&e^{i\alpha}\end{bmatrix}} \& \qw\\
         \qw \& \gate{C} \& \targ{} \& \gate{B} \& \targ{} \& \gate{A} \& \qw
     \end{tikzcd}\label{Fig-4.6-controlled-U-construction}} and the conclusion obtained in the last Exercise, we can transform the $C^2(U)$ gate into
     \begin{center}
@@ -1625,7 +1625,7 @@
 \begin{exe}[Fredkin gate construction]
     Recall that the Fredkin (controlled-swap) gate performs the transform
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0&0&0&0&0&0&0\\
             0&1&0&0&0&0&0&0\\
             0&0&1&0&0&0&0&0\\
@@ -1634,7 +1634,7 @@
             0&0&0&0&0&0&1&0\\
             0&0&0&0&0&1&0&0\\
             0&0&0&0&0&0&0&1
-        \end{matrix}\right].
+        \end{bmatrix}.
     \end{align}
     \begin{itemize}
         \item[(1)] Give a quantum circuit which use three Toffoli gates to Construct the Fredkin gate (\emph{Hint}: think of the swap gate Construction --- you can control each gate, one at a time).
@@ -1665,7 +1665,7 @@
 \begin{exe}
     Using just CNOTs and Toffoli gats, Construct a quantum circuit to perform the transformation
     \begin{align}
-        \left[\begin{matrix}
+        \begin{bmatrix}
             1&0&0&0&0&0&0&0\\
             0&0&0&0&0&0&0&1\\
             0&1&0&0&0&0&0&0\\
@@ -1674,7 +1674,7 @@
             0&0&0&0&1&0&0&0\\
             0&0&0&0&0&1&0&0\\
             0&0&0&0&0&0&1&0
-        \end{matrix}\right]
+        \end{bmatrix}
     \end{align}
     This kind of partial cyclic permutation operation will be useful later, in Chapter 7.
 \end{exe}
