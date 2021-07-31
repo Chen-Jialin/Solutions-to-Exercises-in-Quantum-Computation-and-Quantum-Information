@@ -1112,7 +1112,7 @@
 \end{pf}
 
 \begin{exe}
-    Verify that Figure 4.8\footnote{\label{Figure-4.8}\begin{quantikz}
+    Verify that Figure 4.8\footnote{\label{Figure-4.8-Circuit-for-the-C^2(U)-gate}\begin{quantikz}
     \qw & \ctrl{1} & \qw\\
     \qw & \ctrl{1} & \qw\\
     \qw & \gate{H} & \qw
@@ -1123,10 +1123,10 @@
     \end{quantikz}\\Figure 4.8. Circuit for the $C^2(U)$ gate. $V$ is any unitary operator satisfying $V^2=U$. The special case $V=(1-i)(1+iX)/2$ corresponds to the Toffoli gate.} implements the $C^2(U)$ operation.
 \end{exe}
 \begin{pf}
-    Inputting the computational basis states to the Figure 4.8\textsuperscript{\ref{Figure-4.8}}, the state changing progress is shown in table \ref{E4.21-state-changing-progress}.
+    Inputting the computational basis states to the Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}}, the state changing progress is shown in table \ref{E4.21-state-changing-progress}.
     \begin{table}[h]
         \centering
-        \caption{State changing progress for the computational basis stats input to Figure 4.8\textsuperscript{\ref{Figure-4.8}}.}
+        \caption{State changing progress for the computational basis stats input to Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}}.}
         \label{E4.21-state-changing-progress}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
@@ -1162,7 +1162,7 @@
         \end{tabular}
     \end{table}
 
-    Therefore, Figure 4.8\textsuperscript{\ref{Figure-4.8}} implements the $C^2(U)$ operation.
+    Therefore, Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}} implements the $C^2(U)$ operation.
 \end{pf}
 
 \begin{exe}
@@ -1701,14 +1701,340 @@
         \end{bmatrix}.
     \end{align}
     \begin{itemize}
-        \item[(1)] Give a quantum circuit which use three Toffoli gates to Construct the Fredkin gate (\emph{Hint}: think of the swap gate Construction --- you can control each gate, one at a time).
+        \item[(1)] Give a quantum circuit which use three Toffoli gates to construct the Fredkin gate (\emph{Hint}: think of the swap gate Construction --- you can control each gate, one at a time).
         \item[(2)] Show that the first and the last Toffoli gates can be replaced by CNOT gates.
-        \item[(3)] Now replace the middle Toffoli gate with the circuit in Figure 4.8\textsuperscript{\ref{Figure-4.8}} to obtain a Fredkin gate construction using only six two-qubit gates.
+        \item[(3)] Now replace the middle Toffoli gate with the circuit in Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}} to obtain a Fredkin gate construction using only six two-qubit gates.
         \item[(4)] Can you come up with an even simpler construction, with only five two-qubit gates?
     \end{itemize}
 \end{exe}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(1)] According to Figure 1.7 in the textbook, the swap gate can be constructed with three CNOT gate,
+        \begin{center}
+            \begin{quantikz}
+                \qw & \swap{1} & \qw\\
+                \qw & \targX{} & \qw
+            \end{quantikz}$\equiv$
+            \begin{quantikz}
+                \qw & \ctrl{1} & \targ{} & \ctrl{1} & \qw\\
+                \qw & \targ{} & \ctrl{-1} & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        Thus, we can use three Toffoli gates to construct the Fredkin gate,
+        \begin{center}
+            \begin{quantikz}
+                \qw & \ctrl{2} & \qw\\
+                \qw & \swap{1} & \qw\\
+                \qw & \targX{} & \qw
+            \end{quantikz}$=$
+            \begin{quantikz}
+                \qw & \ctrl{1} & \ctrl{1} & \ctrl{1} & \qw\\
+                \qw & \ctrl{1} & \targ{} & \ctrl{1} & \qw\\
+                \qw & \targ{} & \ctrl{-1} & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        \item[(2)] If we replace the first and the last Toffoli with CNOT gates and get
+        \begin{center}
+            \begin{quantikz}
+                \qw & \qw & \ctrl{1} & \qw & \qw\\
+                \qw & \ctrl{1} & \targ{} & \ctrl{1} & \qw\\
+                \qw & \targ{} & \ctrl{-1} & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        the unitary matrix of the quantum circuit is
+        \begin{align}
+            \notag&\text{CNOT}\times\text{C}^2\text{NOT}\times\text{CNOT}\\
+            \notag=&\begin{bmatrix}
+                1&0&0&0&0&0&0&0\\
+                0&1&0&0&0&0&0&0\\
+                0&0&0&1&0&0&0&0\\
+                0&0&1&0&0&0&0&0\\
+                0&0&0&0&1&0&0&0\\
+                0&0&0&0&0&1&0&0\\
+                0&0&0&0&0&0&0&1\\
+                0&0&0&0&0&0&1&0
+            \end{bmatrix}\begin{bmatrix}
+                1&0&0&0&0&0&0&0\\
+                0&1&0&0&0&0&0&0\\
+                0&0&1&0&0&0&0&0\\
+                0&0&0&1&0&0&0&0\\
+                0&0&0&0&1&0&0&0\\
+                0&0&0&0&0&0&0&1\\
+                0&0&0&0&0&0&1&0\\
+                0&0&0&0&0&1&0&0
+            \end{bmatrix}\begin{bmatrix}
+                1&0&0&0&0&0&0&0\\
+                0&1&0&0&0&0&0&0\\
+                0&0&0&1&0&0&0&0\\
+                0&0&1&0&0&0&0&0\\
+                0&0&0&0&1&0&0&0\\
+                0&0&0&0&0&1&0&0\\
+                0&0&0&0&0&0&0&1\\
+                0&0&0&0&0&0&1&0
+            \end{bmatrix}\\
+            =&\begin{bmatrix}
+                1&0&0&0&0&0&0&0\\
+                0&1&0&0&0&0&0&0\\
+                0&0&1&0&0&0&0&0\\
+                0&0&0&1&0&0&0&0\\
+                0&0&0&0&1&0&0&0\\
+                0&0&0&0&0&0&1&0\\
+                0&0&0&0&0&1&0&0\\
+                0&0&0&0&0&0&0&1
+            \end{bmatrix},
+        \end{align}
+        which is the same as that of Fredkin.
+
+        Therefore, the first and the last Toffoli gate can be replaced by CNOT gates.
+        \item[(3)] Replacing the middle Toffoli gate with circuit in Figure 4.8\footref{Figure-4.8-Circuit-for-the-C^2(U)-gate}, we get
+        \begin{center}
+            \begin{quantikz}
+                \qw & \qw & \qw & \ctrl{2} & \qw & \ctrl{2} & \ctrl{1} & \qw & \qw\\
+                \qw & \ctrl{1} & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \ctrl{1} & \qw\\
+                \qw & \targ{} & \ctrl{-1} & \targ{} & \ctrl{-1} & \targ{} & \qw & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        where
+        \begin{align}
+            V=\frac{1-i}{2}(I+iX)=e^{-i\pi/4}R_x\left(-\frac{\pi}{4}\right)=\frac{1-i}{2}\begin{bmatrix}
+                1&i\\
+                i&1
+            \end{bmatrix}.
+        \end{align}
+        Combining the first two CNOT gate and the first controlled-$V$ gate into one two-qubit gate, we get
+        \begin{center}
+            \begin{quantikz}
+                \qw & \qw & \ctrl{2} & \qw & \ctrl{2} & \ctrl{1} & \qw & \qw\\
+                \qw & \gate[wires=2]{W} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \ctrl{1} & \qw\\
+                \qw & & \targ{} & \ctrl{-1} & \targ{} & \qw & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        where
+        \begin{align}
+            W=\text{CNOT}\times\text{controlled-}V=\begin{bmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&0&1\\
+                0&0&1&0
+            \end{bmatrix}\times\begin{bmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&\frac{1-i}{2}&\frac{i+1}{2}\\
+                0&0&\frac{i+1}{2}&\frac{1-i}{2}
+            \end{bmatrix}=\begin{bmatrix}
+                1&0&0&0\\
+                0&1&0&0\\
+                0&0&\frac{i+1}{2}&\frac{1-i}{2}\\
+                0&0&\frac{1-i}{2}&\frac{i+1}{2}
+            \end{bmatrix}.
+        \end{align}
+        In this way, we obtain a Fredkin gate construction using only six two-qubit gates.
+        \item[(4)] Using Corollary \ref{E4.25-cor}, we can move the last controlled-$V$ gate to behind $W$ gate and get
+        \begin{center}
+            \begin{quantikz}
+                \qw & \qw & \ctrl{1} & \ctrl{2} & \qw & \ctrl{2} & \qw & \qw\\
+                \qw & \gate[wires=2]{W} & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \ctrl{1} & \qw\\
+                \qw & & \qw & \targ{} & \ctrl{-1} & \targ{} & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        Using Corollary , we exchage the last two CNOT gate and combine the last controlled-$V^{\dagger}$ and CNOT gate into one two-qubit gate, we get
+        \begin{center}
+            \begin{quantikz}
+                \qw & \qw & \ctrl{1} & \ctrl{2} & \qw & \ctrl{2} & \qw\\
+                \qw & \gate[wires=2]{W} & \gate{V} & \qw & \gate[wires=2]{W^{\dagger}} & \qw & \qw\\
+                \qw & & \qw & \targ{} & & \targ{} & \qw
+            \end{quantikz}
+        \end{center}
+        which is a Fredkin gate construction using only five two-qubit gates.
+        \begin{cor}
+            \label{E4.25-cor-1}
+            \begin{quantikz}
+                \qw & \ctrl{1} & \qw\\
+                \qw & \gate{V} & \qw\\
+                \qw & \qw & \qw
+            \end{quantikz}
+            commutes with
+            \begin{quantikz}
+                \qw & \qw & \qw\\
+                \qw & \gate{V^{\dagger}} & \qw\\
+                \qw & \ctrl{-1} & \qw
+            \end{quantikz}.
+        \end{cor}
+        \begin{pf}
+            The unitary matrix of the first circuit is
+            \begin{align}
+                \begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix}.
+            \end{align}
+            The unitary matrix of the second circuit is
+            \begin{align}
+                \begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&\frac{1-i}{2}&0&\frac{i+1}{2}&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&\frac{i+1}{2}&0&\frac{1-i}{2}&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&0&0&1&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix}.
+            \end{align}
+            Since
+            \begin{align}
+                \notag&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&\frac{1-i}{2}&0&\frac{i+1}{2}&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&\frac{i+1}{2}&0&\frac{1-i}{2}&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&0&0&1&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix}\\
+                \notag=&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&\frac{1-i}{2}&0&\frac{1+i}{2}&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&\frac{1+i}{2}&0&\frac{1-i}{2}&0&0&0&0\\
+                    0&0&0&0&\frac{1-i}{2}&0&\frac{1+i}{2}&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&\frac{1+i}{2}&0&\frac{1-i}{2}&0\\
+                    0&0&0&0&0&1&0&0
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&\frac{1-i}{2}&0&\frac{i+1}{2}&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&\frac{i+1}{2}&0&\frac{1-i}{2}&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&0&0&1&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}&0\\
+                    0&0&0&0&0&\frac{1-i}{2}&0&\frac{i+1}{2}\\
+                    0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}&0\\
+                    0&0&0&0&0&\frac{i+1}{2}&0&\frac{1-i}{2}
+                \end{bmatrix},
+            \end{align}
+            Corollary \ref{E4.25-cor-1} holds.
+        \end{pf}
+        \begin{cor}
+            \label{E4.25-cor-2}
+            \begin{quantikz}
+                \qw & \ctrl{2} & \qw\\
+                \qw & \qw & \qw\\
+                \qw & \targ{} & \qw
+            \end{quantikz}
+            commutes with
+            \begin{quantikz}
+                \qw & \qw & \qw\\
+                \qw & \ctrl{1} & \qw\\
+                \qw & \targ{} & \qw
+            \end{quantikz}.
+        \end{cor}
+        \begin{pf}
+            The unitary matrix of the first circuit is
+            \begin{align}
+                \begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix}.
+            \end{align}
+            The unitary matrix of the second circuit is
+            \begin{align}
+                \begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix}.
+            \end{align}
+            Since
+            \begin{align}
+                \notag&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix}\\
+                \notag=&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&0&1&0\\
+                    0&0&0&0&0&0&0&1
+                \end{bmatrix}\\
+                =&\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix}\times\begin{bmatrix}
+                    1&0&0&0&0&0&0&0\\
+                    0&1&0&0&0&0&0&0\\
+                    0&0&1&0&0&0&0&0\\
+                    0&0&0&1&0&0&0&0\\
+                    0&0&0&0&0&1&0&0\\
+                    0&0&0&0&1&0&0&0\\
+                    0&0&0&0&0&0&0&1\\
+                    0&0&0&0&0&0&1&0
+                \end{bmatrix},
+            \end{align}
+            Corollary \ref{E4.25-cor-2} holds.
+        \end{pf}
+    \end{itemize}
 \end{sol}
 
 \begin{exe}
