@@ -1615,11 +1615,75 @@
     \end{quantikz}$=$\begin{quantikz}
         \qw & \qw & \qw & \qw & \ctrl{2} & \qw & \qw & \qw & \ctrl{2} & \qw & \ctrl{1} & \qw & \ctrl{1} & \gate{T} & \qw\\
         \qw & \qw & \ctrl{1} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw & \gate{T^{\dagger}} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{S} & \qw\\
-        \qw & \gate{H} & \targ{} & \gate{H^{\dagger}} & \targ{} & \gate{T} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{T} & \gate{H} & \qw & \qw & \qw & \qw
-    \end{quantikz}} implements the Toffoli gate.
+        \qw & \gate{H} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{T} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{T} & \gate{H} & \qw & \qw & \qw & \qw
+    \end{quantikz}\label{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}} implements the Toffoli gate.
 \end{exe}
 \begin{pf}
-    
+    Inputting the computational basis states to the Toffoli gate, the state changing process is shown in table \ref{E4.24-state-changing-process-1}.
+    \begin{table}[h]
+        \centering
+        \caption{State changing process for the computational basis states input to the Toffoli gate.}
+        \label{E4.24-state-changing-process-1}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        & Input & Output \\ \hline
+        \multirow{8}{*}{States} & $\lvert 000\rangle$ & $\lvert 000\rangle$ \\ \cline{2-3} 
+        & $\lvert 001\rangle$ & $\lvert 001\rangle$ \\ \cline{2-3} 
+        & $\lvert 010\rangle$ & $\lvert 010\rangle$ \\ \cline{2-3} 
+        & $\lvert 011\rangle$ & $\lvert 011\rangle$ \\ \cline{2-3} 
+        & $\lvert 100\rangle$ & $\lvert 100\rangle$ \\ \cline{2-3} 
+        & $\lvert 101\rangle$ & $\lvert 101\rangle$ \\ \cline{2-3} 
+        & $\lvert 110\rangle$ & $\lvert 111\rangle$ \\ \cline{2-3} 
+        & $\lvert 111\rangle$ & $\lvert 110\rangle$ \\ \hline
+        \end{tabular}
+    \end{table}\\
+    Inputting the computational basis states to the right side of Figure 4.9\footref{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}, the state changing process is shown in table \ref{E4.24-state-changing-process-2}, which is the same with that of Toffoli gate.
+    \begin{table}[h]
+        \centering\scriptsize
+        \caption{State changing process for the computational basis states input to the left side of Figure 4.9.}
+        \label{E4.24-state-changing-process-2}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+             & Input & After $1$st $H$ & After $1$st CNOT & After $1$st $T^{\dagger}$ \\ \hline
+            \multirow{8}{*}{States} & $\lvert 000\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+e^{-i\pi/4}\lvert 001\rangle)$ \\ \cline{2-5} 
+             & $\lvert 001\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-e^{-i\pi/4}\lvert 001\rangle)$ \\ \cline{2-5} 
+             & $\lvert 010\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle+\lvert 011\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 011\rangle+\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 011\rangle+\lvert 010\rangle)$ \\ \cline{2-5} 
+             & $\lvert 011\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle-\lvert 011\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 011\rangle-\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 011\rangle-\lvert 010\rangle)$ \\ \cline{2-5} 
+             & $\lvert 100\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle+\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle+\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle+e^{-i\pi/4}\lvert 101\rangle)$ \\ \cline{2-5} 
+             & $\lvert 101\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle-\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle-\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle-e^{-i\pi/4}\lvert 101\rangle)$ \\ \cline{2-5} 
+             & $\lvert 110\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 110\rangle+\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 111\rangle+\lvert 110\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 111\rangle+\lvert 110\rangle)$ \\ \cline{2-5} 
+             & $\lvert 111\rangle$ & $\frac{1}{\sqrt{2}}(\lvert 110\rangle-\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 111\rangle-\lvert 110\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 111\rangle-\lvert 110\rangle)$ \\ \hline\hline
+             & After $2$nd CNOT & After $1$st $T$ & After $3$rd CNOT & After $2$nd $T^{\dagger}$ \\ \hline
+            \multirow{8}{*}{States} & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+e^{-i\pi/4}\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+e^{-i\pi/4}\lvert 001\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-e^{-i\pi/4}\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-e^{-i\pi/4}\lvert 001\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 011\rangle+\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 011\rangle+\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle+\lvert 011\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle+e^{-i\pi/4}\lvert 011\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 011\rangle-\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 011\rangle-\lvert 010\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle-\lvert 011\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 010\rangle-e^{-i\pi/4}\lvert 011\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 101\rangle+e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(e^{i\pi/4}\lvert 101\rangle+e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(e^{i\pi/4}\lvert 101\rangle+e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 101\rangle+e^{-i\pi/4}\lvert 100\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 101\rangle-e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(e^{i\pi/4}\lvert 101\rangle-e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(e^{i\pi/4}\lvert 101\rangle-e^{-i\pi/4}\lvert 100\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 101\rangle-e^{-i\pi/4}\lvert 100\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 110\rangle+\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 110\rangle+e^{i\pi/4}\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 111\rangle+e^{i\pi/4}\lvert 110\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/2}\lvert 111\rangle+e^{i\pi/4}\lvert 110\rangle)$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 110\rangle-\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 110\rangle-e^{i\pi/4}\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/4}\lvert 111\rangle-e^{i\pi/4}\lvert 110\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i\pi/2}\lvert 111\rangle-e^{i\pi/4}\lvert 110\rangle)$ \\ \hline\hline
+             & After $4$th CNOT & After $3$rd $T^{\dagger}$ and $2$nd $T$ & After $5$th CNOT and $2$nd $H$ & After $4$th $T^{\dagger}$ \\ \hline
+            \multirow{8}{*}{States} & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+e^{-i\pi/4}\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle+\lvert 001\rangle)$ & $\lvert 000\rangle$ & $\lvert 000\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-e^{-i\pi/4}\lvert 001\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 000\rangle-\lvert 001\rangle)$ & $\lvert 001\rangle$ & $\lvert 001\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 010\rangle+e^{-i\pi/4}\lvert 011\rangle)$ & $\frac{e^{-i\pi/4}}{\sqrt{2}}(\lvert 010\rangle+\lvert 011\rangle)$ & $e^{-i\pi/4}\lvert 010\rangle$ & $e^{-i\pi/2}\lvert 010\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 010\rangle-e^{-i\pi/4}\lvert 011\rangle)$ & $\frac{e^{-i\pi/4}}{\sqrt{2}}(\lvert 010\rangle-\lvert 011\rangle)$ & $e^{-i\pi/4}\lvert 011\rangle$ & $e^{-i\pi/2}\lvert 011\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 100\rangle+e^{-i\pi/4}\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle+\lvert 101\rangle)$ & $\lvert 110\rangle$ & $e^{-i\pi/4}\lvert 110\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(\lvert 100\rangle-e^{-i\pi/4}\lvert 101\rangle)$ & $\frac{1}{\sqrt{2}}(\lvert 100\rangle-\lvert 101\rangle)$ & $\lvert 111\rangle$ & $e^{-i\pi/4}\lvert 111\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/2}\lvert 110\rangle+e^{i\pi/4}\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i3\pi/4}\lvert 110\rangle+e^{i\pi/4}\lvert 111\rangle)$ & $-e^{i\pi/4}\lvert 101\rangle$ & $e^{i\pi/4}\lvert 100\rangle$ \\ \cline{2-5} 
+             & $\frac{1}{\sqrt{2}}(e^{-i\pi/2}\lvert 110\rangle-e^{i\pi/4}\lvert 111\rangle)$ & $\frac{1}{\sqrt{2}}(e^{-i3\pi/4}\lvert 110\rangle-e^{i\pi/4}\lvert 111\rangle)$ & $-e^{i\pi/4}\lvert 100\rangle$ & $e^{i\pi/4}\lvert 101\rangle$ \\ \hline\hline
+             & After $6$th CNOT & Output &  &  \\ \hline
+            \multirow{8}{*}{States} & $\lvert 000\rangle$ & $\lvert 000\rangle$ &  &  \\ \cline{2-5} 
+             & $\lvert 001\rangle$ & $\lvert 001\rangle$ &  &  \\ \cline{2-5} 
+             & $e^{-i\pi/2}\lvert 010\rangle$ & $\lvert 010\rangle$ &  &  \\ \cline{2-5} 
+             & $e^{-i\pi/2}\lvert 011\rangle$ & $\lvert 011\rangle$ &  &  \\ \cline{2-5} 
+             & $e^{-i\pi/4}\lvert 100\rangle$ & $\lvert 100\rangle$ &  &  \\ \cline{2-5} 
+             & $e^{-i\pi/4}\lvert 101\rangle$ & $\lvert 101\rangle$ &  &  \\ \cline{2-5} 
+             & $-e^{i\pi/4}\lvert 111\rangle$ & $\lvert 111\rangle$ &  &  \\ \cline{2-5} 
+             & $-e^{i\pi/4}\lvert 110\rangle$ & $\lvert 110\rangle$ &  &  \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Therefore, Figure 4.9\footref{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates} implements Toffoli gate.
 \end{pf}
 
 \begin{exe}[Fredkin gate construction]
