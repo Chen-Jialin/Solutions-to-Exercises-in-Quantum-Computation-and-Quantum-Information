@@ -525,7 +525,7 @@
 \end{sol}
 
 \begin{exe}[X-Y decomposition of rotations]
-    Give a decomposition analogous to Theorem 4.1\footnote{($Z-Y$ decomposition for single qubit) Suppose $U$ is a unitary operation on a single qubit. Then there exist real numbers $\alpha$, $\beta$, $\gamma$ and $\delta$ such that $U=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)$.\label{Thm-4.1-Z-Y-decomp-for-a-single-qubit}} but using $R_x$ instead of $R_z$.
+    Give a decomposition analogous to Theorem 4.1\footnote{\label{Thm-4.1-Z-Y-decomp-for-a-single-qubit}($Z-Y$ decomposition for single qubit) Suppose $U$ is a unitary operation on a single qubit. Then there exist real numbers $\alpha$, $\beta$, $\gamma$ and $\delta$ such that $U=e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)$.} but using $R_x$ instead of $R_z$.
 \end{exe}
 \begin{sol}
     Suppose an arbitrary qubit unitary operator is
@@ -1112,7 +1112,7 @@
 \end{pf}
 
 \begin{exe}
-    Verify that Figure 4.8\footnote{\label{Figure-4.8-Circuit-for-the-C^2(U)-gate}\begin{quantikz}
+    Verify that Figure 4.8\footnote{\label{Fig-4.8-Circuit-for-the-C2(U)-gate}\begin{quantikz}
     \qw & \ctrl{1} & \qw\\
     \qw & \ctrl{1} & \qw\\
     \qw & \gate{H} & \qw
@@ -1123,10 +1123,10 @@
     \end{quantikz}\\Figure 4.8. Circuit for the $C^2(U)$ gate. $V$ is any unitary operator satisfying $V^2=U$. The special case $V=(1-i)(1+iX)/2$ corresponds to the Toffoli gate.} implements the $C^2(U)$ operation.
 \end{exe}
 \begin{pf}
-    Inputting the computational basis states to the Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}}, the state changing process is shown in Table \ref{E4.21-state-changing-progress}.
+    Inputting the computational basis states to the Figure 4.8\footref{Fig-4.8-Circuit-for-the-C2(U)-gate}, the state changing process is shown in Table \ref{E4.21-state-changing-progress}.
     \begin{table}[h]
         \centering
-        \caption{State changing process for the computational basis stats input to Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}}.}
+        \caption{State changing process for the computational basis stats inputs into Figure 4.8\textsuperscript{\ref{Fig-4.8-Circuit-for-the-C2(U)-gate}}.}
         \label{E4.21-state-changing-progress}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
@@ -1162,20 +1162,20 @@
         \end{tabular}
     \end{table}
 
-    Therefore, Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}} implements the $C^2(U)$ operation.
+    Therefore, Figure 4.8\footref{Fig-4.8-Circuit-for-the-C2(U)-gate} implements the $C^2(U)$ operation.
 \end{pf}
 
 \begin{exe}
     Prove that a $C^2(U)$ gate (for any single qubit unitary $U$) can be constructed using at most eight one-qubit gates, and six controlled-NOTs.
 \end{exe}
 \begin{pf}
-    \footnote{Reference: \url{https://quantumcomputing.stackexchange.com/questions/7082/how-to-reduce-circuit-elements-of-a-decomposed-c2u-operation}}Using the equation in Figure 4.6\footnote{\begin{quantikz}
+    \footnote{Reference: \url{https://quantumcomputing.stackexchange.com/questions/7082/how-to-reduce-circuit-elements-of-a-decomposed-c2u-operation}}Using the equation in Figure 4.6\footnote{\label{Fig-4.6-controlled-U-construction}\begin{quantikz}
         \qw & \ctrl{1} & \qw\\
         \qw & \gate{U} & \qw
     \end{quantikz}$=$\begin{tikzcd}[ampersand replacement=\&]
         \qw \& \qw \& \ctrl{1} \& \qw \& \ctrl{1} \& \gate{\begin{bmatrix}1&0\\0&e^{i\alpha}\end{bmatrix}} \& \qw\\
         \qw \& \gate{C} \& \targ{} \& \gate{B} \& \targ{} \& \gate{A} \& \qw
-    \end{tikzcd}\label{Fig-4.6-controlled-U-construction}} and the conclusion obtained in the last Exercise, we can transform the $C^2(U)$ gate into
+    \end{tikzcd}} and the conclusion obtained in the last Exercise, we can transform the $C^2(U)$ gate into
     \begin{center}
         \begin{quantikz}
             \qw & \ctrl{1} & \qw\\
@@ -1259,7 +1259,7 @@
         Inputting the computational basis states to the right and left side, the state changing process is shown in Table \ref{E4.22-cor-1-left} and Table \ref{E4.22-cor-1-right}, respectively, which generate the same output.
         \begin{table}[h]
             \centering
-            \caption{State changing process for the computational basis states input to the left side of Corollary \ref{E4.22-cor-1}.}
+            \caption{State changing process for the computational basis states inputs into the left side of Corollary \ref{E4.22-cor-1}.}
             \label{E4.22-cor-1-left}
             \begin{tabular}{|c|c|c|c|}
             \hline
@@ -1276,7 +1276,7 @@
         \end{table}
         \begin{table}[h]
             \centering
-            \caption{State changing process for the computational basis states input to the right side of Corollary \ref{E4.22-cor-1}.}
+            \caption{State changing process for the computational basis states inputs into the right side of Corollary \ref{E4.22-cor-1}.}
             \label{E4.22-cor-1-right}
             \begin{tabular}{|c|c|c|c|c|}
             \hline
@@ -1303,7 +1303,7 @@
         Inputting the computational basis states to the above quantum circuit, the state changing process is shown in Table \ref{E4.22-cor-2-quantum-circuit}, where the inputs and outputs are the same, so this quantum circuit vanishes.
         \begin{table}[h]
             \centering
-            \caption{State changing process for the computational basis states input to the quantum circuit of Corollary \ref{E4.22-cor-2}.}
+            \caption{State changing process for the computational basis states inputs into the quantum circuit of Corollary \ref{E4.22-cor-2}.}
             \label{E4.22-cor-2-quantum-circuit}
             \begin{tabular}{|c|c|c|c|}
             \hline
@@ -1410,7 +1410,7 @@
         \delta=&\frac{\pi}{2},\\
         \gamma=&\theta.
     \end{align}
-    Using the Corollary 4.2 in textbook\footnote{Suppose $U$ is a unitary gate on a single qubit. Then there exist unitary operators $A$, $B$, $C$ on a single qubit such that $ABC=I$ and $U=e^{i\alpha}AXBXC$, where $\alpha$ is some overall phase factor, $A=R_z(\beta)R_y(\gamma/2)$, $B=R_y(-\gamma/2)R_z(-(\delta+\beta)/2)$, $C=R_z((\delta-\beta)/2)$.\label{Cor-4.2-U=exp(i alpha)AXBXC}},
+    Using the Corollary 4.2 in textbook\footnote{\label{Cor-4.2-U=exp(i alpha)AXBXC}Suppose $U$ is a unitary gate on a single qubit. Then there exist unitary operators $A$, $B$, $C$ on a single qubit such that $ABC=I$ and $U=e^{i\alpha}AXBXC$, where $\alpha$ is some overall phase factor, $A=R_z(\beta)R_y(\gamma/2)$, $B=R_y(-\gamma/2)R_z(-(\delta+\beta)/2)$, $C=R_z((\delta-\beta)/2)$.},
     \begin{align}
         U=R_x(\theta)=e^{i\alpha}AXBXC,
     \end{align}
@@ -1608,7 +1608,7 @@
 \end{sol}
 
 \begin{exe}
-    Verify that Figure 4.9\footnote{\begin{quantikz}
+    Verify that Figure 4.9\footnote{\label{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}\begin{quantikz}
         \qw & \ctrl{1} & \qw\\
         \qw & \ctrl{1} & \qw\\
         \qw & \targ{} & \qw
@@ -1616,13 +1616,13 @@
         \qw & \qw & \qw & \qw & \ctrl{2} & \qw & \qw & \qw & \ctrl{2} & \qw & \ctrl{1} & \qw & \ctrl{1} & \gate{T} & \qw\\
         \qw & \qw & \ctrl{1} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw & \gate{T^{\dagger}} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{S} & \qw\\
         \qw & \gate{H} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{T} & \targ{} & \gate{T^{\dagger}} & \targ{} & \gate{T} & \gate{H} & \qw & \qw & \qw & \qw
-    \end{quantikz}\label{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}} implements the Toffoli gate.
+    \end{quantikz}} implements the Toffoli gate.
 \end{exe}
 \begin{pf}
     Inputting the computational basis states to the Toffoli gate, the state changing process is shown in Table \ref{E4.24-state-changing-process-1}.
     \begin{table}[h]
         \centering
-        \caption{State changing process for the computational basis states input to the Toffoli gate.}
+        \caption{Truth table of the Toffoli gate.}
         \label{E4.24-state-changing-process-1}
         \begin{tabular}{|c|c|c|}
         \hline
@@ -1640,7 +1640,7 @@
     Inputting the computational basis states to the right side of Figure 4.9\footref{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}, the state changing process is shown in Table \ref{E4.24-state-changing-process-2}, which is the same with that of Toffoli gate.
     \begin{table}[h]
         \centering\scriptsize
-        \caption{State changing process for the computational basis states input to the left side of Figure 4.9.}
+        \caption{State changing process for the computational basis states inputs into the left side of Figure 4.9\textsuperscript{\ref{Fig-4.9-Implementation-of-Toffoli-gate-using-Hadamard-phase-controlled-NOT-and-pi/8-gates}}.}
         \label{E4.24-state-changing-process-2}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
@@ -1703,7 +1703,7 @@
     \begin{itemize}
         \item[(1)] Give a quantum circuit which use three Toffoli gates to construct the Fredkin gate (\emph{Hint}: think of the swap gate Construction --- you can control each gate, one at a time).
         \item[(2)] Show that the first and the last Toffoli gates can be replaced by CNOT gates.
-        \item[(3)] Now replace the middle Toffoli gate with the circuit in Figure 4.8\textsuperscript{\ref{Figure-4.8-Circuit-for-the-C^2(U)-gate}} to obtain a Fredkin gate construction using only six two-qubit gates.
+        \item[(3)] Now replace the middle Toffoli gate with the circuit in Figure 4.8\footref{Fig-4.8-Circuit-for-the-C2(U)-gate} to obtain a Fredkin gate construction using only six two-qubit gates.
         \item[(4)] Can you come up with an even simpler construction, with only five two-qubit gates?
     \end{itemize}
 \end{exe}
@@ -1786,7 +1786,7 @@
         which is the same as that of Fredkin.
 
         Therefore, the first and the last Toffoli gate can be replaced by CNOT gates.
-        \item[(3)] Replacing the middle Toffoli gate with circuit in Figure 4.8\footref{Figure-4.8-Circuit-for-the-C^2(U)-gate}, we get
+        \item[(3)] Replacing the middle Toffoli gate with circuit in Figure 4.8\footref{Fig-4.8-Circuit-for-the-C2(U)-gate}, we get
         \begin{center}
             \begin{quantikz}
                 \qw & \qw & \qw & \ctrl{2} & \qw & \ctrl{2} & \ctrl{1} & \qw & \qw\\
@@ -1829,7 +1829,7 @@
             \end{bmatrix}.
         \end{align}
         In this way, we obtain a Fredkin gate construction using only six two-qubit gates.
-        \item[(4)] Using Corollary \ref{E4.25-cor}, we can move the last controlled-$V$ gate to behind $W$ gate and get
+        \item[(4)] Using Corollary \ref{E4.25-cor-2}, we can move the last controlled-$V$ gate to behind $W$ gate and get
         \begin{center}
             \begin{quantikz}
                 \qw & \qw & \ctrl{1} & \ctrl{2} & \qw & \ctrl{2} & \qw & \qw\\
@@ -2052,7 +2052,7 @@
     Inputting the computational basis states to the above circuit, the state changing process is shown in Table \ref{E4.26-State-Changing-Process},
     \begin{table}[h]
         \centering
-        \caption{State changing process for the computational basis states input to the above circuit.}
+        \caption{State changing process for the computational basis states inputs into the above circuit.}
         \label{E4.26-State-Changing-Process}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
@@ -2152,7 +2152,7 @@
 \end{sol}
 
 \begin{exe}
-    For $U=V^2$ with $V$ unitary, construct a $C^5(U)$ gate analogous to that in Figure 4.10\footnote{\begin{quantikz}
+    For $U=V^2$ with $V$ unitary, construct a $C^5(U)$ gate analogous to that in Figure 4.10\footnote{\label{Fig-4.10-Network-implementing-the-Cn(U)-operation,for-use-n=5}\begin{quantikz}
         \lstick[wires=5]{control qubits} & \lstick{$\lvert c_1\rangle$} & \ctrl{1} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{1}\\
         & \lstick{$\lvert c_2\rangle$} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{4}\\
         & \lstick{$\lvert c_3\rangle$} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw & \qw & \ctrl{3} & \qw\\
@@ -2166,7 +2166,18 @@
     \end{quantikz}}, but using no work qubits. You may use controlled-$V$ and controlled-$V^{\dagger}$ gates.
 \end{exe}
 \begin{sol}
-    
+    Iterating based on Figure 4.8\footref{Fig-4.8-Circuit-for-the-C2(U)-gate}, we get quantum circuit
+    \begin{center}
+        \begin{quantikz}
+            \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{5} & \qw\\
+            \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{4} & \targ{} & \ctrl{4} & \targ{} & \qw & \qw\\
+            \qw & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{3} & \targ{} & \ctrl{3} & \targ{} & \qw & \qw & \qw & \qw & \qw & \qw\\
+            \qw & \qw & \ctrl{1} & \qw & \ctrl{1} & \ctrl{2} & \targ{} & \ctrl{2} & \targ{} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw\\
+            \qw & \ctrl{1} & \targ{} & \ctrl{1} & \targ{} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw\\
+            \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw & \gate{V^{\dagger}} & \qw & \gate{V} & \qw
+        \end{quantikz}
+    \end{center}
+    which constructs a $C^5(U)$ gate analogous to that in Figure 4.10\footref{Fig-4.10-Network-implementing-the-Cn(U)-operation,for-use-n=5}, using no work qubits but only controlled-$V$ and controlled-$V^{\dagger}$ gates (and CNOT gates).
 \end{sol}
 
 \ifx\allfiles\undefined
