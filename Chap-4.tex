@@ -2043,13 +2043,42 @@
         \begin{quantikz}
             \qw & \qw & \qw & \qw & \ctrl{2} & \qw & \qw & \qw & \qw\\
             \qw & \qw & \ctrl{1} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw\\
-            \qw & \gate{R_y\;\pi/} & \targ{} & \gate{R_y\;\pi/} & \targ{} & \gate{R_y\;-\pi/} & \targ{} & \gate{R_y\;-\pi/} & \qw
+            \qw & \gate{R_y(\pi/4)} & \targ{} & \gate{R_y(\pi/4)} & \targ{} & \gate{R_y(-\pi/4)} & \targ{} & \gate{R_y(-\pi/4)} & \qw
         \end{quantikz}
     \end{center}
-    differs from a Toffoli gate only by relative phases. That is, the circuit takes $\lvert c_1,c_2,t\rangle$ to $e^{i\theta}\lvert c_1,c_2,t\otimes c_1\cdot c_2\rangle$, where $e^{i\theta(c_1,c_2,t)}$ is some relative phase factor. Such gates can sometimes be useful in experimental implementations, where it may be much easier to implement a gate that is the same as the Toffoli up to relative phases that it is to do the Toffoli directly.
+    differs from a Toffoli gate only by relative phases. That is, the circuit takes $\lvert c_1,c_2,t\rangle$ to $e^{i\theta}\lvert c_1,c_2,t\oplus c_1\cdot c_2\rangle$, where $e^{i\theta(c_1,c_2,t)}$ is some relative phase factor. Such gates can sometimes be useful in experimental implementations, where it may be much easier to implement a gate that is the same as the Toffoli up to relative phases that it is to do the Toffoli directly.
 \end{exe}
 \begin{pf}
-    
+    Inputting the computational basis states to the above circuit, the state changing process is shown in Table \ref{E4.26-State-Changing-Process},
+    \begin{table}[h]
+        \centering
+        \caption{State changing process for the computational basis states input to the above circuit.}
+        \label{E4.26-State-Changing-Process}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+             & Input & After $1$st $R_y(\pi/4)$ & After $1$st CNOT & After $2$nd $R_y(\pi/4)$ \\ \hline
+            \multirow{8}{*}{States} & $\lvert 000\rangle$ & $\cos\frac{\pi}{8}\lvert 000\rangle+\sin\frac{\pi}{8}\lvert 001\rangle$ & $\cos\frac{\pi}{8}\lvert 000\rangle+\sin\frac{\pi}{8}\lvert 001\rangle$ & $\cos\frac{\pi}{4}\lvert 000\rangle+\sin\frac{\pi}{4}\lvert 001\rangle$ \\ \cline{2-5} 
+             & $\lvert 001\rangle$ & $-\sin\frac{\pi}{8}\lvert 000\rangle+\cos\frac{\pi}{8}\lvert 001\rangle$ & $-\sin\frac{\pi}{8}\lvert 000\rangle+\cos\frac{\pi}{8}\lvert 001\rangle$ & $-\sin\frac{\pi}{4}\lvert 000\rangle+\cos\frac{\pi}{4}\lvert 001\rangle$ \\ \cline{2-5} 
+             & $\lvert 010\rangle$ & $\cos\frac{\pi}{8}\lvert 010\rangle+\sin\frac{\pi}{8}\lvert 011\rangle$ & $\cos\frac{\pi}{8}\lvert 011\rangle+\sin\frac{\pi}{8}\lvert 010\rangle$ & $\lvert 011\rangle$ \\ \cline{2-5} 
+             & $\lvert 011\rangle$ & $-\sin\frac{\pi}{8}\lvert 010\rangle+\cos\frac{\pi}{8}\lvert 011\rangle$ & $-\sin\frac{\pi}{8}\lvert 011\rangle+\cos\frac{\pi}{8}\lvert 010\rangle$ & $\lvert 010\rangle$ \\ \cline{2-5} 
+             & $\lvert 100\rangle$ & $\cos\frac{\pi}{8}\lvert 100\rangle+\sin\frac{\pi}{8}\lvert 101\rangle$ & $\cos\frac{\pi}{8}\lvert 100\rangle+\sin\frac{\pi}{8}\lvert 101\rangle$ & $\cos\frac{\pi}{4}\lvert 100\rangle+\sin\frac{\pi}{4}\lvert 101\rangle$ \\ \cline{2-5} 
+             & $\lvert 101\rangle$ & $-\sin\frac{\pi}{8}\lvert 100\rangle+\cos\frac{\pi}{8}\lvert 101\rangle$ & $-\sin\frac{\pi}{8}\lvert 100\rangle+\cos\frac{\pi}{8}\lvert 101\rangle$ & $-\sin\frac{\pi}{4}\lvert 100\rangle+\cos\frac{\pi}{4}\lvert 101\rangle$ \\ \cline{2-5} 
+             & $\lvert 110\rangle$ & $\cos\frac{\pi}{8}\lvert 110\rangle+\sin\frac{\pi}{8}\lvert 111\rangle$ & $\cos\frac{\pi}{8}\lvert 111\rangle+\sin\frac{\pi}{8}\lvert 110\rangle$ & $\lvert 111\rangle$ \\ \cline{2-5} 
+             & $\lvert 111\rangle$ & $-\sin\frac{\pi}{8}\lvert 110\rangle+\cos\frac{\pi}{8}\lvert 111\rangle$ & $-\sin\frac{\pi}{8}\lvert 111\rangle+\cos\frac{\pi}{8}\lvert 110\rangle$ & $\lvert 110\rangle$ \\ \hline\hline
+             & After $2$nd CNOT & After $1$st $R_y(-pi/4)$ & After $3$rd CNOT & Output \\ \hline
+            \multirow{8}{*}{States} & $\cos\frac{\pi}{4}\lvert 000\rangle+\sin\frac{\pi}{4}\lvert 001\rangle$ & $\cos\frac{\pi}{8}\lvert 000\rangle+\sin\frac{\pi}{8}\lvert 001\rangle$ & $\cos\frac{\pi}{8}\lvert 000\rangle+\sin\frac{\pi}{8}\lvert 001\rangle$ & $\lvert 000\rangle$ \\ \cline{2-5} 
+             & $-\sin\frac{\pi}{4}\lvert 000\rangle+\cos\frac{\pi}{4}\lvert 001\rangle$ & $-\sin\frac{\pi}{8}\lvert 000\rangle+\cos\frac{\pi}{8}\lvert 001\rangle$ & $-\sin\frac{\pi}{8}\lvert 000\rangle+\cos\frac{\pi}{8}\lvert 001\rangle$ & $\lvert 001\rangle$ \\ \cline{2-5} 
+             & $\lvert 011\rangle$ & $\sin\frac{\pi}{8}\lvert 010\rangle+\cos\frac{\pi}{8}\lvert 011\rangle$ & $\sin\frac{\pi}{8}\lvert 011\rangle+\cos\frac{\pi}{8}\lvert 010\rangle$ & $\lvert 010\rangle$ \\ \cline{2-5} 
+             & $\lvert 010\rangle$ & $\cos\frac{\pi}{8}\lvert 010\rangle-\sin\frac{\pi}{8}\lvert 011\rangle$ & $\cos\frac{\pi}{8}\lvert 011\rangle-\sin\frac{\pi}{8}\lvert 010\rangle$ & $\lvert 011\rangle$ \\ \cline{2-5} 
+             & $\cos\frac{\pi}{4}\lvert 101\rangle+\sin\frac{\pi}{4}\lvert 100\rangle$ & $\sin\frac{3\pi}{8}\lvert 100\rangle+\cos\frac{3\pi}{8}\lvert 101\rangle$ & $\sin\frac{3\pi}{8}\lvert 100\rangle+\cos\frac{3\pi}{8}\lvert 101\rangle$ & $\lvert 100\rangle$ \\ \cline{2-5} 
+             & $-\sin\frac{\pi}{4}\lvert 101\rangle+\cos\frac{\pi}{4}\lvert 100\rangle$ & $\cos\frac{3\pi}{8}\lvert 100\rangle-\sin\frac{3\pi}{8}\lvert 101\rangle$ & $\cos\frac{3\pi}{8}\lvert 100\rangle-\sin\frac{3\pi}{8}\lvert 101\rangle$ & $-\lvert 101\rangle$ \\ \cline{2-5} 
+             & $\lvert 110\rangle$ & $\cos\frac{\pi}{8}\lvert 110\rangle-\sin\frac{\pi}{8}\lvert 111\rangle$ & $\cos\frac{\pi}{8}\lvert 111\rangle-\sin\frac{\pi}{8}\lvert 110\rangle$ & $\lvert 111\rangle$ \\ \cline{2-5} 
+             & $\lvert 111\rangle$ & $\sin\frac{\pi}{8}\lvert 110\rangle+\cos\frac{\pi}{8}\lvert 111\rangle$ & $\sin\frac{\pi}{8}\lvert 111\rangle+\cos\frac{\pi}{8}\lvert 110\rangle$ & $\lvert 110\rangle$ \\ \hline
+            \end{tabular}
+    \end{table}\\
+    which is the same as that of Toffoli gate shown in Table \ref{E4.24-state-changing-process-1}.
+
+    Therefore, the above circuit differs from Toffoli gate only by relative phases.
 \end{pf}
 
 \begin{exe}
