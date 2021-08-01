@@ -2082,7 +2082,7 @@
 \end{pf}
 
 \begin{exe}
-    Using just CNOTs and Toffoli gats, Construct a quantum circuit to perform the transformation
+    Using just CNOTs and Toffoli gats, construct a quantum circuit to perform the transformation
     \begin{align}
         \begin{bmatrix}
             1&0&0&0&0&0&0&0\\
@@ -2098,7 +2098,57 @@
     This kind of partial cyclic permutation operation will be useful later, in Chapter 7.
 \end{exe}
 \begin{sol}
-    
+    Quantum circuit
+    \begin{center}
+        \begin{quantikz}
+            \qw & \qw & \qw & \targ{} & \qw\\
+            \qw & \ctrl{1} & \targ{} & \ctrl{-1} & \qw\\
+            \qw & \targ{} & \ctrl{-1} & \ctrl{-2} & \qw
+        \end{quantikz}
+    \end{center}
+    uses just CNOTs and Toffoli gates and its unitary matrix is
+    \begin{align}
+        \notag&\begin{bmatrix}
+            1&0&0&0&0&0&0&0\\
+            0&1&0&0&0&0&0&0\\
+            0&0&0&1&0&0&0&0\\
+            0&0&1&0&0&0&0&0\\
+            0&0&0&0&1&0&0&0\\
+            0&0&0&0&0&1&0&0\\
+            0&0&0&0&0&0&0&1\\
+            0&0&0&0&0&0&1&0
+        \end{bmatrix}\begin{bmatrix}
+            1&0&0&0&0&0&0&0\\
+            0&0&0&1&0&0&0&0\\
+            0&0&1&0&0&0&0&0\\
+            0&1&0&0&0&0&0&0\\
+            0&0&0&0&1&0&0&0\\
+            0&0&0&0&0&0&0&1\\
+            0&0&0&0&0&0&1&0\\
+            0&0&0&0&0&1&0&0
+        \end{bmatrix}\begin{bmatrix}
+            1&0&0&0&0&0&0&0\\
+            0&1&0&0&0&0&0&0\\
+            0&0&1&0&0&0&0&0\\
+            0&0&0&0&0&0&0&1\\
+            0&0&0&0&1&0&0&0\\
+            0&0&0&0&0&1&0&0\\
+            0&0&0&0&0&0&1&0\\
+            0&0&0&1&0&0&0&0
+        \end{bmatrix}\\
+        =&\begin{bmatrix}
+            1&0&0&0&0&0&0&0\\
+            0&0&0&0&0&0&0&1\\
+            0&1&0&0&0&0&0&0\\
+            0&0&1&0&0&0&0&0\\
+            0&0&0&1&0&0&0&0\\
+            0&0&0&0&1&0&0&0\\
+            0&0&0&0&0&1&0&0\\
+            0&0&0&0&0&0&1&0
+        \end{bmatrix},
+    \end{align}
+    which is the same as the above transformation matrix.
+    Thus, this quantum circuit performs the above transformation.
 \end{sol}
 
 \begin{exe}
