@@ -783,10 +783,13 @@
     Use the previous exercise to show that $HTH=R_x(\pi/4)$, up to a global phase.
 \end{exe}
 \begin{pf}
-    Since
+    Using the conclusion obtained in Exercise 4.3 and the previous Exercise, we have
     \begin{align}
-        HTH=H\left(\cos\frac{\pi}{8}I-i\sin\frac{\pi}{8}Z\right)H=\cos\frac{\pi}{8}I-i\sin\frac{\pi}{8}X=R_x(\pi/4).
+        \notag HTH=&\exp(i\pi/8)HR_z(\pi/4)H=\exp(i\pi/8)H\left(\cos\frac{\pi}{8}I-i\sin\frac{\pi}{8}Z\right)H=\exp(i\pi/8)\left(\cos\frac{\pi}{8}I-i\sin\frac{\pi}{8}X\right)\\
+        =&\exp(i\pi/8)R_x(\pi/4).
     \end{align}
+
+    Therefore, $HTH=R_x(\pi/4)$ up to a global phase.
 \end{pf}
 
 \begin{exe}[Composition of single qubit operations]
