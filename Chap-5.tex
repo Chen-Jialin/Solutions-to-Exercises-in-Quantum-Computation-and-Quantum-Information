@@ -9,10 +9,22 @@
 \section{The quantum Fourier transform}
 
 \begin{exe}
-    Give a direct proof that the linear transform defined by Equation (5.2)\footnote{$\lvert j\rangle\longrightarrow\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{2\pi ijk/N}\lvert k\rangle$.} is unitary.
+    Give a direct proof that the linear transform defined by Equation (5.2)\footnote{\label{Equ-5.2}$\lvert j\rangle\longrightarrow\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{2\pi ijk/N}\lvert k\rangle$.} is unitary.
 \end{exe}
 \begin{pf}
-    
+    Set the matrix of the linear transform defined by Equation (5.2) as $\hat{U}$,
+    \begin{align}
+        \hat{U}\lvert j\rangle=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{2\pi ijk/N}\lvert k\rangle.
+    \end{align}
+    Since for any $\lvert j\rangle$
+    \begin{align}
+        \notag\langle j\rvert\hat{U}^{\dagger}\hat{U}\lvert j\rangle=&\left(\frac{1}{\sqrt{N}}\sum_{l=0}^{N-1}e^{2\pi ijl/N}\lvert l\rangle\right)^{\dagger}\left(\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{2\pi ijk/N}\lvert k\rangle\right)=\frac{1}{N}\sum_{k,l=0}^{N-1}e^{2\pi ij(k-l)/N}\langle l\vert k\rangle=\frac{1}{N}\sum_{k,l=0}^{N-1}e^{2\pi ij(k-l)/N}\delta_{lk}\\
+        =&\frac{1}{N}\sum_{k=0}^{N-1}1=1=\langle j\vert j\rangle,
+    \end{align}
+    \begin{align}
+        \Longrightarrow\hat{U}^{\dagger}\hat{U}=I,
+    \end{align}
+    i.e., the linear transform defined by Equation (5.2)\footref{Equ-5.2} is unitary.
 \end{pf}
 
 \ifx\allfiles\undefined
