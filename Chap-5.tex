@@ -37,6 +37,30 @@
     \end{align}
 \end{sol}
 
+\begin{exe}[Classical fast Fourier transform]
+    Suppose we wish to perform a Fourier transform of a vector containing $2^n$ complex numbers on a classical computer. Verify that the straightforward method for performing the Fourier transform, based upon direct evaluation of Equation (5.1)\footnote{\label{Equ-5.1}$y_k\equiv\frac{1}{\sqrt{N}}\sum_{j=0}^{N-1}x_je^{2\pi ijk/N}$.} requires $\Theta(2^{2n})$ elementary arithmetic operations. Find a method for reducing this to $\Theta(n2^n)$ operations, based upon Equation (5.4)\footnote{\label{Equ-5.4}$\lvert j_1,\cdots,j_n\rangle\rightarrow\frac{\left(\lvert 0\rangle+e^{2\pi i0.j_n}\lvert 1\rangle\right)\left(\lvert 0\rangle+e^{2\pi i0.j_{n-1}j_n}\lvert 1\rangle\right)\cdots\left(\lvert 0\rangle+e^{2\pi i0.j_1j_2\cdots j_n}\lvert 1\rangle\right)}{2^{n/2}}$}.
+\end{exe}
+\begin{sol}
+    According to Equation (5.1)\footref{Equ-5.1}, every element $y_k$ in vector $\lvert y\rangle$ takes $2^n$ elementary arithmetic operations. Since there are $2^n$ elements in vector $\lvert y\rangle$, the straightforward method for performing the Fourier transform, based upon direct evaluation of Equation (5.1)\footref{Equ-5.1} requires $\Theta(2^{2n})$ elementary arithmetic operations.
+
+    Based upon Equation (5.1)\footref{Equ-5.1}. For every element $y_k$ in vector $\lvert y\rangle$,
+    \begin{align}
+        \notag y_k=&\frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}x_je^{2\pi ijk/N}=\sum_{j=0}^{2^{n-1}-1}x_{2j}e^{2\pi i(2j)k/N}+\sum_{j=0}^{2^{n-1}-1}x_{2j+1}e^{2\pi i(2j+1)k/N}\\
+        =&\sum_{j=0}^{2^{n-1}-1}x_{2j}e^{2\pi i(2j)k/N}+e^{2\pi ik/N}\sum_{j=0}^{2^{n-1}-1}x_{2j+1}e^{2\pi i(2j)k/N}.
+    \end{align}
+    Define $T(\text{A})$ as the elementary arithmetic operation number needed (computational complexity) for algorithm A. Here,
+    \begin{align}
+        \notag&T(\text{Fourier transform of a vector containing $2^n$ complex numbers})\\
+        \notag=&T(\text{calculate $\sum_{j=0}^{2^{n-1}-1}x_{2j}e^{2\pi i(2j)k/N}$ for }k=1,2,\cdots,2^n)+T(\text{calculate $\sum_{j=0}^{2^{n-1}-1}x_{2j+1}e^{2\pi i(2j)k/N}$ for }k=1,2,\cdots,2^n)+2^n\\
+        \notag=&2T(\text{Fourier transform of a vector containing $2^{n-1}$ complex numbers})+2^n.
+    \end{align}
+    In this way,
+    \begin{align}
+        T(\text{Fourier transform of a vector containing $2^n$ complex numbers})=O(n2^n),
+    \end{align}
+    i.e., we reduce Fourier transform of a vector containing $2^n$ complex numbers to $\Theta(n2^n)$ elementary arithmetic operations.
+\end{sol}
+
 \ifx\allfiles\undefined
 \end{document}
 \fi
